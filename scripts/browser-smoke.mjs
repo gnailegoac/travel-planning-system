@@ -53,9 +53,12 @@ try {
     await page.waitForTimeout(250);
 
     const visibleDayCards = await page.locator('.day-card').count();
+    const visibleStops = await page.locator('.stop-item').count();
     const visibleMarkers = await page.locator('.route-marker').count();
     if (visibleDayCards !== 1) errors.push(`D2 筛选后显示 ${visibleDayCards} 张日程卡，预期 1 张`);
-    if (visibleMarkers !== 4) errors.push(`D2 筛选后显示 ${visibleMarkers} 个地图点，预期 4 个`);
+    if (visibleMarkers !== visibleStops) {
+      errors.push(`D2 地图点 ${visibleMarkers} 个，与时间线停靠点 ${visibleStops} 个不一致`);
+    }
 
     const layout = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,

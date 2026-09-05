@@ -6,6 +6,7 @@ import {
   Flag,
   Landmark,
   MapPin,
+  Plane,
   Utensils,
 } from 'lucide-react';
 import { DAY_COLORS, formatDate, formatDuration, getStopDurationMinutes, getVisibleDays } from '../lib/trip.js';
@@ -13,6 +14,7 @@ import { DAY_COLORS, formatDate, formatDuration, getStopDurationMinutes, getVisi
 const KIND_META = {
   departure: { label: '出发', icon: Flag },
   arrival: { label: '抵达', icon: MapPin },
+  transport: { label: '交通', icon: Car },
   attraction: { label: '游览', icon: Landmark },
   meal: { label: '餐饮', icon: Utensils },
   lodging: { label: '住宿', icon: BedDouble },
@@ -39,6 +41,7 @@ function StopItem({ stop, index, color }) {
         </div>
         <p>{stop.note}</p>
         <span className="duration-label">停留 {formatDuration(duration)}</span>
+        {stop.timeStatus && <span className="tentative-label">{stop.timeStatus}</span>}
       </div>
     </li>
   );
@@ -77,6 +80,7 @@ export function DayTimeline({ trip, selectedDayId, onDayChange }) {
               <div className="day-route-summary">
                 <span><Car size={15} /> {day.route?.method ?? '交通待定'}</span>
                 <span>{day.route?.distanceKm ?? 0} km</span>
+                {day.route?.flightDistanceKm > 0 && <span><Plane size={15} /> 约 {day.route.flightDistanceKm} km</span>}
                 <span>{formatDuration(day.route?.durationMinutes ?? 0)}</span>
               </div>
 

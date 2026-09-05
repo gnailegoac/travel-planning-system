@@ -1,0 +1,1084 @@
+{
+  "schemaVersion": 1,
+  "id": "xinjiang-self-drive-2026",
+  "title": "阿勒泰—喀什双段自驾",
+  "subtitle": "北疆秋色与帕米尔人文的 10 天 9 晚双段行程",
+  "status": "planning",
+  "statusLabel": "待航班与报价确认",
+  "versionDate": "2026-09-05",
+  "notice": "航班时刻、景区营业时间和部分市内安排尚待确认；带“待确认”标记的时间不可用于购票或误机判断。阿禾公路、G314、盘龙古道及全部地图连线均须在出发前按官方公告和当天导航复核。",
+  "timezone": "Asia/Shanghai",
+  "currency": "CNY",
+  "startDate": "2026-09-24",
+  "endDate": "2026-10-03",
+  "origin": "阿勒泰雪都机场",
+  "destination": "喀什徕宁国际机场",
+  "travelers": {
+    "adults": 2,
+    "children": 0,
+    "seniors": 0
+  },
+  "tags": ["双人自驾", "北疆 + 南疆", "10 天 9 晚"],
+  "days": [
+    {
+      "id": "day-1",
+      "date": "2026-09-24",
+      "title": "阿勒泰机场 → 阿禾公路 → 禾木",
+      "summary": "14:00 是本行程的安全门槛；若超时或遇降雪、浓雾、管制，当晚改住阿勒泰市，不夜间抢路。",
+      "route": {
+        "method": "自驾 + 景区区间车",
+        "distanceKm": 225,
+        "durationMinutes": 270,
+        "geometry": [
+          [47.751698, 88.090188],
+          [47.825756, 88.12917],
+          [48.355491, 88.290908],
+          [48.571074, 87.524492],
+          [48.569206, 87.430372]
+        ]
+      },
+      "stops": [
+        {
+          "id": "altay-airport-arrival",
+          "name": "阿勒泰雪都机场",
+          "kind": "arrival",
+          "arrival": "12:00",
+          "departure": "13:30",
+          "coordinates": [47.751698, 88.090188],
+          "timeStatus": "待航班确认",
+          "note": "12:00 仅代表“中午抵达”的占位；完成取车目标约 13:30。"
+        },
+        {
+          "id": "altay-fuel-supplies",
+          "name": "阿勒泰加油与补给",
+          "kind": "departure",
+          "arrival": "13:30",
+          "departure": "14:00",
+          "coordinates": [47.825756, 88.12917],
+          "note": "加满油，购买水和简餐；两位驾驶人均登记在租车合同中。"
+        },
+        {
+          "id": "ahe-road-viewpoint",
+          "name": "阿禾公路途中安全观景点",
+          "kind": "attraction",
+          "arrival": "16:20",
+          "departure": "16:40",
+          "coordinates": [48.355491, 88.290908],
+          "timeStatus": "正常路况估算",
+          "note": "坐标只用于路线塑形；仅在允许停车、天气和管制正常时短停。"
+        },
+        {
+          "id": "hemu-visitor-center",
+          "name": "禾木游客服务中心",
+          "kind": "transport",
+          "arrival": "18:30",
+          "departure": "19:10",
+          "coordinates": [48.571074, 87.524492],
+          "timeStatus": "接驳待复核",
+          "note": "停车后换乘区间车；游客服务中心与交通换乘中心并非同一点。"
+        },
+        {
+          "id": "hemu-old-village-hotel-1",
+          "name": "禾木老村住宿",
+          "kind": "lodging",
+          "arrival": "19:30",
+          "departure": "07:00",
+          "departureDayOffset": 1,
+          "coordinates": [48.569206, 87.430372],
+          "note": "靠近禾木桥或哈登平台步道，要求独立卫浴、供暖且可免费取消。"
+        }
+      ],
+      "lodging": {
+        "name": "禾木老村住宿（待选）",
+        "area": "禾木桥 / 哈登平台步道附近",
+        "checkIn": "19:30",
+        "checkOut": "07:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-2",
+      "date": "2026-09-25",
+      "title": "禾木晨景 → 喀纳斯",
+      "summary": "晨景后离开禾木，经贾登峪换乘进入喀纳斯；区间车与排队按中秋客流留足缓冲。",
+      "route": {
+        "method": "步行 + 区间车 + 自驾",
+        "distanceKm": 68,
+        "durationMinutes": 240,
+        "geometry": [
+          [48.569206, 87.430372],
+          [48.576476, 87.426503],
+          [48.571074, 87.524492],
+          [48.506368, 87.128007],
+          [48.714959, 87.025323],
+          [48.699878, 87.035303]
+        ]
+      },
+      "stops": [
+        {
+          "id": "hadeng-view-platform",
+          "name": "哈登观景平台",
+          "kind": "attraction",
+          "arrival": "07:20",
+          "departure": "08:30",
+          "coordinates": [48.576476, 87.426503],
+          "timeStatus": "位置近似",
+          "note": "07:00 左右从住处步行出发，日出约 08:00；地图点采用禾木村观景点。"
+        },
+        {
+          "id": "hemu-village-walk",
+          "name": "禾木桥、白桦林与老村",
+          "kind": "attraction",
+          "arrival": "08:40",
+          "departure": "11:20",
+          "coordinates": [48.569206, 87.430372],
+          "note": "以步行为主，避免只沿主路走马观花。"
+        },
+        {
+          "id": "hemu-transfer-out",
+          "name": "禾木游客服务中心 / 取车点",
+          "kind": "transport",
+          "arrival": "12:10",
+          "departure": "12:30",
+          "coordinates": [48.571074, 87.524492],
+          "timeStatus": "班次待确认",
+          "note": "约 11:30 后乘区间车出村，实际停车接驳点按景区公告确认。"
+        },
+        {
+          "id": "jiadengyu-transfer",
+          "name": "贾登峪停车与换乘中心",
+          "kind": "transport",
+          "arrival": "14:10",
+          "departure": "15:20",
+          "coordinates": [48.506368, 87.128007],
+          "timeStatus": "排队时间估算",
+          "note": "停车、排队和区间车合计预留 1—2 小时。"
+        },
+        {
+          "id": "kanas-lake-boardwalk-1",
+          "name": "喀纳斯湖与湖边栈道",
+          "kind": "attraction",
+          "arrival": "15:50",
+          "departure": "18:00",
+          "coordinates": [48.714959, 87.025323],
+          "note": "下午安排低强度湖边游览。"
+        },
+        {
+          "id": "kanas-scenic-hotel-1",
+          "name": "喀纳斯景区内住宿",
+          "kind": "lodging",
+          "arrival": "18:20",
+          "departure": "08:00",
+          "departureDayOffset": 1,
+          "coordinates": [48.699878, 87.035303],
+          "note": "景区内连住第一晚，减少重复换乘。"
+        }
+      ],
+      "lodging": {
+        "name": "喀纳斯景区内住宿（待选）",
+        "area": "喀纳斯村 / 换乘便利区域",
+        "checkIn": "18:20",
+        "checkOut": "08:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-3",
+      "date": "2026-09-26",
+      "title": "喀纳斯全天",
+      "summary": "能见度好且排队可接受才上观鱼台；否则把时间留给湖边栈道、森林和村落。",
+      "route": {
+        "method": "景区区间车 + 步行",
+        "distanceKm": 20,
+        "durationMinutes": 90,
+        "geometry": [
+          [48.699878, 87.035303],
+          [48.725782, 86.990507],
+          [48.699878, 87.035303],
+          [48.714959, 87.025323]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kanas-hotel-depart-1",
+          "name": "喀纳斯景区内住宿",
+          "kind": "departure",
+          "arrival": "07:45",
+          "departure": "08:00",
+          "coordinates": [48.699878, 87.035303],
+          "note": "早餐后按天气和现场容量决定当天顺序。"
+        },
+        {
+          "id": "fish-viewing-platform",
+          "name": "观鱼台",
+          "kind": "attraction",
+          "arrival": "08:30",
+          "departure": "11:00",
+          "coordinates": [48.725782, 86.990507],
+          "timeStatus": "条件项目",
+          "note": "天气、地灾、检修或容量控制均可能导致关闭；长队时直接取消。"
+        },
+        {
+          "id": "kanas-lunch",
+          "name": "喀纳斯村午餐",
+          "kind": "meal",
+          "arrival": "11:15",
+          "departure": "12:15",
+          "coordinates": [48.699878, 87.035303],
+          "note": "避免把午餐推迟到下午游览时段。"
+        },
+        {
+          "id": "kanas-lake-boardwalk-2",
+          "name": "喀纳斯湖区栈道",
+          "kind": "attraction",
+          "arrival": "12:30",
+          "departure": "15:00",
+          "coordinates": [48.714959, 87.025323],
+          "note": "阴雾时可扩展为全天主项目。"
+        },
+        {
+          "id": "kanas-village-forest",
+          "name": "喀纳斯村落与森林",
+          "kind": "attraction",
+          "arrival": "15:20",
+          "departure": "17:30",
+          "coordinates": [48.699878, 87.035303],
+          "note": "下午降低强度，为次日三湾和返程保留体力。"
+        },
+        {
+          "id": "kanas-scenic-hotel-2",
+          "name": "喀纳斯景区内住宿",
+          "kind": "lodging",
+          "arrival": "18:00",
+          "departure": "07:45",
+          "departureDayOffset": 1,
+          "coordinates": [48.699878, 87.035303],
+          "note": "同一家住宿第二晚。"
+        }
+      ],
+      "lodging": {
+        "name": "喀纳斯景区内住宿（同一家）",
+        "area": "喀纳斯村 / 换乘便利区域",
+        "checkIn": "18:00",
+        "checkOut": "07:45",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-4",
+      "date": "2026-09-27",
+      "title": "喀纳斯三湾 → 阿勒泰市",
+      "summary": "上午完成三湾，13:00 前争取取车返程；不增加五彩滩，以保护次日下午航班。",
+      "route": {
+        "method": "区间车 + 步行 + 自驾",
+        "distanceKm": 250,
+        "durationMinutes": 300,
+        "geometry": [
+          [48.699878, 87.035303],
+          [48.658248, 87.037659],
+          [48.634545, 87.047184],
+          [48.619762, 87.051558],
+          [48.506368, 87.128007],
+          [47.700617, 86.872219],
+          [47.825756, 88.12917]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kanas-hotel-depart-2",
+          "name": "喀纳斯景区内住宿",
+          "kind": "departure",
+          "arrival": "07:30",
+          "departure": "07:50",
+          "coordinates": [48.699878, 87.035303],
+          "note": "退房并轻装前往三湾。"
+        },
+        {
+          "id": "shenxian-bay",
+          "name": "神仙湾",
+          "kind": "attraction",
+          "arrival": "08:00",
+          "departure": "08:45",
+          "coordinates": [48.658248, 87.037659],
+          "note": "按天气和晨雾情况停留。"
+        },
+        {
+          "id": "moon-bay",
+          "name": "月亮湾",
+          "kind": "attraction",
+          "arrival": "09:05",
+          "departure": "09:45",
+          "coordinates": [48.634545, 87.047184],
+          "note": "体力允许再进入后续栈道。"
+        },
+        {
+          "id": "moon-to-wolong-boardwalk",
+          "name": "月亮湾—卧龙湾栈道",
+          "kind": "attraction",
+          "arrival": "09:45",
+          "departure": "11:45",
+          "coordinates": [48.619762, 87.051558],
+          "note": "完整步行约 2—3 小时；时间紧时改乘区间车。"
+        },
+        {
+          "id": "jiadengyu-car-pickup",
+          "name": "贾登峪取车点",
+          "kind": "departure",
+          "arrival": "12:30",
+          "departure": "13:00",
+          "coordinates": [48.506368, 87.128007],
+          "note": "争取 13:00 前驶离。"
+        },
+        {
+          "id": "burqin-road-rest",
+          "name": "布尔津方向途中休息",
+          "kind": "meal",
+          "arrival": "15:10",
+          "departure": "15:30",
+          "coordinates": [47.700617, 86.872219],
+          "note": "只作驾驶休息，不安排额外景点。"
+        },
+        {
+          "id": "altay-city-hotel",
+          "name": "阿勒泰市或机场附近住宿",
+          "kind": "lodging",
+          "arrival": "17:30",
+          "departure": "11:30",
+          "departureDayOffset": 1,
+          "coordinates": [47.825756, 88.12917],
+          "timeStatus": "退房待航班确认",
+          "note": "停车与次日还车方便，避免从山区直接赶航班。"
+        }
+      ],
+      "lodging": {
+        "name": "阿勒泰市 / 机场附近酒店（待选）",
+        "area": "停车与还车方便区域",
+        "checkIn": "17:30",
+        "checkOut": "11:30",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-5",
+      "date": "2026-09-28",
+      "title": "阿勒泰 → 飞喀什 → 古城夜游",
+      "summary": "本日全部航班相关时间都是占位；获得航班号后必须整体重排，而不是局部微调。",
+      "route": {
+        "method": "还车 + 航班 + 重新取车",
+        "distanceKm": 30,
+        "flightDistanceKm": 1100,
+        "durationMinutes": 300,
+        "geometry": [
+          [47.825756, 88.12917],
+          [47.751698, 88.090188],
+          [39.54002, 76.019713],
+          [39.472055, 75.987628]
+        ]
+      },
+      "stops": [
+        {
+          "id": "altay-breakfast-riverside",
+          "name": "阿勒泰早餐与河岸短走",
+          "kind": "attraction",
+          "arrival": "08:30",
+          "departure": "10:00",
+          "coordinates": [47.825756, 88.12917],
+          "timeStatus": "可删减",
+          "note": "不增加远途景点；航班提前时优先取消。"
+        },
+        {
+          "id": "altay-hotel-luggage",
+          "name": "阿勒泰酒店取行李",
+          "kind": "departure",
+          "arrival": "10:15",
+          "departure": "11:30",
+          "coordinates": [47.825756, 88.12917],
+          "timeStatus": "待航班确认",
+          "note": "退房时间须按真实起飞时刻倒推。"
+        },
+        {
+          "id": "altay-airport-return",
+          "name": "阿勒泰机场加油、验车与还车",
+          "kind": "transport",
+          "arrival": "12:00",
+          "departure": "15:00",
+          "coordinates": [47.751698, 88.090188],
+          "timeStatus": "待航班确认",
+          "note": "目前按占位航班预留约 3 小时，不能作为真实值。"
+        },
+        {
+          "id": "kashgar-airport-arrival",
+          "name": "喀什徕宁国际机场",
+          "kind": "arrival",
+          "arrival": "17:30",
+          "departure": "19:00",
+          "coordinates": [39.54002, 76.019713],
+          "timeStatus": "待航班确认",
+          "note": "落地、取行李和重新取车均为占位。"
+        },
+        {
+          "id": "kashgar-old-city-night",
+          "name": "喀什古城夜游与晚餐",
+          "kind": "attraction",
+          "arrival": "19:30",
+          "departure": "21:00",
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "随航班顺延",
+          "note": "只安排轻松散步和晚餐；晚到则直接入住。"
+        },
+        {
+          "id": "kashgar-hotel-1",
+          "name": "喀什古城边缘住宿",
+          "kind": "lodging",
+          "arrival": "21:15",
+          "departure": "08:15",
+          "departureDayOffset": 1,
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "入住随航班调整",
+          "note": "要求可靠停车位。"
+        }
+      ],
+      "lodging": {
+        "name": "喀什古城边缘酒店（待选）",
+        "area": "有可靠停车位的古城外围",
+        "checkIn": "21:15",
+        "checkOut": "08:15",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-6",
+      "date": "2026-09-29",
+      "title": "喀什 → 白沙湖 → 喀拉库勒湖 → 塔县",
+      "summary": "全天按 8—9 小时以上准备；G314 近期存在地灾与反复阻断风险，到达时间不能视为承诺。",
+      "route": {
+        "method": "自驾",
+        "distanceKm": 300,
+        "durationMinutes": 330,
+        "geometry": [
+          [39.472055, 75.987628],
+          [38.977032, 75.474853],
+          [38.751563, 75.002423],
+          [38.464341, 75.051098],
+          [37.77694, 75.22466],
+          [37.782223, 75.232784]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kashgar-hotel-depart-1",
+          "name": "喀什古城边缘酒店",
+          "kind": "departure",
+          "arrival": "08:15",
+          "departure": "08:45",
+          "coordinates": [39.472055, 75.987628],
+          "note": "天亮后出发，不摸黑走山路。"
+        },
+        {
+          "id": "oytak-red-mountain",
+          "name": "奥依塔克红山",
+          "kind": "attraction",
+          "arrival": "10:30",
+          "departure": "11:00",
+          "coordinates": [38.977032, 75.474853],
+          "timeStatus": "短停估算",
+          "note": "只作短停，不挤压后续检查站和高原路段缓冲。"
+        },
+        {
+          "id": "white-sand-lake",
+          "name": "白沙湖北岸观景点",
+          "kind": "attraction",
+          "arrival": "12:30",
+          "departure": "13:30",
+          "coordinates": [38.751563, 75.002423],
+          "timeStatus": "开放待复核",
+          "note": "此处指帕米尔线路的布仑口水库；身份证和边境通行证随身携带。"
+        },
+        {
+          "id": "karakul-lake",
+          "name": "喀拉库勒湖北岸观景点",
+          "kind": "attraction",
+          "arrival": "15:00",
+          "departure": "16:00",
+          "coordinates": [38.464341, 75.051098],
+          "timeStatus": "开放待复核",
+          "note": "控制停留，不追求每个观景台都下车。"
+        },
+        {
+          "id": "tashkurgan-arrival-health-check",
+          "name": "塔什库尔干县城",
+          "kind": "arrival",
+          "arrival": "18:30",
+          "departure": "19:00",
+          "coordinates": [37.77694, 75.22466],
+          "timeStatus": "路况情景值",
+          "note": "先观察高原反应；抵达后 48 小时内避免饮酒和剧烈活动。"
+        },
+        {
+          "id": "stone-city-golden-grassland",
+          "name": "石头城与金草滩",
+          "kind": "attraction",
+          "arrival": "19:15",
+          "departure": "20:00",
+          "coordinates": [37.782223, 75.232784],
+          "timeStatus": "条件项目",
+          "note": "仅在仍开放、身体状态良好且时间充足时执行；否则直接取消。"
+        },
+        {
+          "id": "tashkurgan-hotel-1",
+          "name": "塔县县城住宿",
+          "kind": "lodging",
+          "arrival": "20:15",
+          "departure": "08:00",
+          "departureDayOffset": 1,
+          "coordinates": [37.77694, 75.22466],
+          "note": "停车方便、供暖可靠；出现高反不继续上升。"
+        }
+      ],
+      "lodging": {
+        "name": "塔县县城酒店（待选）",
+        "area": "停车方便、供暖可靠区域",
+        "checkIn": "20:15",
+        "checkOut": "08:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-7",
+      "date": "2026-09-30",
+      "title": "盘龙古道 → 瓦恰乡 → 班迪尔蓝湖",
+      "summary": "盘龙古道可能因天气、施工临时关闭；现场开放、单行方向和车型限制未确认时，不进入。",
+      "route": {
+        "method": "自驾 + 短距离步行",
+        "distanceKm": 165,
+        "durationMinutes": 420,
+        "geometry": [
+          [37.77694, 75.22466],
+          [37.598386, 75.368222],
+          [37.620262, 75.620967],
+          [37.821215, 75.441558],
+          [37.77694, 75.22466]
+        ]
+      },
+      "stops": [
+        {
+          "id": "tashkurgan-fuel-check",
+          "name": "塔县加油与路况复核",
+          "kind": "departure",
+          "arrival": "08:00",
+          "departure": "09:00",
+          "coordinates": [37.77694, 75.22466],
+          "note": "加满油，带午餐、水和保暖衣物；复核开放时段、入口、方向与车型。"
+        },
+        {
+          "id": "panlong-west-entrance",
+          "name": "盘龙古道西入口",
+          "kind": "arrival",
+          "arrival": "10:00",
+          "departure": "10:20",
+          "coordinates": [37.598386, 75.368222],
+          "timeStatus": "开放待复核",
+          "note": "到场核对正式入口，并以现场单行标志和交警指挥为准。"
+        },
+        {
+          "id": "panlong-scenic-road",
+          "name": "盘龙古道",
+          "kind": "attraction",
+          "arrival": "10:20",
+          "departure": "13:10",
+          "coordinates": [37.6105, 75.49],
+          "timeStatus": "开放待复核",
+          "note": "约 36 公里、最高点约 4200 米；长下坡用低挡和发动机制动。"
+        },
+        {
+          "id": "wacha-lunch",
+          "name": "瓦恰乡方向午餐休息",
+          "kind": "meal",
+          "arrival": "13:15",
+          "departure": "14:00",
+          "coordinates": [37.620262, 75.620967],
+          "note": "以自带午餐为主。"
+        },
+        {
+          "id": "bandier-blue-lake",
+          "name": "班迪尔蓝湖南岸观景点",
+          "kind": "attraction",
+          "arrival": "15:15",
+          "departure": "16:15",
+          "coordinates": [37.821215, 75.441558],
+          "note": "开放地图正式水体名为颇斯特班迪尔水库。"
+        },
+        {
+          "id": "tashkurgan-hotel-2",
+          "name": "塔县县城住宿",
+          "kind": "lodging",
+          "arrival": "18:00",
+          "departure": "08:15",
+          "departureDayOffset": 1,
+          "coordinates": [37.77694, 75.22466],
+          "note": "同一家酒店第二晚；若有高反症状，取消盘龙并及时下降就医。"
+        }
+      ],
+      "lodging": {
+        "name": "塔县县城酒店（同一家）",
+        "area": "停车方便、供暖可靠区域",
+        "checkIn": "18:00",
+        "checkOut": "08:15",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-8",
+      "date": "2026-10-01",
+      "title": "塔县 → G314 → 喀什",
+      "summary": "国庆首日沿 G314 原路返回，尽量不重复游览；检查站、地灾和拥堵缓冲优先。",
+      "route": {
+        "method": "自驾",
+        "distanceKm": 300,
+        "durationMinutes": 480,
+        "geometry": [
+          [37.77694, 75.22466],
+          [38.464341, 75.051098],
+          [38.751563, 75.002423],
+          [38.977032, 75.474853],
+          [39.472055, 75.987628]
+        ]
+      },
+      "stops": [
+        {
+          "id": "tashkurgan-hotel-depart",
+          "name": "塔县酒店",
+          "kind": "departure",
+          "arrival": "08:15",
+          "departure": "08:45",
+          "coordinates": [37.77694, 75.22466],
+          "note": "天亮后出发，出发前再次确认 G314 路况。"
+        },
+        {
+          "id": "karakul-safety-rest-return",
+          "name": "喀拉库勒湖沿线安全休息点",
+          "kind": "transport",
+          "arrival": "11:15",
+          "departure": "11:35",
+          "coordinates": [38.464341, 75.051098],
+          "timeStatus": "路况情景值",
+          "note": "只作安全休息，不重复完整游览。"
+        },
+        {
+          "id": "white-sand-lake-lunch-return",
+          "name": "白沙湖沿线午餐休息",
+          "kind": "meal",
+          "arrival": "13:00",
+          "departure": "13:40",
+          "coordinates": [38.751563, 75.002423],
+          "timeStatus": "路况情景值",
+          "note": "尽量减少停留。"
+        },
+        {
+          "id": "oytak-rest-return",
+          "name": "奥依塔克沿线安全休息点",
+          "kind": "transport",
+          "arrival": "15:30",
+          "departure": "15:50",
+          "coordinates": [38.977032, 75.474853],
+          "timeStatus": "路况情景值",
+          "note": "视路况和体力决定是否停车。"
+        },
+        {
+          "id": "kashgar-hotel-2",
+          "name": "喀什古城边缘住宿",
+          "kind": "lodging",
+          "arrival": "17:30",
+          "departure": "09:00",
+          "departureDayOffset": 1,
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "国庆路况估算",
+          "note": "若 G314 延误，次日首先用于补偿和休整。"
+        }
+      ],
+      "lodging": {
+        "name": "喀什古城边缘酒店（待选）",
+        "area": "有可靠停车位的古城外围",
+        "checkIn": "17:30",
+        "checkOut": "09:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-9",
+      "date": "2026-10-02",
+      "title": "喀什人文游兼机动日",
+      "summary": "本日首先是 G314 延误缓冲；正常执行时步行和打车，不在古城周边反复找车位。",
+      "route": {
+        "method": "步行 + 打车",
+        "distanceKm": 18,
+        "durationMinutes": 75,
+        "geometry": [
+          [39.472055, 75.987628],
+          [39.472242, 75.98418],
+          [39.495123, 75.992991],
+          [39.470182, 75.99996],
+          [39.472055, 75.987628]
+        ]
+      },
+      "stops": [
+        {
+          "id": "east-gate-ceremony",
+          "name": "喀什古城东门开城仪式",
+          "kind": "attraction",
+          "arrival": "09:30",
+          "departure": "10:15",
+          "coordinates": [39.4741, 75.9986],
+          "timeStatus": "前一晚确认",
+          "note": "国庆具体场次尚未公布；若取消或时间不合适，直接进入古城。"
+        },
+        {
+          "id": "kashgar-old-city-day",
+          "name": "古城居民巷与手工艺街区",
+          "kind": "attraction",
+          "arrival": "10:15",
+          "departure": "12:30",
+          "coordinates": [39.472055, 75.987628],
+          "note": "以步行为主，保留自由停留时间。"
+        },
+        {
+          "id": "id-kah-area-lunch",
+          "name": "艾提尕尔广场及周边",
+          "kind": "meal",
+          "arrival": "12:40",
+          "departure": "14:00",
+          "coordinates": [39.472242, 75.98418],
+          "timeStatus": "准入待确认",
+          "note": "宗教场所能否进入及开放时段以当天公告为准。"
+        },
+        {
+          "id": "kashgar-museum",
+          "name": "喀什博物馆",
+          "kind": "attraction",
+          "arrival": "14:30",
+          "departure": "16:30",
+          "coordinates": [39.495123, 75.992991],
+          "timeStatus": "国庆开放待确认",
+          "note": "普通参观规则与讲解预约不同；节日开放安排需临近确认。"
+        },
+        {
+          "id": "gaotai-residences",
+          "name": "高台民居",
+          "kind": "attraction",
+          "arrival": "17:00",
+          "departure": "18:30",
+          "coordinates": [39.470182, 75.99996],
+          "timeStatus": "条件项目",
+          "note": "可与博物馆二选一；以当日开放安排和体力为准。"
+        },
+        {
+          "id": "kashgar-hotel-3",
+          "name": "喀什古城边缘住宿",
+          "kind": "lodging",
+          "arrival": "19:00",
+          "departure": "13:00",
+          "departureDayOffset": 1,
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "退房待航班确认",
+          "note": "若前一日延误，本日优先休整，不再增加莎车等远途。"
+        }
+      ],
+      "lodging": {
+        "name": "喀什古城边缘酒店（同一家）",
+        "area": "有可靠停车位的古城外围",
+        "checkIn": "19:00",
+        "checkOut": "13:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-10",
+      "date": "2026-10-03",
+      "title": "喀什离境",
+      "summary": "暂按 16:00 起飞制作占位时刻；真实规则是从航班时刻倒推至少 3 小时，并优先删除购物。",
+      "route": {
+        "method": "自驾还车 + 航班离境",
+        "distanceKm": 20,
+        "durationMinutes": 75,
+        "geometry": [
+          [39.472055, 75.987628],
+          [39.54002, 76.019713]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kashgar-breakfast-shopping",
+          "name": "喀什早餐与少量购物",
+          "kind": "attraction",
+          "arrival": "09:00",
+          "departure": "11:00",
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "可删减",
+          "note": "航班提前时先缩短或取消购物。"
+        },
+        {
+          "id": "kashgar-hotel-checkout",
+          "name": "酒店取行李与退房",
+          "kind": "departure",
+          "arrival": "11:00",
+          "departure": "13:00",
+          "coordinates": [39.472055, 75.987628],
+          "timeStatus": "待航班确认",
+          "note": "13:00 只对应占位航班的 T-3 小时。"
+        },
+        {
+          "id": "kashgar-fuel-car-return",
+          "name": "机场附近加油与租车交还",
+          "kind": "transport",
+          "arrival": "13:20",
+          "departure": "14:00",
+          "coordinates": [39.52, 76.012],
+          "timeStatus": "待航班确认",
+          "note": "预留加油、验车和还车时间。"
+        },
+        {
+          "id": "kashgar-airport-departure",
+          "name": "喀什徕宁国际机场",
+          "kind": "arrival",
+          "arrival": "14:00",
+          "departure": "16:00",
+          "coordinates": [39.54002, 76.019713],
+          "timeStatus": "假设 16:00 起飞",
+          "note": "航班号和准确起飞时间尚未提供。"
+        }
+      ],
+      "lodging": null
+    }
+  ],
+  "preparation": [
+    {
+      "kind": "documents",
+      "title": "证件与边境通行",
+      "items": [
+        "建议 9 月上旬办理两人的电子边境通行证，不要卡在出发前一周。",
+        "申请并核对证面覆盖阿克陶县与塔什库尔干县；不确定时拨打 12367。",
+        "手机离线保存正式电子证文件并打印一份，不能只依赖普通截图。",
+        "白沙湖、喀拉库勒湖沿线同时携带身份证与边境通行证。"
+      ]
+    },
+    {
+      "kind": "transport",
+      "title": "航班、住宿与车辆",
+      "items": [
+        "补充三段航班的航班号和准确时间，重算 D1、D5、D10。",
+        "锁定可取消的禾木、喀纳斯、阿勒泰、喀什与塔县住宿。",
+        "确认两段租车的双驾驶人、山区保险、轮胎、刹车、备胎与暖风除雾。",
+        "出发前确认喀纳斯与禾木的门票、最晚入园、区间车和住宿接驳。"
+      ]
+    },
+    {
+      "kind": "safety",
+      "title": "天气、道路与高原",
+      "items": [
+        "出发前 7—10 天查天气，前 48 小时复核阿禾公路、G314 与盘龙古道。",
+        "塔县最初 48 小时避免饮酒和剧烈活动；有症状即停止继续上升。",
+        "走路不稳、意识异常、静息气促或胸闷时立即下降、吸氧并求援。",
+        "全程不夜驾；下载离线地图并携带保暖层、水、食物、车充和头灯。"
+      ]
+    }
+  ],
+  "budget": {
+    "contingencyRate": 0.15,
+    "items": [
+      {
+        "id": "altay-kashgar-flights",
+        "dayId": "day-5",
+        "category": "transport",
+        "name": "阿勒泰—喀什机票",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待出票",
+        "note": "2 人；航班号与时间均待确认"
+      },
+      {
+        "id": "north-car-rental",
+        "dayId": null,
+        "category": "transport",
+        "name": "北疆租车",
+        "quantity": 5,
+        "unitAmount": null,
+        "status": "待报价",
+        "note": "9/24—9/28，含第二驾驶人和保险"
+      },
+      {
+        "id": "south-car-rental",
+        "dayId": null,
+        "category": "transport",
+        "name": "南疆租车",
+        "quantity": 6,
+        "unitAmount": null,
+        "status": "待报价",
+        "note": "9/28—10/3，普通五座 SUV"
+      },
+      {
+        "id": "fuel-tolls-parking",
+        "dayId": null,
+        "category": "transport",
+        "name": "油费、路桥与停车",
+        "quantity": 1,
+        "unitAmount": null,
+        "status": "待估算",
+        "note": "当前规划地面里程约 1396 km"
+      },
+      {
+        "id": "hemu-stay",
+        "dayId": "day-1",
+        "category": "lodging",
+        "name": "禾木住宿",
+        "quantity": 1,
+        "unitAmount": null,
+        "status": "待预订",
+        "note": "1 间 × 1 晚"
+      },
+      {
+        "id": "kanas-stays",
+        "dayId": "day-2",
+        "category": "lodging",
+        "name": "喀纳斯景区内住宿",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待预订",
+        "note": "1 间 × 2 晚"
+      },
+      {
+        "id": "altay-stay",
+        "dayId": "day-4",
+        "category": "lodging",
+        "name": "阿勒泰市住宿",
+        "quantity": 1,
+        "unitAmount": null,
+        "status": "待预订",
+        "note": "1 间 × 1 晚"
+      },
+      {
+        "id": "kashgar-stays",
+        "dayId": "day-5",
+        "category": "lodging",
+        "name": "喀什住宿",
+        "quantity": 3,
+        "unitAmount": null,
+        "status": "待预订",
+        "note": "1 间 × 3 晚，日期不连续"
+      },
+      {
+        "id": "tashkurgan-stays",
+        "dayId": "day-6",
+        "category": "lodging",
+        "name": "塔县住宿",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待预订",
+        "note": "1 间 × 2 晚"
+      },
+      {
+        "id": "north-tickets-shuttles",
+        "dayId": null,
+        "category": "tickets",
+        "name": "禾木、喀纳斯门票与区间车",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待确认",
+        "note": "按 2 人统计，具体套票规则待复核"
+      },
+      {
+        "id": "south-tickets",
+        "dayId": null,
+        "category": "tickets",
+        "name": "帕米尔沿线门票",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待确认",
+        "note": "白沙湖、喀拉库勒湖、石头城等"
+      },
+      {
+        "id": "meals-supplies",
+        "dayId": null,
+        "category": "food",
+        "name": "餐饮与途中补给",
+        "quantity": 10,
+        "unitAmount": null,
+        "status": "待估算",
+        "note": "2 人 × 10 天"
+      },
+      {
+        "id": "travel-insurance",
+        "dayId": null,
+        "category": "other",
+        "name": "旅行保险与应急用品",
+        "quantity": 2,
+        "unitAmount": null,
+        "status": "待购买",
+        "note": "2 人"
+      }
+    ]
+  },
+  "sourceLinks": [
+    {
+      "label": "国务院办公厅：2026 年节假日安排",
+      "url": "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf"
+    },
+    {
+      "label": "阿勒泰地区：阿禾公路 2026 年通行公告",
+      "url": "https://share.altxw.com/gg/202605/t20260519_34526050.html"
+    },
+    {
+      "label": "喀纳斯景区：2026 年夏季游览通告",
+      "url": "https://www.kns.gov.cn/001/001004/20260416/4019c7cf-d7bc-449e-ac67-5a2bd0c51d2b.html"
+    },
+    {
+      "label": "国家移民管理局：电子边境通行证公告",
+      "url": "https://www.nia.gov.cn/n741440/n741542/c1775717/content.html"
+    },
+    {
+      "label": "国家移民管理局：电子边境通行证办理指南",
+      "url": "https://s.nia.gov.cn/mps/bszy/dzbjtxz/blzy/202604/t20260414_1001.html"
+    },
+    {
+      "label": "阿克陶县政府：白沙湖、喀拉库勒湖边境证提示",
+      "url": "https://www.xjakt.gov.cn/xjakt/c103525/202604/857cc4a4dd904b3fa70d53c05313a27e.shtml"
+    },
+    {
+      "label": "新疆交通运输厅：G314 山区道路风险通报",
+      "url": "https://jtyst.xinjiang.gov.cn/xjjtysj/yxfc/202609/be19f8cef55842beab7bd05f1adcb930.shtml"
+    },
+    {
+      "label": "新疆交通运输厅：盘龙古道信息",
+      "url": "https://jtyst.xinjiang.gov.cn/xjjtysj/mtkjt/202509/427cd8b398ab49628b599e772fa77625.shtml"
+    },
+    {
+      "label": "喀什博物馆：2026 年参观与讲解提示",
+      "url": "https://www.kashi.gov.cn/ksdqxzgs/c106694/202602/63aaff7eebf6426cbc6642497270ebd5.shtml"
+    },
+    {
+      "label": "CDC Yellow Book：高海拔旅行与高原病",
+      "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"
+    },
+    {
+      "label": "OpenStreetMap：地图与坐标数据",
+      "url": "https://www.openstreetmap.org/"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { Calculator, CircleDollarSign, PiggyBank, Users } from 'lucide-react';
+import { Calculator, CircleDollarSign, CircleHelp, PiggyBank, Users } from 'lucide-react';
 import { calculateBudget, CATEGORY_META, formatCurrency } from '../lib/trip.js';
 
 export function BudgetPanel({ trip }) {
@@ -17,46 +17,56 @@ export function BudgetPanel({ trip }) {
       <div className="budget-summary">
         <div className="budget-total-card">
           <span className="budget-card-icon"><CircleDollarSign size={23} /></span>
-          <span>含机动金的总预算</span>
-          <strong>{formatCurrency(budget.total, trip.currency)}</strong>
-          <small>基础预算 {formatCurrency(budget.subtotal, trip.currency)}</small>
+          <span>{budget.unpricedItemCount ? '当前已录入预算' : '含机动金的总预算'}</span>
+          <strong>{budget.hasPricedItems ? formatCurrency(budget.total, trip.currency) : '待补充'}</strong>
+          <small>
+            {budget.unpricedItemCount
+              ? `仍有 ${budget.unpricedItemCount} 项待补充金额`
+              : `基础预算 ${formatCurrency(budget.subtotal, trip.currency)}`}
+          </small>
         </div>
         <div className="budget-mini-card">
           <Users size={20} />
           <span>人均预算</span>
-          <strong>{formatCurrency(budget.perPerson, trip.currency)}</strong>
+          <strong>{budget.hasPricedItems ? formatCurrency(budget.perPerson, trip.currency) : '待补充'}</strong>
           <small>按 {budget.travelerCount} 人平摊</small>
         </div>
         <div className="budget-mini-card">
-          <PiggyBank size={20} />
-          <span>机动金</span>
-          <strong>{formatCurrency(budget.contingency, trip.currency)}</strong>
-          <small>{Math.round(budget.contingencyRate * 100)}% 预留</small>
+          {budget.unpricedItemCount ? <CircleHelp size={20} /> : <PiggyBank size={20} />}
+          <span>{budget.unpricedItemCount ? '待补充项目' : '机动金'}</span>
+          <strong>{budget.unpricedItemCount ? `${budget.unpricedItemCount} 项` : formatCurrency(budget.contingency, trip.currency)}</strong>
+          <small>{budget.unpricedItemCount ? '录入预订价后自动汇总' : `${Math.round(budget.contingencyRate * 100)}% 预留`}</small>
         </div>
       </div>
 
       <div className="budget-body">
         <div className="category-breakdown">
           <h3><Calculator size={18} /> 分类占比</h3>
-          <div className="stacked-budget" aria-label="费用分类占比">
-            {budget.categories.map((category) => (
-              <span
-                key={category.id}
-                style={{ width: `${category.share * 100}%`, backgroundColor: category.color }}
-                title={`${category.label} ${Math.round(category.share * 100)}%`}
-              />
-            ))}
-          </div>
-          <ul className="category-list">
-            {budget.categories.map((category) => (
-              <li key={category.id}>
-                <span className="category-swatch" style={{ backgroundColor: category.color }} />
-                <span>{category.label}</span>
-                <strong>{formatCurrency(category.amount, trip.currency)}</strong>
-                <small>{Math.round(category.share * 100)}%</small>
-              </li>
-            ))}
-          </ul>
+          {budget.categories.length ? (
+            <>
+              <div className="stacked-budget" aria-label="费用分类占比">
+                {budget.categories.map((category) => (
+                  <span
+                    key={category.id}
+                    style={{ width: `${category.share * 100}%`, backgroundColor: category.color }}
+                    title={`${category.label} ${Math.round(category.share * 100)}%`}
+                  />
+                ))}
+              </div>
+              <ul className="category-list">
+                {budget.categories.map((category) => (
+                  <li key={category.id}>
+                    <span className="category-swatch" style={{ backgroundColor: category.color }} />
+                    <span>{category.label}</span>
+                    <strong>{formatCurrency(category.amount, trip.currency)}</strong>
+                    <small>{Math.round(category.share * 100)}%</small>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="budget-empty">补充机票、租车、住宿等金额后，这里会自动生成分类占比。</p>
+          )}
         </div>
 
         <div className="budget-table-wrap">

@@ -7,6 +7,7 @@ import { RouteMap } from './components/RouteMap.jsx';
 import { DayTimeline } from './components/DayTimeline.jsx';
 import { LodgingOverview } from './components/LodgingOverview.jsx';
 import { BudgetPanel } from './components/BudgetPanel.jsx';
+import { PreparationPanel } from './components/PreparationPanel.jsx';
 
 function useTripData() {
   const [catalog, setCatalog] = useState(null);
@@ -128,6 +129,7 @@ export default function App() {
         </div>
 
         <LodgingOverview trip={trip} />
+        <PreparationPanel trip={trip} />
         <BudgetPanel trip={trip} />
       </main>
       <footer className="site-footer">

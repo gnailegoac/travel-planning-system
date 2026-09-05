@@ -2,7 +2,7 @@
 
 一个把旅行路线、逐站时间、住宿安排与费用预算放在同一页面上的静态旅行规划系统。
 
-当前版本是一套可扩展框架，并附带一份明确标注为演示数据的川西 4 日行程。正式行程通过 JSON 文件录入，不需要修改地图或预算组件。
+当前版本是一套可扩展框架，默认展示 2026 阿勒泰—喀什双段自驾，同时保留一份明确标注为演示数据的川西 4 日行程。行程通过 JSON 文件录入，不需要修改地图或预算组件。
 
 公网地址：<https://gnailegoac.github.io/travel-planning-system/>
 
@@ -35,6 +35,8 @@ npm run check
 2. 修改根级信息、`days`、`stops`、`lodging` 与 `budget.items`。
 3. 在 `public/data/trips/index.json` 的 `trips` 数组中登记新文件；需要时修改 `defaultTripId`。
 4. 执行 `npm run validate:data`，再运行页面确认地图和时间线。
+
+`incoming/` 用于暂存 Markdown 草稿并已被 Git 忽略；转换后的公开版本才放入 `public/data/trips/`。
 
 核心数据约定见 [数据格式说明](docs/DATA_SCHEMA.md)。
 

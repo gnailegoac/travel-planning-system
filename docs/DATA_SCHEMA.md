@@ -46,6 +46,7 @@
   "route": {
     "method": "自驾",
     "distanceKm": 260,
+    "flightDistanceKm": 0,
     "durationMinutes": 280,
     "geometry": [[30.57, 104.06], [30.10, 103.00]]
   },
@@ -57,6 +58,7 @@
       "arrival": "10:00",
       "departure": "12:30",
       "coordinates": [30.10, 103.00],
+      "timeStatus": "开放时间待确认",
       "note": "停留说明"
     }
   ],
@@ -72,7 +74,7 @@
 }
 ```
 
-时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`。当前普通坐标和路线坐标均使用 `[纬度, 经度]`，与原生 GeoJSON 的 `[经度, 纬度]` 顺序不同；未来若增加外部 GeoJSON 文件，会单独解析并校验。
+时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`；尚未确认的航班、班次或开放时段可用 `timeStatus` 明确标记。当前普通坐标和路线坐标均使用 `[纬度, 经度]`，与原生 GeoJSON 的 `[经度, 纬度]` 顺序不同；未来若增加外部 GeoJSON 文件，会单独解析并校验。
 
 `kind` 当前支持 `departure`、`arrival`、`attraction`、`meal`、`lodging`；其他值会以普通停靠点显示。
 
@@ -99,7 +101,7 @@
 }
 ```
 
-预计金额由 `quantity × unitAmount` 自动计算。如果录入数值型 `actualAmount`，预算投影会优先使用实际金额。`dayId` 可留空，非空时必须引用一个真实日期。分类支持：
+预计金额由 `quantity × unitAmount` 自动计算。如果录入数值型 `actualAmount`，预算投影会优先使用实际金额。尚未取得报价时将 `unitAmount` 设为 `null`，页面会显示“待补充”，不会误计成零元。`dayId` 可留空，非空时必须引用一个真实日期。分类支持：
 
 - `transport`：交通
 - `lodging`：住宿

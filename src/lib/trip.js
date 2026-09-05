@@ -42,6 +42,7 @@ export function formatDuration(minutes) {
 }
 
 export function formatCurrency(amount, currency = 'CNY') {
+  if (!Number.isFinite(amount)) return '待补充';
   return new Intl.NumberFormat('zh-CN', {
     style: 'currency',
     currency,
@@ -77,23 +78,28 @@ export function formatDateRange(startDate, endDate) {
 
 export function calculateBudget(trip) {
   const items = (trip.budget?.items ?? []).map((item) => {
+    const hasUnitEstimate = Number.isFinite(item.unitAmount) && Number.isFinite(item.quantity ?? 1);
     const estimatedAmount = Number.isFinite(item.estimatedAmount)
       ? item.estimatedAmount
-      : (Number(item.quantity) || 0) * (Number(item.unitAmount) || 0);
+      : hasUnitEstimate
+        ? (item.quantity ?? 1) * item.unitAmount
+        : null;
     const projectedAmount = Number.isFinite(item.actualAmount)
       ? item.actualAmount
       : estimatedAmount;
-    return { ...item, estimatedAmount, projectedAmount };
+    return { ...item, estimatedAmount, projectedAmount, isPriced: Number.isFinite(projectedAmount) };
   });
 
-  const subtotal = items.reduce((sum, item) => sum + item.projectedAmount, 0);
+  const pricedItems = items.filter((item) => item.isPriced);
+  const unpricedItems = items.filter((item) => !item.isPriced);
+  const subtotal = pricedItems.reduce((sum, item) => sum + item.projectedAmount, 0);
   const contingencyRate = Number(trip.budget?.contingencyRate) || 0;
   const contingency = Math.round(subtotal * contingencyRate);
   const total = subtotal + contingency;
   const travelerCount = getTravelerCount(trip.travelers);
 
   const categories = Object.entries(
-    items.reduce((grouped, item) => {
+    pricedItems.reduce((grouped, item) => {
       grouped[item.category] = (grouped[item.category] ?? 0) + item.projectedAmount;
       return grouped;
     }, {}),
@@ -113,6 +119,9 @@ export function calculateBudget(trip) {
     contingencyRate,
     contingency,
     total,
+    hasPricedItems: pricedItems.length > 0,
+    pricedItemCount: pricedItems.length,
+    unpricedItemCount: unpricedItems.length,
     travelerCount,
     perPerson: travelerCount ? total / travelerCount : total,
     categories,
@@ -122,6 +131,10 @@ export function calculateBudget(trip) {
 export function calculateTripMetrics(trip) {
   const days = trip.days ?? [];
   const distanceKm = days.reduce((sum, day) => sum + (Number(day.route?.distanceKm) || 0), 0);
+  const flightDistanceKm = days.reduce(
+    (sum, day) => sum + (Number(day.route?.flightDistanceKm) || 0),
+    0,
+  );
   const travelMinutes = days.reduce(
     (sum, day) => sum + (Number(day.route?.durationMinutes) || 0),
     0,
@@ -135,6 +148,7 @@ export function calculateTripMetrics(trip) {
   return {
     dayCount: days.length,
     distanceKm,
+    flightDistanceKm,
     travelMinutes,
     stopCount,
     nightCount,
@@ -179,10 +193,14 @@ export function validateTrip(trip) {
 
   for (const item of trip.budget?.items ?? []) {
     const quantity = Number(item.quantity ?? 1);
-    const unitAmount = Number(item.unitAmount ?? item.estimatedAmount ?? 0);
     if (!item.id || !item.name || !item.category) errors.push('预算项缺少 id、name 或 category');
-    if (!Number.isFinite(quantity) || quantity < 0 || !Number.isFinite(unitAmount) || unitAmount < 0) {
-      errors.push(`${item.name ?? '预算项'} 的金额不是有效非负数`);
+    if (!Number.isFinite(quantity) || quantity < 0) {
+      errors.push(`${item.name ?? '预算项'} 的数量不是有效非负数`);
+    }
+    for (const field of ['unitAmount', 'estimatedAmount', 'actualAmount']) {
+      if (item[field] != null && (!Number.isFinite(item[field]) || item[field] < 0)) {
+        errors.push(`${item.name ?? '预算项'} 的 ${field} 不是有效非负数`);
+      }
     }
     if (item.dayId && !dayIds.has(item.dayId)) errors.push(`${item.name} 引用了不存在的 dayId：${item.dayId}`);
   }

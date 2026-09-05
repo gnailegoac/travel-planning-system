@@ -1,7 +1,15 @@
 {
   "schemaVersion": 1,
-  "defaultTripId": "demo-west-sichuan",
+  "defaultTripId": "xinjiang-self-drive-2026",
   "trips": [
+    {
+      "id": "xinjiang-self-drive-2026",
+      "file": "xinjiang-self-drive-2026.json",
+      "title": "阿勒泰—喀什双段自驾",
+      "status": "planning",
+      "startDate": "2026-09-24",
+      "endDate": "2026-10-03"
+    },
     {
       "id": "demo-west-sichuan",
       "file": "demo-west-sichuan.json",

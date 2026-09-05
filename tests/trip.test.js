@@ -46,6 +46,19 @@ describe('预算计算', () => {
   it('统计出行人数', () => {
     expect(getTravelerCount(trip.travelers)).toBe(4);
   });
+
+  it('未报价项目保持未知而不是按零元计价', () => {
+    const budget = calculateBudget({
+      travelers: { adults: 2 },
+      budget: {
+        contingencyRate: 0.1,
+        items: [{ id: 'flight', name: '机票', category: 'transport', quantity: 2, unitAmount: null }],
+      },
+    });
+    expect(budget.hasPricedItems).toBe(false);
+    expect(budget.unpricedItemCount).toBe(1);
+    expect(budget.items[0].projectedAmount).toBeNull();
+  });
 });
 
 describe('行程指标与校验', () => {
@@ -73,6 +86,7 @@ describe('行程指标与校验', () => {
     expect(calculateTripMetrics(validTrip)).toEqual({
       dayCount: 1,
       distanceKm: 120,
+      flightDistanceKm: 0,
       travelMinutes: 150,
       stopCount: 1,
       nightCount: 1,
