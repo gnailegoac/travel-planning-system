@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "defaultTripId": "demo-west-sichuan",
+  "trips": [
+    {
+      "id": "demo-west-sichuan",
+      "file": "demo-west-sichuan.json",
+      "title": "川西慢行 · 框架示例",
+      "status": "demo",
+      "startDate": "2026-07-18",
+      "endDate": "2026-07-21"
+    }
+  ]
+}

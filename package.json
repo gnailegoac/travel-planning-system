@@ -1,0 +1,27 @@
+{
+  "name": "travel-planning-system",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "validate:data": "node scripts/validate-trips.mjs",
+    "check": "npm run validate:data && npm test && npm run build"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4",
+    "lucide-react": "1.41.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "playwright-core": "1.63.0",
+    "vite": "8.2.2",
+    "vitest": "5.0.0"
+  }
+}

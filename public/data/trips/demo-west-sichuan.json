@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "id": "demo-west-sichuan",
+  "title": "川西慢行 · 框架示例",
+  "subtitle": "成都出发的 4 日自驾演示，用来确认页面结构与信息密度",
+  "status": "demo",
+  "statusLabel": "演示行程",
+  "notice": "本行程中的地点、时间、里程、住宿与价格均为界面演示数据，路线为地点间示意线，不可用于实际导航或预订。",
+  "timezone": "Asia/Shanghai",
+  "currency": "CNY",
+  "startDate": "2026-07-18",
+  "endDate": "2026-07-21",
+  "origin": "成都",
+  "destination": "丹巴",
+  "travelers": {
+    "adults": 2,
+    "children": 1,
+    "seniors": 1
+  },
+  "tags": ["自驾", "家庭", "慢节奏"],
+  "days": [
+    {
+      "id": "day-1",
+      "date": "2026-07-18",
+      "title": "成都 → 康定",
+      "summary": "抵达高原门户，早到酒店、低强度适应。",
+      "route": {
+        "method": "自驾",
+        "distanceKm": 285,
+        "durationMinutes": 300,
+        "geometry": [
+          [30.5728, 104.0668],
+          [30.2965, 102.8347],
+          [30.0508, 101.9602]
+        ]
+      },
+      "stops": [
+        {
+          "id": "chengdu-start",
+          "name": "成都",
+          "kind": "departure",
+          "arrival": "07:30",
+          "departure": "08:00",
+          "coordinates": [30.5728, 104.0668],
+          "note": "集合、装车，确认油量与随车物品。"
+        },
+        {
+          "id": "ya-an-lunch",
+          "name": "雅安午餐",
+          "kind": "meal",
+          "arrival": "10:20",
+          "departure": "11:30",
+          "coordinates": [30.009, 103.0415],
+          "note": "途中休息，避免把午餐拖到高海拔路段。"
+        },
+        {
+          "id": "kangding-old-town",
+          "name": "康定老城",
+          "kind": "attraction",
+          "arrival": "14:30",
+          "departure": "16:10",
+          "coordinates": [30.0508, 101.9602],
+          "note": "轻松散步，根据身体状态随时缩短。"
+        },
+        {
+          "id": "kangding-hotel",
+          "name": "康定住宿",
+          "kind": "lodging",
+          "arrival": "16:30",
+          "departure": "08:30",
+          "departureDayOffset": 1,
+          "coordinates": [30.0556, 101.9588],
+          "note": "尽早入住，不安排夜间驾车。"
+        }
+      ],
+      "lodging": {
+        "name": "康定城区酒店（待选）",
+        "area": "情歌广场周边",
+        "checkIn": "16:30",
+        "checkOut": "08:30",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-2",
+      "date": "2026-07-19",
+      "title": "康定适应日",
+      "summary": "减少赶路，用一整天观察全家对海拔的适应情况。",
+      "route": {
+        "method": "自驾 + 步行",
+        "distanceKm": 42,
+        "durationMinutes": 100,
+        "geometry": [
+          [30.0556, 101.9588],
+          [30.1023, 101.8726],
+          [30.0508, 101.9602]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kangding-breakfast",
+          "name": "酒店早餐",
+          "kind": "meal",
+          "arrival": "08:00",
+          "departure": "09:00",
+          "coordinates": [30.0556, 101.9588],
+          "note": "慢起床，先确认老人和孩子的状态。"
+        },
+        {
+          "id": "mugecuo-demo",
+          "name": "近郊轻量游览",
+          "kind": "attraction",
+          "arrival": "10:00",
+          "departure": "13:00",
+          "coordinates": [30.1023, 101.8726],
+          "note": "演示景点；实际行程需按预约、天气和体力替换。"
+        },
+        {
+          "id": "kangding-free-time",
+          "name": "康定自由活动",
+          "kind": "attraction",
+          "arrival": "15:00",
+          "departure": "17:00",
+          "coordinates": [30.0508, 101.9602],
+          "note": "留出休息与采购时间。"
+        },
+        {
+          "id": "kangding-hotel-2",
+          "name": "康定住宿",
+          "kind": "lodging",
+          "arrival": "17:20",
+          "departure": "08:30",
+          "departureDayOffset": 1,
+          "coordinates": [30.0556, 101.9588],
+          "note": "连续住两晚，减少搬运行李。"
+        }
+      ],
+      "lodging": {
+        "name": "康定城区酒店（待选）",
+        "area": "情歌广场周边",
+        "checkIn": "17:20",
+        "checkOut": "08:30",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-3",
+      "date": "2026-07-20",
+      "title": "康定 → 塔公 → 八美",
+      "summary": "沿草原方向前进，控制停留强度并预留天气机动。",
+      "route": {
+        "method": "自驾",
+        "distanceKm": 125,
+        "durationMinutes": 210,
+        "geometry": [
+          [30.0508, 101.9602],
+          [30.3319, 101.5316],
+          [30.5307, 101.5068],
+          [30.6354, 101.5749]
+        ]
+      },
+      "stops": [
+        {
+          "id": "kangding-depart",
+          "name": "康定出发",
+          "kind": "departure",
+          "arrival": "08:00",
+          "departure": "08:30",
+          "coordinates": [30.0508, 101.9602],
+          "note": "早餐后出发。"
+        },
+        {
+          "id": "xinduqiao-view",
+          "name": "新都桥途中观景",
+          "kind": "attraction",
+          "arrival": "10:10",
+          "departure": "11:00",
+          "coordinates": [30.3319, 101.5316],
+          "note": "只在安全停车点停留。"
+        },
+        {
+          "id": "tagong-lunch",
+          "name": "塔公午餐与草原",
+          "kind": "attraction",
+          "arrival": "12:00",
+          "departure": "14:30",
+          "coordinates": [30.5307, 101.5068],
+          "note": "午餐与游览合并，减少上下车次数。"
+        },
+        {
+          "id": "bamei-hotel",
+          "name": "八美住宿",
+          "kind": "lodging",
+          "arrival": "16:20",
+          "departure": "08:30",
+          "departureDayOffset": 1,
+          "coordinates": [30.6354, 101.5749],
+          "note": "高海拔住宿仅作框架示例，实际需按成员状况评估。"
+        }
+      ],
+      "lodging": {
+        "name": "八美镇酒店（待选）",
+        "area": "镇中心",
+        "checkIn": "16:20",
+        "checkOut": "08:30",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-4",
+      "date": "2026-07-21",
+      "title": "八美 → 丹巴",
+      "summary": "向低海拔方向移动，在丹巴结束示例行程。",
+      "route": {
+        "method": "自驾",
+        "distanceKm": 90,
+        "durationMinutes": 150,
+        "geometry": [
+          [30.6354, 101.5749],
+          [30.8786, 101.8924],
+          [30.8789, 101.8904]
+        ]
+      },
+      "stops": [
+        {
+          "id": "bamei-depart",
+          "name": "八美出发",
+          "kind": "departure",
+          "arrival": "08:00",
+          "departure": "08:30",
+          "coordinates": [30.6354, 101.5749],
+          "note": "检查路况与车辆。"
+        },
+        {
+          "id": "danba-village",
+          "name": "丹巴村落观景",
+          "kind": "attraction",
+          "arrival": "11:30",
+          "departure": "14:30",
+          "coordinates": [30.8786, 101.8924],
+          "note": "示例停留，正式行程需确认道路与停车条件。"
+        },
+        {
+          "id": "danba-finish",
+          "name": "丹巴县城",
+          "kind": "arrival",
+          "arrival": "15:00",
+          "departure": "15:00",
+          "coordinates": [30.8789, 101.8904],
+          "note": "示例行程在此结束。"
+        }
+      ],
+      "lodging": null
+    }
+  ],
+  "budget": {
+    "contingencyRate": 0.1,
+    "items": [
+      {
+        "id": "fuel-tolls",
+        "dayId": null,
+        "category": "transport",
+        "name": "全程油费与路桥费",
+        "quantity": 1,
+        "unitAmount": 1050,
+        "status": "估算",
+        "note": "按一辆车演示"
+      },
+      {
+        "id": "local-parking",
+        "dayId": null,
+        "category": "transport",
+        "name": "停车与短途接驳",
+        "quantity": 1,
+        "unitAmount": 220,
+        "status": "估算",
+        "note": "预留项"
+      },
+      {
+        "id": "kangding-hotel-night-1",
+        "dayId": "day-1",
+        "category": "lodging",
+        "name": "康定住宿第 1 晚",
+        "quantity": 2,
+        "unitAmount": 420,
+        "status": "待确认",
+        "note": "2 间房"
+      },
+      {
+        "id": "kangding-hotel-night-2",
+        "dayId": "day-2",
+        "category": "lodging",
+        "name": "康定住宿第 2 晚",
+        "quantity": 2,
+        "unitAmount": 420,
+        "status": "待确认",
+        "note": "2 间房"
+      },
+      {
+        "id": "bamei-hotel-night",
+        "dayId": "day-3",
+        "category": "lodging",
+        "name": "八美住宿",
+        "quantity": 2,
+        "unitAmount": 360,
+        "status": "待确认",
+        "note": "2 间房"
+      },
+      {
+        "id": "meals",
+        "dayId": null,
+        "category": "food",
+        "name": "正餐与途中补给",
+        "quantity": 4,
+        "unitAmount": 420,
+        "status": "估算",
+        "note": "按每日全团估算"
+      },
+      {
+        "id": "tickets",
+        "dayId": null,
+        "category": "tickets",
+        "name": "门票与观光车",
+        "quantity": 1,
+        "unitAmount": 1100,
+        "status": "估算",
+        "note": "老人、儿童优惠待核"
+      },
+      {
+        "id": "insurance",
+        "dayId": null,
+        "category": "other",
+        "name": "短期旅行保险",
+        "quantity": 4,
+        "unitAmount": 45,
+        "status": "估算",
+        "note": "每人一份"
+      }
+    ]
+  }
+}
