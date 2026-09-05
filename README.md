@@ -4,6 +4,8 @@
 
 当前版本是一套可扩展框架，并附带一份明确标注为演示数据的川西 4 日行程。正式行程通过 JSON 文件录入，不需要修改地图或预算组件。
 
+公网地址：<https://gnailegoac.github.io/travel-planning-system/>
+
 ## 已实现
 
 - 按天筛选的 Leaflet 路线地图、编号地点与地图弹窗。
