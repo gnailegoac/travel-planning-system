@@ -13,6 +13,54 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+function getGeometryUrl(geometryFile) {
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  return `${baseUrl}${String(geometryFile).replace(/^\.?\//, '')}`;
+}
+
+function addCoordinatesToBounds(bounds, coordinates = []) {
+  coordinates.forEach((coordinate) => {
+    if (Array.isArray(coordinate) && coordinate.length >= 2) bounds.extend(coordinate);
+  });
+}
+
+function addSchematicLine({ coordinates, color, dayIndex, day, segment, layerGroup }) {
+  if (coordinates.length < 2) return null;
+
+  const line = L.polyline(coordinates, {
+    className: 'route-line route-line-schematic',
+    color,
+    weight: 4,
+    opacity: 0.78,
+    dashArray: '9 9',
+    lineCap: 'round',
+    lineJoin: 'round',
+  });
+  const label = segment?.label ? ` · ${segment.label}` : '';
+  line.bindTooltip(`第 ${dayIndex + 1} 天 · ${day.title}${label} · 示意路线`);
+  line.addTo(layerGroup);
+  return line;
+}
+
+function addRoadLine({ geoJson, color, dayIndex, day, segment, layerGroup }) {
+  const line = L.geoJSON(geoJson, {
+    className: 'route-line route-line-road',
+    style: {
+      color,
+      weight: 5,
+      opacity: 0.92,
+      lineCap: 'round',
+      lineJoin: 'round',
+    },
+  });
+  const label = segment?.label ? ` · ${segment.label}` : '';
+  line.bindTooltip(`第 ${dayIndex + 1} 天 · ${day.title}${label} · 道路路线`);
+  line.addTo(layerGroup);
+  return line;
+}
+
 export function RouteMap({ trip, selectedDayId, onDayChange }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -46,28 +94,82 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
   useEffect(() => {
     const map = mapRef.current;
     const layerGroup = routeLayersRef.current;
-    if (!map || !layerGroup) return;
+    if (!map || !layerGroup) return undefined;
 
     layerGroup.clearLayers();
-    const bounds = [];
+    const bounds = L.latLngBounds([]);
     const visibleDays = getVisibleDays(trip, selectedDayId);
+    const abortController = new AbortController();
+    let cancelled = false;
+    const roadRequests = [];
+
+    const fitVisibleRoutes = () => {
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [34, 34], maxZoom: 11 });
+      } else {
+        map.setView([30.5728, 104.0668], 7);
+      }
+    };
 
     visibleDays.forEach((day) => {
       const dayIndex = trip.days.findIndex((candidate) => candidate.id === day.id);
       const color = DAY_COLORS[dayIndex % DAY_COLORS.length];
-      const geometry = day.route?.geometry ?? [];
+      const segments = day.route?.segments ?? [];
 
-      if (geometry.length > 1) {
-        L.polyline(geometry, {
-          color,
-          weight: 4,
-          opacity: 0.88,
-          dashArray: '9 9',
-          lineCap: 'round',
-        })
-          .bindTooltip(`第 ${dayIndex + 1} 天 · ${day.title} · 示意路线`)
-          .addTo(layerGroup);
-        bounds.push(...geometry);
+      if (segments.length) {
+        segments.forEach((segment) => {
+          const coordinates = segment.mode === 'driving'
+            ? (segment.waypoints ?? segment.coordinates ?? [])
+            : (segment.coordinates ?? segment.waypoints ?? []);
+          addCoordinatesToBounds(bounds, coordinates);
+
+          const fallbackLine = addSchematicLine({
+            coordinates,
+            color,
+            dayIndex,
+            day,
+            segment,
+            layerGroup,
+          });
+
+          if (segment.mode !== 'driving' || !segment.geometryFile) return;
+
+          const roadRequest = fetch(getGeometryUrl(segment.geometryFile), {
+            headers: { Accept: 'application/geo+json, application/json' },
+            signal: abortController.signal,
+          })
+            .then((response) => {
+              if (!response.ok) throw new Error('Road geometry unavailable');
+              return response.json();
+            })
+            .then((geoJson) => {
+              if (cancelled) return;
+              const roadLine = addRoadLine({
+                geoJson,
+                color,
+                dayIndex,
+                day,
+                segment,
+                layerGroup,
+              });
+              const roadBounds = roadLine.getBounds();
+              if (!roadBounds.isValid()) {
+                layerGroup.removeLayer(roadLine);
+                return;
+              }
+              if (fallbackLine) layerGroup.removeLayer(fallbackLine);
+              bounds.extend(roadBounds);
+            })
+            .catch(() => {
+              // Keep the already-rendered waypoint line as a quiet fallback.
+            });
+
+          roadRequests.push(roadRequest);
+        });
+      } else {
+        const geometry = day.route?.geometry ?? [];
+        addCoordinatesToBounds(bounds, geometry);
+        addSchematicLine({ coordinates: geometry, color, dayIndex, day, layerGroup });
       }
 
       (day.stops ?? []).forEach((stop, stopIndex) => {
@@ -92,15 +194,19 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
           </div>
         `);
         marker.addTo(layerGroup);
-        bounds.push(stop.coordinates);
+        bounds.extend(stop.coordinates);
       });
     });
 
-    if (bounds.length) {
-      map.fitBounds(bounds, { padding: [34, 34], maxZoom: 11 });
-    } else {
-      map.setView([30.5728, 104.0668], 7);
-    }
+    fitVisibleRoutes();
+    Promise.allSettled(roadRequests).then(() => {
+      if (!cancelled) fitVisibleRoutes();
+    });
+
+    return () => {
+      cancelled = true;
+      abortController.abort();
+    };
   }, [trip, selectedDayId]);
 
   return (
@@ -110,7 +216,7 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
           <span className="section-kicker">ROUTE AT A GLANCE</span>
           <h2 id="route-map-title">路线地图</h2>
         </div>
-        <span className="map-mode"><Navigation size={15} /> 地点间示意线</span>
+        <span className="map-mode"><Navigation size={15} /> 自驾沿路网 · 其他示意</span>
       </div>
 
       <div className="day-filter" role="group" aria-label="选择地图显示日期">
@@ -137,9 +243,20 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
 
       <div ref={mapContainerRef} className="route-map" aria-label="行程路线交互地图" />
 
-      <div className="map-caption">
+      <div className="map-caption map-legend" aria-label="路线图例">
         <Info size={16} aria-hidden="true" />
-        <span>虚线仅连接已录入地点，不代表实际道路；正式行程可替换为道路 GeoJSON。</span>
+        <span className="map-legend-item">
+          <i className="map-legend-line map-legend-line-road" aria-hidden="true" />
+          实线：沿道路生成的自驾路线
+        </span>
+        <span className="map-legend-item">
+          <i className="map-legend-line map-legend-line-schematic" aria-hidden="true" />
+          虚线：非自驾路段或道路数据缺失时的地点间示意
+        </span>
+        <span className="map-route-disclaimer">
+          路径由 <a href="https://project-osrm.org/" target="_blank" rel="noreferrer">OSRM</a>
+          {' '}基于 OpenStreetMap 路网预先计算，不含实时路况、施工、季节开放或交通管制；出发当天仍以实时导航与当地交管信息为准。
+        </span>
       </div>
     </section>
   );

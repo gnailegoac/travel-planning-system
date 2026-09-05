@@ -48,7 +48,22 @@
     "distanceKm": 260,
     "flightDistanceKm": 0,
     "durationMinutes": 280,
-    "geometry": [[30.57, 104.06], [30.10, 103.00]]
+    "geometry": [[30.57, 104.06], [30.10, 103.00]],
+    "segments": [
+      {
+        "id": "day-1-driving",
+        "label": "机场 → 景区游客中心",
+        "mode": "driving",
+        "geometryFile": "data/routes/trip-id/day-1-driving.geojson",
+        "waypoints": [[30.57, 104.06], [30.10, 103.00]]
+      },
+      {
+        "id": "day-1-shuttle",
+        "label": "游客中心 → 景区入口",
+        "mode": "shuttle",
+        "coordinates": [[30.10, 103.00], [30.08, 102.98]]
+      }
+    ]
   },
   "stops": [
     {
@@ -74,11 +89,44 @@
 }
 ```
 
-时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`；尚未确认的航班、班次或开放时段可用 `timeStatus` 明确标记。当前普通坐标和路线坐标均使用 `[纬度, 经度]`，与原生 GeoJSON 的 `[经度, 纬度]` 顺序不同；未来若增加外部 GeoJSON 文件，会单独解析并校验。
+时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`；尚未确认的航班、班次或开放时段可用 `timeStatus` 明确标记。
+
+停靠点的 `coordinates`、旧版 `route.geometry`、分段路线的 `waypoints` 和 `coordinates` 均使用 `[纬度, 经度]`。`geometryFile` 指向的文件是标准 GeoJSON，因此其中的坐标顺序必须是 `[经度, 纬度]`；前端会在读取时转换，不要把两种顺序混用。
 
 `kind` 当前支持 `departure`、`arrival`、`attraction`、`meal`、`lodging`；其他值会以普通停靠点显示。
 
-路线 `geometry` 为前端展示坐标。没有经过道路路由服务核验时，只应录入少量节点并继续标为“示意路线”，不能把它当作导航线路。
+### 分段路线
+
+`route.segments` 用于在同一天分别表达自驾、景区区间车、步行、航班等线路。每段都需要在当天唯一的 `id`、供页面展示的 `label` 和 `mode`。当前模式包括：
+
+- `driving`：自驾；页面读取预生成的道路 GeoJSON，并以实线展示。
+- `shuttle`：景区区间车。
+- `walk`：步行。
+- `flight`：航班。
+- `taxi`：出租车或网约车。
+
+自驾段使用以下两个字段：
+
+- `waypoints`：两个或更多用于请求路由的节点，顺序为 `[纬度, 经度]`。它们也是道路文件无法加载时的简化回退线，不应密集录入整条道路轨迹。
+- `geometryFile`：相对于 `public/` 的 GeoJSON 路径，例如 `data/routes/trip-id/day-1-driving.geojson`。文件由生成脚本写入，几何须为 `LineString` 或 `MultiLineString`。
+
+区间车、步行、航班和出租车等非自驾段不请求道路路由，直接使用 `coordinates`，至少包含两个 `[纬度, 经度]` 节点。它们在地图中使用虚线，以表达连接关系而不是可执行导航。
+
+如果没有 `segments`，页面继续使用 `route.geometry` 作为兼容的整日示意线。没有经过道路路由服务生成并人工核验的 `geometry` 或 `coordinates`，都不能标作道路导航线路。
+
+### 生成自驾道路文件
+
+录入或修改自驾段后，在项目根目录运行：
+
+```powershell
+npm run routes:fetch -- <trip-id>
+```
+
+脚本会读取该行程全部 `mode: "driving"` 的分段，用 `waypoints` 请求 OSRM，随后把标准 GeoJSON 快照写到相应的 `geometryFile`。不传行程 ID时会处理目录中的全部行程。生成后应检查道路走向、距离和跨区绕行是否合理，并将 JSON 与 GeoJSON 一起提交；最后运行 `npm run validate:data`。
+
+生成动作发生在开发/构建准备阶段，部署后的浏览器只读取静态 GeoJSON，不会实时调用 OSRM。文件中的生成时间、距离和时长也只是生成当时基于 OpenStreetMap 路网的估算，不含实时交通、封路、施工、季节管制或现场准入信息，不能替代出发当天的导航与官方通知。
+
+页面和衍生路线文件必须保留 `© OpenStreetMap contributors` 署名。默认公共 OSRM 实例仅用于少量、低频的路线预生成；需要批量刷新、稳定服务或商业 SLA 时，应使用自托管实例或正式供应商。
 
 ## 预算
 

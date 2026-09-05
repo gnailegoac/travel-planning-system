@@ -527,6 +527,46 @@ ul {
   margin-top: 1px;
 }
 
+.map-legend {
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.map-legend svg {
+  margin-top: 0;
+}
+
+.map-legend-item {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.map-legend-line {
+  display: inline-block;
+  width: 28px;
+  height: 0;
+  border-top: 3px solid var(--forest-soft);
+  border-radius: 999px;
+}
+
+.map-legend-line-schematic {
+  border-top-style: dashed;
+  opacity: 0.72;
+}
+
+.map-route-disclaimer {
+  flex-basis: 100%;
+  padding-left: 30px;
+}
+
+.map-route-disclaimer a {
+  color: inherit;
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+
 .text-button {
   padding: 6px 0;
   color: var(--forest-soft);

@@ -49,8 +49,13 @@ try {
     await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     await page.locator('.route-map.leaflet-container').waitFor();
     await page.locator('.leaflet-control-attribution').waitFor();
+    const roadRouteResponse = page.waitForResponse(
+      (response) => response.url().endsWith('/data/routes/xinjiang-self-drive-2026/day-2-driving.geojson')
+        && response.status() === 200,
+      { timeout: 5000 },
+    );
     await page.getByRole('button', { name: 'D2', exact: true }).click();
-    await page.waitForTimeout(250);
+    await roadRouteResponse;
 
     const visibleDayCards = await page.locator('.day-card').count();
     const visibleStops = await page.locator('.stop-item').count();
@@ -76,6 +81,20 @@ try {
       path: resolve(outputDirectory, `${scenario.name}.png`),
       fullPage: true,
     });
+
+    if (scenario.name === 'desktop') {
+      const panlongRouteResponse = page.waitForResponse(
+        (response) => response.url().endsWith('/data/routes/xinjiang-self-drive-2026/day-7-driving.geojson')
+          && response.status() === 200,
+        { timeout: 5000 },
+      );
+      await page.getByRole('button', { name: 'D7', exact: true }).click();
+      await panlongRouteResponse;
+      await page.waitForTimeout(750);
+      await page.locator('.route-map').screenshot({
+        path: resolve(outputDirectory, 'desktop-day7-map.png'),
+      });
+    }
     await page.close();
 
     if (errors.length) {
