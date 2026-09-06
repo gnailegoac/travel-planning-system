@@ -102,4 +102,25 @@ describe('行程指标与校验', () => {
     expect(errors.some((message) => message.includes('重复的停靠点'))).toBe(true);
     expect(errors.some((message) => message.includes('坐标超出范围'))).toBe(true);
   });
+
+  it('校验关键决策与应变预案的必填字段和唯一 id', () => {
+    const invalid = structuredClone(validTrip);
+    invalid.keyDecisions = [
+      { id: 'same', decision: '提前出发', reason: '避峰', tradeoff: '早起' },
+      { id: 'same', decision: '保留机动日', reason: '吸收延误' },
+    ];
+    invalid.fallbackPlans = [{ id: 'weather', trigger: '道路关闭', action: '取消支线' }];
+    const errors = validateTrip(invalid);
+    expect(errors.some((message) => message.includes('重复的关键决策 id'))).toBe(true);
+    expect(errors.some((message) => message.includes('关键决策缺少'))).toBe(true);
+    expect(errors.some((message) => message.includes('应变预案缺少'))).toBe(true);
+
+    const wrongTypes = structuredClone(validTrip);
+    wrongTypes.keyDecisions = {};
+    wrongTypes.fallbackPlans = 'weather';
+    expect(validateTrip(wrongTypes)).toEqual(expect.arrayContaining([
+      'keyDecisions 必须为数组',
+      'fallbackPlans 必须为数组',
+    ]));
+  });
 });

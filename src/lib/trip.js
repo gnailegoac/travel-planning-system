@@ -205,6 +205,30 @@ export function validateTrip(trip) {
     if (item.dayId && !dayIds.has(item.dayId)) errors.push(`${item.name} 引用了不存在的 dayId：${item.dayId}`);
   }
 
+  if (trip.keyDecisions != null && !Array.isArray(trip.keyDecisions)) {
+    errors.push('keyDecisions 必须为数组');
+  }
+  const decisionIds = new Set();
+  for (const decision of Array.isArray(trip.keyDecisions) ? trip.keyDecisions : []) {
+    if (!decision.id || !decision.decision || !decision.reason || !decision.tradeoff) {
+      errors.push('关键决策缺少 id、decision、reason 或 tradeoff');
+    }
+    if (decision.id && decisionIds.has(decision.id)) errors.push(`重复的关键决策 id：${decision.id}`);
+    decisionIds.add(decision.id);
+  }
+
+  if (trip.fallbackPlans != null && !Array.isArray(trip.fallbackPlans)) {
+    errors.push('fallbackPlans 必须为数组');
+  }
+  const fallbackIds = new Set();
+  for (const plan of Array.isArray(trip.fallbackPlans) ? trip.fallbackPlans : []) {
+    if (!plan.id || !plan.trigger || !plan.action || !plan.priority) {
+      errors.push('应变预案缺少 id、trigger、action 或 priority');
+    }
+    if (plan.id && fallbackIds.has(plan.id)) errors.push(`重复的应变预案 id：${plan.id}`);
+    fallbackIds.add(plan.id);
+  }
+
   return errors;
 }
 

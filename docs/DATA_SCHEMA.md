@@ -32,8 +32,36 @@
 - `timezone`、`currency`：时区与全程基础币种；首版只支持一个币种。
 - `startDate`、`endDate`、`origin`、`destination`。
 - `travelers`：`adults`、`children`、`seniors` 的人数，页面自动合计。
+- `keyDecisions`：可选的关键安排、理由和取舍。
+- `fallbackPlans`：可选的触发条件、调整方案和优先级。
+- `preparation`、`sourceLinks`：出发前待办和公开参考来源。
 - `days`：逐日计划。
 - `budget`：预算配置和预算项。
+
+关键决策与应变预案采用以下结构；两个数组都可以省略，缺失时页面不会显示空面板：
+
+```json
+{
+  "keyDecisions": [
+    {
+      "id": "arrive-earlier",
+      "decision": "提前一天抵达",
+      "reason": "避开高峰并增加转场缓冲",
+      "tradeoff": "首日只安排必要转场"
+    }
+  ],
+  "fallbackPlans": [
+    {
+      "id": "mountain-road-closed",
+      "trigger": "出发前确认山区道路关闭",
+      "action": "留在起点城市并取消山区支线",
+      "priority": "安全与按时返程优先"
+    }
+  ]
+}
+```
+
+数组内的 `id` 必须各自唯一，其余三个展示字段均为必填。预案应写成可判断的触发条件和可直接执行的动作，不要只写笼统提醒。
 
 ## 每日与停靠点
 
@@ -93,7 +121,7 @@
 
 停靠点的 `coordinates`、旧版 `route.geometry`、分段路线的 `waypoints` 和 `coordinates` 均使用 `[纬度, 经度]`。`geometryFile` 指向的文件是标准 GeoJSON，因此其中的坐标顺序必须是 `[经度, 纬度]`；前端会在读取时转换，不要把两种顺序混用。
 
-`kind` 当前支持 `departure`、`arrival`、`attraction`、`meal`、`lodging`；其他值会以普通停靠点显示。
+`kind` 当前支持 `departure`、`arrival`、`transport`、`attraction`、`meal`、`lodging`；其他值会以普通停靠点显示。
 
 ### 分段路线
 

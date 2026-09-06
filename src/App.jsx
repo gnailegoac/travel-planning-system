@@ -8,6 +8,7 @@ import { DayTimeline } from './components/DayTimeline.jsx';
 import { LodgingOverview } from './components/LodgingOverview.jsx';
 import { BudgetPanel } from './components/BudgetPanel.jsx';
 import { PreparationPanel } from './components/PreparationPanel.jsx';
+import { DecisionSupportPanel } from './components/DecisionSupportPanel.jsx';
 
 function useTripData() {
   const [catalog, setCatalog] = useState(null);
@@ -119,7 +120,7 @@ export default function App() {
         {trip.notice && (
           <aside className="demo-notice">
             <AlertTriangle size={18} aria-hidden="true" />
-            <p><strong>框架预览：</strong>{trip.notice}</p>
+            <p><strong>{trip.status === 'demo' ? '框架预览：' : '重要提醒：'}</strong>{trip.notice}</p>
           </aside>
         )}
 
@@ -128,6 +129,7 @@ export default function App() {
           <DayTimeline trip={trip} selectedDayId={selectedDayId} onDayChange={changeDay} />
         </div>
 
+        <DecisionSupportPanel trip={trip} />
         <LodgingOverview trip={trip} />
         <PreparationPanel trip={trip} />
         <BudgetPanel trip={trip} />

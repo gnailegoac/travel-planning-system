@@ -11,6 +11,7 @@
 - 按天筛选的 Leaflet 路线地图、编号地点与地图弹窗；自驾段可沿预生成的道路几何显示。
 - 每个停靠点的到达、离开和自动计算的停留时间。
 - 每日交通方式、里程、在途时间和活动说明。
+- 可展开的行程关键决策、取舍说明与触发式应变预案。
 - 每晚酒店、入住/退房、房间数与预订状态。
 - 总预算、人均预算、机动金、分类占比和逐项费用。
 - 多行程目录、数据加载错误提示、结构校验与单元测试。
@@ -32,7 +33,7 @@ npm run check
 ## 新增一份具体行程
 
 1. 复制 `public/data/trips/demo-west-sichuan.json`，用小写英文和连字符命名，例如 `chengdu-yunnan-2026.json`。
-2. 修改根级信息、`days`、`stops`、`lodging` 与 `budget.items`。
+2. 修改根级信息、`days`、`stops`、`lodging` 与 `budget.items`；需要时增加 `keyDecisions` 和 `fallbackPlans`。
 3. 在 `public/data/trips/index.json` 的 `trips` 数组中登记新文件；需要时修改 `defaultTripId`。
 4. 自驾段需要道路形状时，在 `route.segments` 中录入 `mode: "driving"`、`waypoints` 与 `geometryFile`，然后生成静态路线文件：
 
