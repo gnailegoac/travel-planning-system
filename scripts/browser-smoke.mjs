@@ -115,6 +115,51 @@ try {
         path: resolve(outputDirectory, 'desktop-day7-map.png'),
       });
     }
+
+    const indiaUrl = new URL(url);
+    indiaUrl.searchParams.set('trip', 'india-safari-family-2027');
+    await page.goto(indiaUrl.toString(), { waitUntil: 'networkidle', timeout: 30000 });
+    await page.locator('.route-map.leaflet-container').waitFor();
+
+    const indiaTitle = '印度亲子 Safari：Pench 与 Kanha 双园14日';
+    if (await page.getByRole('heading', { name: indiaTitle, exact: true }).count() !== 1) {
+      errors.push('印度行程标题未正确显示');
+    }
+    if (await page.locator('.trip-picker select').inputValue() !== 'india-safari-family-2027') {
+      errors.push('印度行程未在行程选择器中激活');
+    }
+    if (await page.locator('.decision-note').count() !== 6) {
+      errors.push('印度行程关键决策数量不正确');
+    }
+    if (await page.locator('.fallback-note').count() !== 8) {
+      errors.push('印度行程应变预案数量不正确');
+    }
+    if (await page.getByRole('button', { name: 'D14', exact: true }).count() !== 1) {
+      errors.push('印度 14 天行程缺少 D14 日期筛选按钮');
+    }
+
+    await page.getByRole('button', { name: 'D14', exact: true }).click();
+    await page.waitForTimeout(250);
+    const indiaDayCards = await page.locator('.day-card').count();
+    const indiaStops = await page.locator('.stop-item').count();
+    const indiaMarkers = await page.locator('.route-marker').count();
+    if (indiaDayCards !== 1) errors.push(`印度 D14 筛选后显示 ${indiaDayCards} 张日程卡，预期 1 张`);
+    if (indiaMarkers !== indiaStops) {
+      errors.push(`印度 D14 地图点 ${indiaMarkers} 个，与时间线停靠点 ${indiaStops} 个不一致`);
+    }
+
+    const indiaLayout = await page.evaluate(() => ({
+      scrollWidth: document.documentElement.scrollWidth,
+      clientWidth: document.documentElement.clientWidth,
+    }));
+    if (indiaLayout.scrollWidth > indiaLayout.clientWidth + 1) {
+      errors.push(`印度行程页面横向溢出：${indiaLayout.scrollWidth}px > ${indiaLayout.clientWidth}px`);
+    }
+    await page.screenshot({
+      path: resolve(outputDirectory, `${scenario.name}-india.png`),
+      fullPage: true,
+    });
+
     await page.close();
 
     if (errors.length) {

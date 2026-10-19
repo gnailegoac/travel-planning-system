@@ -11,6 +11,14 @@
       "endDate": "2026-10-03"
     },
     {
+      "id": "india-safari-family-2027",
+      "file": "india-safari-family-2027.json",
+      "title": "印度亲子 Safari：Pench 与 Kanha 双园14日",
+      "status": "planning",
+      "startDate": "2027-01-24",
+      "endDate": "2027-02-06"
+    },
+    {
       "id": "demo-west-sichuan",
       "file": "demo-west-sichuan.json",
       "title": "川西慢行 · 框架示例",

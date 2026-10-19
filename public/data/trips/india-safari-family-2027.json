@@ -1,0 +1,1721 @@
+{
+  "schemaVersion": 1,
+  "id": "india-safari-family-2027",
+  "title": "印度亲子 Safari：Pench 与 Kanha 双园14日",
+  "subtitle": "广州往返｜2027年1月24日至2月6日为规划值｜两大两小｜8次日间吉普 safari",
+  "status": "planning",
+  "statusLabel": "规划中，全部预订待落实",
+  "versionDate": "2026-10-19",
+  "notice": "用户已确认将原2026年改为2027年1月下旬至2月上旬；具体起止日仍为规划值。同行成员为两名成人及两名5—12岁儿童，出行时实际年龄、国籍、健康与饮食要求须在私下预订资料中核对，不在公开页面展示。目标总预算为人民币50000—100000元，尚未取得报价，不能据此认定费用已落入预算。计划12个酒店夜、24间夜，加1个机上夜；8次safari均无已获许可，不保证老虎目击。时间均为所在地点当地时间：印度Asia/Kolkata，中国Asia/Shanghai，相差2小时30分；跨夜国际航段的距离及飞行时间统一计入起飞日。flightDistanceKm为机场代表坐标计算的大圆距离估算，不是实际航迹里程。地面距离与交通分钟数均为规划估算，不是实时路况；Safari林内行车按游览处理，route地面里程及交通时长仅统计接送，不是车辆完整累计里程，也不预绘未获分配的林内道路。所有费用未知项保留null，预算未定价不代表免费。",
+  "timezone": "Asia/Kolkata",
+  "currency": "CNY",
+  "startDate": "2027-01-24",
+  "endDate": "2027-02-06",
+  "origin": "中国广州",
+  "destination": "中国广州，经印度德里、那格浦尔、Pench与Kanha后返程",
+  "travelers": {
+    "adults": 2,
+    "children": 2,
+    "seniors": 0
+  },
+  "tags": [
+    "亲子",
+    "Safari",
+    "Pench",
+    "Kanha",
+    "日间吉普",
+    "包车接送",
+    "预算待报价"
+  ],
+  "keyDecisions": [
+    {
+      "id": "decision-two-parks",
+      "decision": "集中Pench与Kanha两园，各连续住5晚，规划各4次safari。",
+      "reason": "以野生动物观察为主，并减少跨园搬迁；Kanha兼顾硬地沼鹿及森林生态观察。",
+      "tradeoff": "不安排已游览过的主流古迹，也不叠加第三个保护区；野生动物目击仍有不确定性。"
+    },
+    {
+      "id": "decision-child-pace",
+      "decision": "每个活动日最多一场日间safari，四人独用一辆持证吉普。",
+      "reason": "州规则支持5—12岁儿童取得独立座位；独用车辆便于全家共同提前结束活动。",
+      "tradeoff": "每人价格和儿童计费须另报价；包车不自动适用单座儿童半价，另聘酒店自然向导是否占座须确认。"
+    },
+    {
+      "id": "decision-gates",
+      "decision": "Pench固定Turia入口；Kanha固定Mukki入口，仅2月1日上午申请Kanha核心区，其余申请Mukki核心区。",
+      "reason": "避免把不同入口和旅游分区混淆；官方规定从Mukki进入Kanha区只能参加上午场。",
+      "tradeoff": "实际分区和路线以许可证为准，不能为了追逐目击临时跨门或越区。"
+    },
+    {
+      "id": "decision-midweek",
+      "decision": "1月27日与2月3日均安排上午场，周三下午休息。",
+      "reason": "官方门户提示周三半日休园，Pench官方FAQ明确为下午；具体许可仍须复核。",
+      "tradeoff": "减少下午可选时段，核心区余票不足时可能减少场次或改合规缓冲区。"
+    },
+    {
+      "id": "decision-transport",
+      "decision": "广州经德里衔接那格浦尔，首晚德里、返程前一晚那格浦尔；地面使用带司机包车。",
+      "reason": "入境后隔夜再接国内航班，长距离公路转场与国际返程分日安排。",
+      "tradeoff": "增加两个过渡酒店夜；冬季航班及道路延误仍需备用航段和可退改条件。"
+    },
+    {
+      "id": "decision-budget",
+      "decision": "按两间房、12个酒店夜和8次四人独用吉普索取分项报价，以含10%机动金不超过100000元为采购上限。",
+      "reason": "用户预算为50000—100000元；门票、车辆、向导、接送与餐食必须核对是否包含，防止重复计费。",
+      "tradeoff": "报价前不承诺预算可达；如超上限，先调整酒店档次与附加服务，再按预案减少一场safari。"
+    }
+  ],
+  "fallbackPlans": [
+    {
+      "id": "fallback-visa",
+      "trigger": "在任何不可退付款前，四人中至少一人尚未获批有效印度入境签证或无法确认适用申请类别。",
+      "action": "暂停不可退项目，仅保留可免费取消的选项；通过印度驻广州领馆或官方签证门户核实资格，全部获签后再出票。",
+      "priority": "入境资格优先"
+    },
+    {
+      "id": "fallback-core-permits",
+      "trigger": "MPOnline查询结果显示任一目标核心区日期无可售整车许可，且同园住宿期间无法取得每日最多一场的替代时段。",
+      "action": "Pench询价并核实Telia缓冲区入口与接送后替换；Kanha查询Mukki入口可用Khapa缓冲区许可。若仍无票，取消该场并留在酒店休息，更新预算和行程，明确缓冲区不等于核心区。",
+      "priority": "合规许可与儿童节奏优先"
+    },
+    {
+      "id": "fallback-republic-day",
+      "trigger": "1月26日MPOnline显示关闭，或无法取得当天Turia上午场许可。",
+      "action": "取消1月26日场次并作为酒店休息日；查询1月28日上午Turia整车许可，如有票则改为上午场并取消原下午场，如无票则保留原下午场。两种情况下Pench均由4场减为3场，并同步更新总场次与预算。",
+      "priority": "以官方日历为准，保持每日最多一场"
+    },
+    {
+      "id": "fallback-kanha-zone",
+      "trigger": "无法取得2月1日从Mukki入口进入Kanha核心区的上午许可。",
+      "action": "申请同日上午Mukki核心区整车许可；若无票，依次查询合规Khapa缓冲区或取消，不改成从Mukki入口进入Kanha区的下午场。",
+      "priority": "入口与许可分区一致"
+    },
+    {
+      "id": "fallback-child-comfort",
+      "trigger": "任一儿童在吉普活动中持续喊冷、出现恶心，或明确表示无法继续乘车。",
+      "action": "立即告知司机与随车向导，要求整车按园方允许线路提前出园并返回住宿；取消当天附加活动，不让儿童单独留在野外或交给未确认的照护者。",
+      "priority": "儿童舒适与安全优先"
+    },
+    {
+      "id": "fallback-park-closure",
+      "trigger": "园方或入口当日公告延迟开放、停止入园或关闭已订分区。",
+      "action": "严格按园方新时段执行；若当天关闭，取消该场并返回酒店，向原许可渠道按规则申请退款，不自行换门入园。",
+      "priority": "园方指令优先"
+    },
+    {
+      "id": "fallback-flight-delay",
+      "trigger": "出票时无法安排2月5日那格浦尔航班在国际起飞前至少6小时抵达德里，或2月4日获知该航段取消。",
+      "action": "把2月4日改为早晨从Mukki离店，乘经核实可售的晚间那格浦尔至德里航班，并将那格浦尔酒店改订德里机场酒店；若无合适航班，联系承运人整体改签返程并增加实际所需住宿。",
+      "priority": "返程衔接优先，改动前确认航班与酒店可用性"
+    },
+    {
+      "id": "fallback-budget-limit",
+      "trigger": "收到全部含税报价并按报价日汇率折算人民币后，小计乘1.1超过100000元。",
+      "action": "要求同住宿区域两间舒适型客房重新报价，取消非必需的酒店额外自然向导和购物；仍超预算则先取消1月29日Pench场次并重新核算，金额降至上限内后再付款。",
+      "priority": "总预算上限优先"
+    }
+  ],
+  "preparation": [
+    {
+      "kind": "documents",
+      "title": "确认范围与入境材料",
+      "items": [
+        "已确认需求：广州出发、两大两小、主要目标safari、10—14天、预算人民币5万—10万元；后续已确认年份改为2027。具体日期、航班、酒店、许可证和价格均待确认。",
+        "出行时四人实际年龄、国籍与证件类别待核；按本人适用类别向印度官方门户及驻广州领馆申请签证，不预设可使用旅游电子签证。",
+        "将儿童与两名成人完整登记在许可中，并私下保存入园所需原件；公开行程不填写任何证件号码或订单信息。",
+        "入境前重新查阅印度官方e-Arrival Card及入境申报要求；如官方要求于抵达前72小时内填报，按届时规则办理。"
+      ]
+    },
+    {
+      "kind": "transport",
+      "title": "先查许可证，再锁定机票和酒店",
+      "items": [
+        "官方门户现显示每天印度时间11:00开放第120天；本方案8场目标日期均已进入预约窗口，应立即查询整车许可实际余票，未查询不得视为有票。",
+        "Pench拟1月26、27、29日上午及1月28日下午；Kanha拟1月31日下午Mukki区、2月1日上午Kanha区、2月2日下午及2月3日上午Mukki区。周三下午不安排核心区safari。",
+        "南航官方已公布广州与德里航线；本方案国际时刻参考该页面，但2027年对应日期班期、航站楼、托运行李及运价须出票前确认。国内段仅为约2小时飞行规划，不指定未核航班号。",
+        "2月5日优先选择联程或受保护衔接；如分票，核实提取并重新托运行李、德里航站楼转换和至少6小时计划衔接。路程估算不等于道路畅通证明。",
+        "索取四人独用带司机MPV/SUV的书面报价，确认行李空间、全座安全带、适龄儿童座椅、休息安排与司机住宿是否包含；不采用游客自行驾车入园方案。",
+        "Pench在Kohka/Turia周边、Kanha在Mukki周边各连续住5晚。按两间房询价，确认每间一成人一儿童、供暖、热水及清淡餐食；连通房仅为偏好，未经酒店确认不视为已具备。",
+        "住宿checkIn、checkOut为计划时刻，不是酒店政策；系统checkOut表示次日离店。续住日仅外出不退房，酒店跨夜停靠点在次日外出时结束；1月30日、2月4日为两园最终退房日。"
+      ]
+    },
+    {
+      "kind": "safety",
+      "title": "亲子活动与预算核对",
+      "items": [
+        "1月园区官方资料提示可能霜冻，开放式吉普准备保暖外层、帽子、手套及毯子；具体天气在出发前和每场前核实。",
+        "不安排步行追踪、夜间safari或自行下车观察；跟随持证向导，在允许范围内乘车观察。准备儿童望远镜与自然观察记录，目击目标包括鹿类、鸟类和森林生态，不承诺老虎。",
+        "饮食偏好、过敏、晕车、既往疾病和其他体力限制尚未提供，预订时补充；拟申请清淡熟食和儿童餐，供给情况待酒店确认。",
+        "取得涵盖野生动物观光及医疗转运的适用保险报价；确认两处住宿可协助就医和提前返程。",
+        "预算全部采用人民币；印度卢比报价需记录报价日和换算依据后再录入。尚无报价的unitAmount与actualAmount均为null，5万为目标预算下沿，10万为含机动金采购上限。",
+        "Safari总包报价必须列明整车许可、车辆、强制向导、入口接送、税费及儿童政策。官方许可不含车辆和向导；若总包已包含，不重复录入独立预算。酒店含餐或含safari时同样扣除重叠项目。",
+        "WGS84坐标来自机场官方AIP或实际查阅的OpenStreetMap数据；住宿与解散区域为代表位置，待确认。所有非自驾线路仅为地点连接示意，保留© OpenStreetMap contributors署名。"
+      ]
+    }
+  ],
+  "sourceLinks": [
+    {
+      "label": "MPOnline官方预约门户：2026—27规则入口、120天预约窗口及车辆向导另付说明；未查询具体余票",
+      "url": "https://forest.mponline.gov.in/Search.aspx"
+    },
+    {
+      "label": "MPOnline当前链接的州英文safari规则：儿童独立座位及许可类型，文件标注2022—23，出行前复核",
+      "url": "https://forest.mponline.gov.in/images/SafariBookingRules_Session_2022-23_English.pdf"
+    },
+    {
+      "label": "Pench官方FAQ：周三下午及季节时段，仅作规划参考，不引用旧价格",
+      "url": "https://forest.mponline.gov.in/Images/PenchFAQ.pdf"
+    },
+    {
+      "label": "Pench官方电子手册：旅游入口、生态、气候与交通",
+      "url": "https://forest.mponline.gov.in/eBrochure/eBrochureDetailsV2.aspx?parkid=4"
+    },
+    {
+      "label": "Kanha官方电子手册：Mukki入口可达分区、Kanha区限上午及Khapa缓冲区",
+      "url": "https://forest.mponline.gov.in/eBrochure/eBrochureDetailsV2.aspx?parkid=2"
+    },
+    {
+      "label": "南航官方广州与德里航线公布时刻；不代表2027具体日期航班已确认",
+      "url": "https://www.csair.com/mcms/mcms/IN/en/2026/20260702_2/flight.html?ac=NEWROUTE&lang=en&orderChannel=HLB&rc=JWYY15&site=in"
+    },
+    {
+      "label": "IndiGo官方德里至那格浦尔航线信息；不代表所选日期时刻或余票",
+      "url": "https://www.goindigo.in/domestic-flights/delhi-to-nagpur-flights.html"
+    },
+    {
+      "label": "印度驻华使馆官方签证说明",
+      "url": "https://www.eoibeijing.gov.in/page/visa/"
+    },
+    {
+      "label": "印度官方签证及入境申报入口，出发前复核现行要求",
+      "url": "https://www.indianvisaonline.gov.in/"
+    },
+    {
+      "label": "AAI德里机场AIP：机场基准点坐标，非航站楼位置",
+      "url": "https://aim-india.aai.aero/eaip-v2-01-2025/eAIP/IN-AD%202.1VIDP-en-GB.html"
+    },
+    {
+      "label": "AAI那格浦尔机场AIP：机场基准点坐标，非航站楼位置",
+      "url": "https://aim-india.aai.aero/eaip-v2-04-2024/eAIP/IN-AD%202.1VANP-en-GB.html"
+    },
+    {
+      "label": "OpenStreetMap：广州白云机场区域代表坐标",
+      "url": "https://nominatim.openstreetmap.org/search?q=Guangzhou%20Baiyun%20International%20Airport&format=json&limit=1"
+    },
+    {
+      "label": "OpenStreetMap：Delhi Aerocity区域代表点",
+      "url": "https://api.openstreetmap.org/api/0.6/node/7788133644.json"
+    },
+    {
+      "label": "OpenStreetMap：Pench Turia入口节点",
+      "url": "https://api.openstreetmap.org/api/0.6/node/1721577312.json"
+    },
+    {
+      "label": "OpenStreetMap：Kohka住宿区域代表点，采用Kurai Tahsil结果，不采用同名Seoni村",
+      "url": "https://nominatim.openstreetmap.org/search?q=Kohka%20Seoni%20Madhya%20Pradesh&format=json&limit=2"
+    },
+    {
+      "label": "OpenStreetMap：Kanha Mukki入口节点",
+      "url": "https://api.openstreetmap.org/api/0.6/node/11828975135.json"
+    },
+    {
+      "label": "OpenStreetMap：Mukki村住宿区域代表点",
+      "url": "https://nominatim.openstreetmap.org/search?q=Mukki%20Madhya%20Pradesh&format=json&limit=2"
+    },
+    {
+      "label": "OpenStreetMap：那格浦尔Wardha Road住宿区域代表点",
+      "url": "https://nominatim.openstreetmap.org/search?q=Wardha%20Road%20Nagpur&format=json&limit=1"
+    },
+    {
+      "label": "OpenStreetMap：广州天河区解散区域代表点",
+      "url": "https://nominatim.openstreetmap.org/search?q=Tianhe%20Guangzhou&format=json&limit=1"
+    },
+    {
+      "label": "OSRM实际查询：那格浦尔机场至Kohka代表点约90.7公里，仅路网估算，未下载道路几何",
+      "url": "https://router.project-osrm.org/route/v1/driving/79.048333,21.091667;79.3618961,21.7153882?overview=false&steps=false"
+    },
+    {
+      "label": "OSRM实际查询：Kohka至Mukki代表点约190公里，仅路网估算，未下载道路几何",
+      "url": "https://router.project-osrm.org/route/v1/driving/79.3618961,21.7153882;80.6727481,22.1517184?overview=false&steps=false"
+    },
+    {
+      "label": "OSRM实际查询：Mukki至那格浦尔Wardha Road代表点约260.3公里，仅路网估算，未下载道路几何",
+      "url": "https://router.project-osrm.org/route/v1/driving/80.6727481,22.1517184;79.0682984,21.1036478?overview=false&steps=false"
+    }
+  ],
+  "days": [
+    {
+      "id": "day-1",
+      "date": "2027-01-24",
+      "title": "广州飞德里，机场酒店过夜",
+      "summary": "规划直飞国际段，入境后在Aerocity休息；当晚不衔接国内航班。广州时间为中国时间，德里为印度时间；国际飞行估算355分钟，地面接送估算30分钟。",
+      "route": {
+        "method": "国际航班＋机场出租车/包车",
+        "distanceKm": 5,
+        "flightDistanceKm": 3649,
+        "durationMinutes": 385,
+        "segments": [
+          {
+            "id": "day-1-flight",
+            "label": "广州白云→德里，15:35中国时间→19:00印度时间，2027班期与时刻待确认",
+            "mode": "flight",
+            "coordinates": [
+              [
+                23.3862983,
+                113.3022655
+              ],
+              [
+                28.568611,
+                77.112222
+              ]
+            ]
+          },
+          {
+            "id": "day-1-airport-transfer",
+            "label": "德里机场→Aerocity待选酒店，包车接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                28.568611,
+                77.112222
+              ],
+              [
+                28.5499844,
+                77.1215185
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-1-can-departure",
+          "name": "广州白云机场国际出发",
+          "kind": "departure",
+          "arrival": "12:30",
+          "departure": "15:35",
+          "coordinates": [
+            23.3862983,
+            113.3022655
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。使用中国时间；预留值机、托运、安检与出境时间，无已确认机票。"
+        },
+        {
+          "id": "day-1-del-arrival",
+          "name": "德里机场入境与行李提取",
+          "kind": "arrival",
+          "arrival": "19:00",
+          "departure": "20:30",
+          "coordinates": [
+            28.568611,
+            77.112222
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。使用印度时间；实际入境排队和行李时间待确认。"
+        },
+        {
+          "id": "day-1-hotel",
+          "name": "Delhi Aerocity机场酒店区域（待选）",
+          "kind": "lodging",
+          "arrival": "21:00",
+          "departure": "07:15",
+          "coordinates": [
+            28.5499844,
+            77.1215185
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；办理入住后留宿至次日，拟2间房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Delhi Aerocity机场酒店区域（待选）",
+        "area": "Delhi Aerocity机场酒店区域",
+        "checkIn": "21:00",
+        "checkOut": "07:15",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-2",
+      "date": "2027-01-25",
+      "title": "德里飞那格浦尔，白天转往Pench",
+      "summary": "国内段仅用规划时段；抵达后预留取行李和午餐时间，再包车前往Kohka/Turia住宿区。地面约96公里为区域估算，含约91公里那格浦尔机场至Kohka参考点；不赶当天safari。",
+      "route": {
+        "method": "国内航班＋带司机包车",
+        "distanceKm": 96,
+        "flightDistanceKm": 854,
+        "durationMinutes": 330,
+        "segments": [
+          {
+            "id": "day-2-del-transfer",
+            "label": "Aerocity酒店区域→德里机场，包车接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                28.5499844,
+                77.1215185
+              ],
+              [
+                28.568611,
+                77.112222
+              ]
+            ]
+          },
+          {
+            "id": "day-2-flight",
+            "label": "德里→那格浦尔，10:00—12:00为规划时段，非已确认航班",
+            "mode": "flight",
+            "coordinates": [
+              [
+                28.568611,
+                77.112222
+              ],
+              [
+                21.091667,
+                79.048333
+              ]
+            ]
+          },
+          {
+            "id": "day-2-pench-transfer",
+            "label": "那格浦尔机场→Pench Kohka/Turia住宿区，包车示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.091667,
+                79.048333
+              ],
+              [
+                21.7153882,
+                79.3618961
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-2-del-departure",
+          "name": "德里机场国内出发",
+          "kind": "departure",
+          "arrival": "07:45",
+          "departure": "10:00",
+          "coordinates": [
+            28.568611,
+            77.112222
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。计划07:15从酒店出发，机场手续预留超过2小时。"
+        },
+        {
+          "id": "day-2-nag-arrival",
+          "name": "那格浦尔机场抵达与午餐",
+          "kind": "arrival",
+          "arrival": "12:00",
+          "departure": "13:00",
+          "coordinates": [
+            21.091667,
+            79.048333
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。取行李后在机场允许区域用简餐，再会合司机。"
+        },
+        {
+          "id": "day-2-hotel",
+          "name": "Pench Kohka/Turia住宿区域（待选）",
+          "kind": "lodging",
+          "arrival": "16:00",
+          "departure": "05:45",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；不是已选酒店。拟两间相邻客房，每间一名成人带一名儿童，连通房、供暖及儿童入住政策待报价确认。车程计划150分钟，另留30分钟休息；下午办理入住并休息。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Pench Kohka/Turia入口周边（待选）",
+        "area": "Pench Kohka/Turia入口周边",
+        "checkIn": "16:00",
+        "checkOut": "05:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-3",
+      "date": "2027-01-26",
+      "title": "Pench第1场：Turia核心区 上午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 10,
+        "flightDistanceKm": 0,
+        "durationMinutes": 60,
+        "segments": [
+          {
+            "id": "day-3-gate-transfer",
+            "label": "Pench酒店区域→Turia入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7153882,
+                79.3618961
+              ],
+              [
+                21.7390632,
+                79.3368346
+              ]
+            ]
+          },
+          {
+            "id": "day-3-hotel-transfer",
+            "label": "Turia入口→Pench酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7390632,
+                79.3368346
+              ],
+              [
+                21.7153882,
+                79.3618961
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-3-gate",
+          "name": "Pench Turia入口：核验与集合",
+          "kind": "transport",
+          "arrival": "06:15",
+          "departure": "06:35",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-3-safari",
+          "name": "Pench Turia核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "06:45",
+          "departure": "11:00",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-3-hotel",
+          "name": "Pench原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "11:30",
+          "departure": "05:45",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Pench Kohka/Turia入口周边（待选）",
+        "area": "Pench Kohka/Turia入口周边",
+        "checkIn": "11:30",
+        "checkOut": "05:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-4",
+      "date": "2027-01-27",
+      "title": "Pench第2场：Turia核心区 上午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。周三下午不安排核心区safari。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 10,
+        "flightDistanceKm": 0,
+        "durationMinutes": 60,
+        "segments": [
+          {
+            "id": "day-4-gate-transfer",
+            "label": "Pench酒店区域→Turia入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7153882,
+                79.3618961
+              ],
+              [
+                21.7390632,
+                79.3368346
+              ]
+            ]
+          },
+          {
+            "id": "day-4-hotel-transfer",
+            "label": "Turia入口→Pench酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7390632,
+                79.3368346
+              ],
+              [
+                21.7153882,
+                79.3618961
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-4-gate",
+          "name": "Pench Turia入口：核验与集合",
+          "kind": "transport",
+          "arrival": "06:15",
+          "departure": "06:35",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-4-safari",
+          "name": "Pench Turia核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "06:45",
+          "departure": "11:00",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-4-hotel",
+          "name": "Pench原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "11:30",
+          "departure": "13:45",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Pench Kohka/Turia入口周边（待选）",
+        "area": "Pench Kohka/Turia入口周边",
+        "checkIn": "11:30",
+        "checkOut": "13:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-5",
+      "date": "2027-01-28",
+      "title": "Pench第3场：Turia核心区 下午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 10,
+        "flightDistanceKm": 0,
+        "durationMinutes": 60,
+        "segments": [
+          {
+            "id": "day-5-gate-transfer",
+            "label": "Pench酒店区域→Turia入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7153882,
+                79.3618961
+              ],
+              [
+                21.7390632,
+                79.3368346
+              ]
+            ]
+          },
+          {
+            "id": "day-5-hotel-transfer",
+            "label": "Turia入口→Pench酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7390632,
+                79.3368346
+              ],
+              [
+                21.7153882,
+                79.3618961
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-5-gate",
+          "name": "Pench Turia入口：核验与集合",
+          "kind": "transport",
+          "arrival": "14:15",
+          "departure": "14:45",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-5-safari",
+          "name": "Pench Turia核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "15:00",
+          "departure": "17:45",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-5-hotel",
+          "name": "Pench原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "18:15",
+          "departure": "05:45",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Pench Kohka/Turia入口周边（待选）",
+        "area": "Pench Kohka/Turia入口周边",
+        "checkIn": "18:15",
+        "checkOut": "05:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-6",
+      "date": "2027-01-29",
+      "title": "Pench第4场：Turia核心区 上午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 10,
+        "flightDistanceKm": 0,
+        "durationMinutes": 60,
+        "segments": [
+          {
+            "id": "day-6-gate-transfer",
+            "label": "Pench酒店区域→Turia入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7153882,
+                79.3618961
+              ],
+              [
+                21.7390632,
+                79.3368346
+              ]
+            ]
+          },
+          {
+            "id": "day-6-hotel-transfer",
+            "label": "Turia入口→Pench酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7390632,
+                79.3368346
+              ],
+              [
+                21.7153882,
+                79.3618961
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-6-gate",
+          "name": "Pench Turia入口：核验与集合",
+          "kind": "transport",
+          "arrival": "06:15",
+          "departure": "06:35",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-6-safari",
+          "name": "Pench Turia核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "06:45",
+          "departure": "11:00",
+          "coordinates": [
+            21.7390632,
+            79.3368346
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-6-hotel",
+          "name": "Pench原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "11:30",
+          "departure": "08:30",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店最后一晚，返店后休息与用餐；departure为次日08:30最终退房离店时刻。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Pench Kohka/Turia入口周边（待选）",
+        "area": "Pench Kohka/Turia入口周边",
+        "checkIn": "11:30",
+        "checkOut": "08:30",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-7",
+      "date": "2027-01-30",
+      "title": "Pench转往Kanha，全天只做白天转场",
+      "summary": "08:30退房，09:00出发，15:00抵达Mukki周边；规划行车270分钟，另留90分钟午餐、休息和道路缓冲。OSRM从住宿区域代表点查询约190公里，仅是路网估算，不是实时路况；不赶下午safari。",
+      "route": {
+        "method": "带司机MPV/SUV包车",
+        "distanceKm": 190,
+        "flightDistanceKm": 0,
+        "durationMinutes": 270,
+        "segments": [
+          {
+            "id": "day-7-park-transfer",
+            "label": "Pench Kohka/Turia住宿区→Kanha Mukki住宿区，白天包车示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.7153882,
+                79.3618961
+              ],
+              [
+                22.1517184,
+                80.6727481
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-7-pench-departure",
+          "name": "Pench住宿区域退房后装车（待选）",
+          "kind": "departure",
+          "arrival": "08:35",
+          "departure": "09:00",
+          "coordinates": [
+            21.7153882,
+            79.3618961
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；与司机核实路线，途中按已营业地点安排休息，不录入未核实餐厅或坐标。"
+        },
+        {
+          "id": "day-7-hotel",
+          "name": "Kanha Mukki住宿区域（待选）",
+          "kind": "lodging",
+          "arrival": "15:00",
+          "departure": "14:00",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；不是已选酒店。拟两间相邻客房，每间一名成人带一名儿童，连通房、供暖及儿童入住政策待报价确认。当天及次日上午休息，次日再参加下午场；连续住5晚。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Kanha Mukki入口周边（待选）",
+        "area": "Kanha Mukki入口周边",
+        "checkIn": "15:00",
+        "checkOut": "14:00",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-8",
+      "date": "2027-01-31",
+      "title": "Kanha第1场：Mukki核心区 下午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 4,
+        "flightDistanceKm": 0,
+        "durationMinutes": 30,
+        "segments": [
+          {
+            "id": "day-8-gate-transfer",
+            "label": "Kanha酒店区域→Mukki入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.1517184,
+                80.6727481
+              ],
+              [
+                22.154754,
+                80.6727727
+              ]
+            ]
+          },
+          {
+            "id": "day-8-hotel-transfer",
+            "label": "Mukki入口→Kanha酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.154754,
+                80.6727727
+              ],
+              [
+                22.1517184,
+                80.6727481
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-8-gate",
+          "name": "Kanha Mukki入口：核验与集合",
+          "kind": "transport",
+          "arrival": "14:15",
+          "departure": "14:45",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-8-safari",
+          "name": "Kanha Mukki核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "15:00",
+          "departure": "17:30",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-8-hotel",
+          "name": "Kanha原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "17:45",
+          "departure": "05:45",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Kanha Mukki入口周边（待选）",
+        "area": "Kanha Mukki入口周边",
+        "checkIn": "17:45",
+        "checkOut": "05:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-9",
+      "date": "2027-02-01",
+      "title": "Kanha第2场：Kanha核心区 上午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 4,
+        "flightDistanceKm": 0,
+        "durationMinutes": 30,
+        "segments": [
+          {
+            "id": "day-9-gate-transfer",
+            "label": "Kanha酒店区域→Mukki入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.1517184,
+                80.6727481
+              ],
+              [
+                22.154754,
+                80.6727727
+              ]
+            ]
+          },
+          {
+            "id": "day-9-hotel-transfer",
+            "label": "Mukki入口→Kanha酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.154754,
+                80.6727727
+              ],
+              [
+                22.1517184,
+                80.6727481
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-9-gate",
+          "name": "Kanha Mukki入口：核验与集合",
+          "kind": "transport",
+          "arrival": "06:00",
+          "departure": "06:25",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-9-safari",
+          "name": "Kanha Kanha核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "06:30",
+          "departure": "11:00",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。从Mukki入口进入Kanha核心区仅申请上午场；无票按预案改Mukki区。"
+        },
+        {
+          "id": "day-9-hotel",
+          "name": "Kanha原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "11:15",
+          "departure": "14:00",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Kanha Mukki入口周边（待选）",
+        "area": "Kanha Mukki入口周边",
+        "checkIn": "11:15",
+        "checkOut": "14:00",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-10",
+      "date": "2027-02-02",
+      "title": "Kanha第3场：Mukki核心区 下午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 4,
+        "flightDistanceKm": 0,
+        "durationMinutes": 30,
+        "segments": [
+          {
+            "id": "day-10-gate-transfer",
+            "label": "Kanha酒店区域→Mukki入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.1517184,
+                80.6727481
+              ],
+              [
+                22.154754,
+                80.6727727
+              ]
+            ]
+          },
+          {
+            "id": "day-10-hotel-transfer",
+            "label": "Mukki入口→Kanha酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.154754,
+                80.6727727
+              ],
+              [
+                22.1517184,
+                80.6727481
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-10-gate",
+          "name": "Kanha Mukki入口：核验与集合",
+          "kind": "transport",
+          "arrival": "14:15",
+          "departure": "14:45",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-10-safari",
+          "name": "Kanha Mukki核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "15:00",
+          "departure": "17:45",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-10-hotel",
+          "name": "Kanha原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "18:00",
+          "departure": "05:45",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店续住，返店后休息、用餐与亲子自然记录；departure为次日外出时刻，非办理退房。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Kanha Mukki入口周边（待选）",
+        "area": "Kanha Mukki入口周边",
+        "checkIn": "18:00",
+        "checkOut": "05:45",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-11",
+      "date": "2027-02-03",
+      "title": "Kanha第4场：Mukki核心区 上午safari",
+      "summary": "今日仅一场日间safari，其余时间在原酒店休息。开放时刻为季节规划值，以许可证和入口公告为准。route只计酒店与入口接送，观赏车程属于游览，不计路线交通里程、时长或预绘道路。周三下午不安排核心区safari。",
+      "route": {
+        "method": "入口往返接送＋授权吉普safari游览",
+        "distanceKm": 4,
+        "flightDistanceKm": 0,
+        "durationMinutes": 30,
+        "segments": [
+          {
+            "id": "day-11-gate-transfer",
+            "label": "Kanha酒店区域→Mukki入口，包车/酒店接送示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.1517184,
+                80.6727481
+              ],
+              [
+                22.154754,
+                80.6727727
+              ]
+            ]
+          },
+          {
+            "id": "day-11-hotel-transfer",
+            "label": "Mukki入口→Kanha酒店区域，接送返程示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.154754,
+                80.6727727
+              ],
+              [
+                22.1517184,
+                80.6727481
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-11-gate",
+          "name": "Kanha Mukki入口：核验与集合",
+          "kind": "transport",
+          "arrival": "06:00",
+          "departure": "06:25",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "OSM入口节点；现场集合点待确认。四名游客同车登记，整车许可、开放时刻及余票待确认。"
+        },
+        {
+          "id": "day-11-safari",
+          "name": "Kanha Mukki核心区日间吉普safari（拟申请）",
+          "kind": "attraction",
+          "arrival": "06:30",
+          "departure": "11:00",
+          "coordinates": [
+            22.154754,
+            80.6727727
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "坐标定位入园门，不代表动物点；园内道路由园方分配。整车许可待申请，司机和强制向导随车，四名游客各有座位，不保证动物目击。"
+        },
+        {
+          "id": "day-11-hotel",
+          "name": "Kanha原酒店续住与休息（待选）",
+          "kind": "lodging",
+          "arrival": "11:15",
+          "departure": "08:30",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；两间房待订。原酒店最后一晚，返店后休息与用餐；departure为次日08:30最终退房离店时刻。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "Kanha Mukki入口周边（待选）",
+        "area": "Kanha Mukki入口周边",
+        "checkIn": "11:15",
+        "checkOut": "08:30",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-12",
+      "date": "2027-02-04",
+      "title": "Kanha退房，白天返回那格浦尔",
+      "summary": "09:00出发，16:00抵达机场附近住宿区域；规划行车330分钟，另留90分钟午餐与休息。OSRM区域点间路网估算约260公里；全天不安排safari，也不直接衔接国际返程。",
+      "route": {
+        "method": "带司机MPV/SUV包车",
+        "distanceKm": 260,
+        "flightDistanceKm": 0,
+        "durationMinutes": 330,
+        "segments": [
+          {
+            "id": "day-12-nagpur-transfer",
+            "label": "Kanha Mukki住宿区→那格浦尔机场附近Wardha Road住宿区，包车示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                22.1517184,
+                80.6727481
+              ],
+              [
+                21.1036478,
+                79.0682984
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-12-mukki-departure",
+          "name": "Mukki住宿区域退房后装车（待选）",
+          "kind": "departure",
+          "arrival": "08:35",
+          "departure": "09:00",
+          "coordinates": [
+            22.1517184,
+            80.6727481
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；装车后白天转场，午餐及休息地点由司机按当日营业情况确认。"
+        },
+        {
+          "id": "day-12-hotel",
+          "name": "那格浦尔机场附近Wardha Road酒店区域（待选）",
+          "kind": "lodging",
+          "arrival": "16:00",
+          "departure": "08:00",
+          "coordinates": [
+            21.1036478,
+            79.0682984
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "住宿区域代表位置，待确认；预留一个缓冲酒店夜，核实次日国内航班和德里转机手续。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "那格浦尔机场附近Wardha Road区域（待选）",
+        "area": "那格浦尔机场附近Wardha Road区域",
+        "checkIn": "16:00",
+        "checkOut": "08:00",
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-13",
+      "date": "2027-02-05",
+      "title": "那格浦尔飞德里，夜航返广州",
+      "summary": "08:00离店，国内航班规划10:30—12:30；在德里预留7小时50分钟至国际起飞，含取行李、换航站楼、重新值机和用餐。国际段规划20:20印度时间起飞，翌日04:15中国时间抵达，机上过夜；该跨夜段完整计入今日route。",
+      "route": {
+        "method": "机场接送＋国内航班＋跨夜国际航班及航站楼接驳",
+        "distanceKm": 5,
+        "flightDistanceKm": 4503,
+        "durationMinutes": 520,
+        "segments": [
+          {
+            "id": "day-13-nag-transfer",
+            "label": "那格浦尔机场附近酒店→机场，包车示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                21.1036478,
+                79.0682984
+              ],
+              [
+                21.091667,
+                79.048333
+              ]
+            ]
+          },
+          {
+            "id": "day-13-domestic-flight",
+            "label": "那格浦尔→德里，10:30—12:30为规划时段，非已确认航班",
+            "mode": "flight",
+            "coordinates": [
+              [
+                21.091667,
+                79.048333
+              ],
+              [
+                28.568611,
+                77.112222
+              ]
+            ]
+          },
+          {
+            "id": "day-13-international-flight",
+            "label": "德里→广州：2月5日20:20印度时间至2月6日04:15中国时间，2027班期与时刻待确认",
+            "mode": "flight",
+            "coordinates": [
+              [
+                28.568611,
+                77.112222
+              ],
+              [
+                23.3862983,
+                113.3022655
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-13-nag-departure",
+          "name": "那格浦尔机场国内出发",
+          "kind": "departure",
+          "arrival": "08:30",
+          "departure": "10:30",
+          "coordinates": [
+            21.091667,
+            79.048333
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。国内航班时段为规划值；起飞前两小时到达机场。"
+        },
+        {
+          "id": "day-13-del-domestic",
+          "name": "德里机场国内抵达与行李提取",
+          "kind": "arrival",
+          "arrival": "12:30",
+          "departure": "14:00",
+          "coordinates": [
+            28.568611,
+            77.112222
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；使用印度时间。取行李后预留转机及可能换楼的缓冲，具体航站楼及是否需换楼待出票确认。"
+        },
+        {
+          "id": "day-13-del-international",
+          "name": "德里机场国际出发与晚餐",
+          "kind": "departure",
+          "arrival": "14:45",
+          "departure": "20:20",
+          "coordinates": [
+            28.568611,
+            77.112222
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；使用印度时间。预留重新托运、安检及出境；国际夜航拟于次日04:15中国时间抵达，机上过夜。"
+        }
+      ],
+      "lodging": null
+    },
+    {
+      "id": "day-14",
+      "date": "2027-02-06",
+      "title": "清晨抵达广州，结束行程",
+      "summary": "全日使用中国时间。跨夜国际航班的飞行里程与325分钟飞行已计入前一日，本日只计算入境后市区接送。市区解散点暂取天河区代表位置，具体下车地址待确认。",
+      "route": {
+        "method": "入境后出租车/包车接送",
+        "distanceKm": 55,
+        "flightDistanceKm": 0,
+        "durationMinutes": 75,
+        "segments": [
+          {
+            "id": "day-14-city-transfer",
+            "label": "广州白云机场→天河区解散区域（待确认），出租车/包车示意",
+            "mode": "taxi",
+            "coordinates": [
+              [
+                23.3862983,
+                113.3022655
+              ],
+              [
+                23.12712,
+                113.356424
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "day-14-can-arrival",
+          "name": "广州白云机场入境与行李提取",
+          "kind": "arrival",
+          "arrival": "04:15",
+          "departure": "05:45",
+          "coordinates": [
+            23.3862983,
+            113.3022655
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "机场代表位置，待确认；坐标不是具体航站楼、值机柜台或接机点。使用中国时间，对应印度时间01:45；航班、航站楼、入境排队及行李时间待确认。"
+        },
+        {
+          "id": "day-14-guangzhou-arrival",
+          "name": "广州天河区解散区域（待确认）",
+          "kind": "arrival",
+          "arrival": "07:00",
+          "departure": "07:15",
+          "coordinates": [
+            23.12712,
+            113.356424
+          ],
+          "timeStatus": "规划值，待确认",
+          "note": "行政区域代表位置，待确认；不是家庭住址。接送里程约55公里、时间75分钟为规划估算，实际下车点确定后重算。"
+        }
+      ],
+      "lodging": null
+    }
+  ],
+  "budget": {
+    "contingencyRate": 0.1,
+    "items": [
+      {
+        "id": "budget-international-flights",
+        "dayId": null,
+        "category": "transport",
+        "name": "四人广州—德里往返国际机票",
+        "quantity": 4,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按每人往返计价；含税、行李、座位及退改条件待报价，儿童票不假设优惠。"
+      },
+      {
+        "id": "budget-domestic-flights",
+        "dayId": null,
+        "category": "transport",
+        "name": "四人德里—那格浦尔往返国内机票",
+        "quantity": 8,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按人次单程计价：4人×2段；含税及行李，避免与联程报价重复。"
+      },
+      {
+        "id": "budget-delhi-transfers",
+        "dayId": null,
+        "category": "transport",
+        "name": "德里机场与Aerocity酒店接送",
+        "quantity": 2,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按车次计价：1月24日晚抵达接送及1月25日早送机；全家和行李一车。"
+      },
+      {
+        "id": "budget-nag-pench-transfer",
+        "dayId": "day-2",
+        "category": "transport",
+        "name": "那格浦尔机场至Pench住宿区包车",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车单程计价，含司机、税费及途中休息，不含safari。"
+      },
+      {
+        "id": "budget-pench-kanha-transfer",
+        "dayId": "day-7",
+        "category": "transport",
+        "name": "Pench至Kanha Mukki住宿区包车",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车单程计价，确认司机、油费、通行费、等候及跨区费用。"
+      },
+      {
+        "id": "budget-kanha-nag-transfer",
+        "dayId": "day-12",
+        "category": "transport",
+        "name": "Kanha Mukki至那格浦尔住宿区包车",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车单程计价，含白天转场及休息安排。"
+      },
+      {
+        "id": "budget-nag-airport-transfer",
+        "dayId": "day-13",
+        "category": "transport",
+        "name": "那格浦尔酒店至机场送机",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车单程计价；若已含在前日包车服务中不重复计费。"
+      },
+      {
+        "id": "budget-del-terminal-transfer",
+        "dayId": "day-13",
+        "category": "transport",
+        "name": "德里国内至国际航站楼接驳",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按全家一次衔接计价，方式与收费待机场及承运人确认；尚未核实是否免费，保留null。"
+      },
+      {
+        "id": "budget-guangzhou-transfer",
+        "dayId": "day-14",
+        "category": "transport",
+        "name": "广州机场至市区解散区域接送",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按全家整车单程计价，具体下车点待确认。"
+      },
+      {
+        "id": "budget-delhi-lodging",
+        "dayId": "day-1",
+        "category": "lodging",
+        "name": "1月24日Delhi Aerocity住宿",
+        "quantity": 2,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按间夜计价：2间×1晚；每间一成人一儿童，含税及餐食范围待确认。"
+      },
+      {
+        "id": "budget-pench-lodging",
+        "dayId": null,
+        "category": "lodging",
+        "name": "1月25日至29日Pench连续5晚住宿",
+        "quantity": 10,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按间夜计价：2间×5晚，对应day-2至day-6；儿童入住、加床、供暖、含税及餐食待确认。"
+      },
+      {
+        "id": "budget-kanha-lodging",
+        "dayId": null,
+        "category": "lodging",
+        "name": "1月30日至2月3日Kanha连续5晚住宿",
+        "quantity": 10,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按间夜计价：2间×5晚，对应day-7至day-11；儿童入住、加床、供暖、含税及餐食待确认。"
+      },
+      {
+        "id": "budget-nagpur-lodging",
+        "dayId": "day-12",
+        "category": "lodging",
+        "name": "2月4日那格浦尔机场附近住宿",
+        "quantity": 2,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按间夜计价：2间×1晚；每间一成人一儿童，含税及餐食范围待确认。"
+      },
+      {
+        "id": "budget-pench-safaris",
+        "dayId": null,
+        "category": "tickets",
+        "name": "Pench四次四人独用日间吉普safari总包",
+        "quantity": 4,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车每场计价，对应day-3至day-6；索取许可、车辆、强制向导、酒店入口接送及税费完整总价。若拆项支付，录入前拆分并删除总包，避免重复。"
+      },
+      {
+        "id": "budget-kanha-safaris",
+        "dayId": null,
+        "category": "tickets",
+        "name": "Kanha四次四人独用日间吉普safari总包",
+        "quantity": 4,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按整车每场计价，对应day-8至day-11；含许可、车辆、强制向导、酒店入口接送及税费范围待确认，不预设包车儿童半价。"
+      },
+      {
+        "id": "budget-family-meals",
+        "dayId": null,
+        "category": "food",
+        "name": "全家餐食与饮用水",
+        "quantity": 14,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按四人家庭每天计价，共14天；扣除机票、酒店或safari总包已含餐饮后询价，短日按实际用餐调整。"
+      },
+      {
+        "id": "budget-visas",
+        "dayId": null,
+        "category": "other",
+        "name": "四人适用印度签证及必要申请服务",
+        "quantity": 4,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按每人计价，签证类别及官方费用待核；不预设旅游电子签证资格。"
+      },
+      {
+        "id": "budget-travel-insurance",
+        "dayId": null,
+        "category": "other",
+        "name": "四人旅行保险",
+        "quantity": 4,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按每人计价，确认儿童、日间safari、医疗及转运保障范围。"
+      },
+      {
+        "id": "budget-optional-spending",
+        "dayId": null,
+        "category": "shopping",
+        "name": "自愿纪念品及其他个人购物",
+        "quantity": 1,
+        "unitAmount": null,
+        "actualAmount": null,
+        "status": "待报价",
+        "note": "按全家总额询价后自行设限；无必购安排，未知金额不是零元。"
+      }
+    ]
+  }
+}
+
