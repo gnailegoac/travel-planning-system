@@ -8,10 +8,10 @@ export function BudgetPanel({ trip }) {
     <section className="budget-section" aria-labelledby="budget-title">
       <div className="section-heading budget-heading">
         <div>
-          <span className="section-kicker">BUDGET PLAN</span>
+          <span className="section-kicker">预算计划</span>
           <h2 id="budget-title">费用预算</h2>
         </div>
-        <span className="section-count">币种 · {trip.currency}</span>
+        <span className="section-count">币种 · {trip.currency === 'CNY' ? '人民币' : trip.currency}</span>
       </div>
 
       <div className="budget-summary">

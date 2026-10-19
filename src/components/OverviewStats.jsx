@@ -7,8 +7,8 @@ export function OverviewStats({ trip }) {
     { label: '行程天数', value: `${metrics.dayCount} 天`, context: `${metrics.nightCount} 晚`, icon: BedDouble },
     {
       label: '预计里程',
-      value: `${metrics.distanceKm} km`,
-      context: metrics.flightDistanceKm ? `地面行驶 · 另飞行约 ${metrics.flightDistanceKm} km` : '全程合计',
+      value: `${metrics.distanceKm} 公里`,
+      context: metrics.flightDistanceKm ? `地面行驶 · 另飞行约 ${metrics.flightDistanceKm} 公里` : '全程合计',
       icon: Route,
     },
     { label: '在途时间', value: formatDuration(metrics.travelMinutes), context: '驾驶与移动', icon: Clock3 },

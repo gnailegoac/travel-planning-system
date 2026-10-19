@@ -54,7 +54,7 @@ export function DayTimeline({ trip, selectedDayId, onDayChange }) {
     <section className="timeline-panel" aria-labelledby="daily-plan-title">
       <div className="section-heading">
         <div>
-          <span className="section-kicker">DAY BY DAY</span>
+          <span className="section-kicker">每日计划</span>
           <h2 id="daily-plan-title">逐日安排</h2>
         </div>
         {selectedDayId !== 'all' && (
@@ -69,7 +69,7 @@ export function DayTimeline({ trip, selectedDayId, onDayChange }) {
           return (
             <article className="day-card" key={day.id} style={{ '--day-color': color }}>
               <header className="day-card-header">
-                <span className="day-number">D{dayIndex + 1}</span>
+                <span className="day-number">{dayIndex + 1}天</span>
                 <div>
                   <span className="day-date">{formatDate(day.date)}</span>
                   <h3>{day.title}</h3>
@@ -79,8 +79,8 @@ export function DayTimeline({ trip, selectedDayId, onDayChange }) {
 
               <div className="day-route-summary">
                 <span><Car size={15} /> {day.route?.method ?? '交通待定'}</span>
-                <span>{day.route?.distanceKm ?? 0} km</span>
-                {day.route?.flightDistanceKm > 0 && <span><Plane size={15} /> 约 {day.route.flightDistanceKm} km</span>}
+                <span>{day.route?.distanceKm ?? 0} 公里</span>
+                {day.route?.flightDistanceKm > 0 && <span><Plane size={15} /> 约 {day.route.flightDistanceKm} 公里</span>}
                 <span>{formatDuration(day.route?.durationMinutes ?? 0)}</span>
               </div>
 

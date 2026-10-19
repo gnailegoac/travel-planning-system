@@ -213,7 +213,7 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
     <section className="map-panel" aria-labelledby="route-map-title">
       <div className="section-heading map-heading">
         <div>
-          <span className="section-kicker">ROUTE AT A GLANCE</span>
+          <span className="section-kicker">路线总览</span>
           <h2 id="route-map-title">路线地图</h2>
         </div>
         <span className="map-mode"><Navigation size={15} /> 自驾沿路网 · 其他示意</span>
@@ -236,7 +236,7 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
             aria-pressed={selectedDayId === day.id}
             onClick={() => onDayChange(day.id)}
           >
-            D{index + 1}
+            第{index + 1}天
           </button>
         ))}
       </div>
@@ -254,8 +254,8 @@ export function RouteMap({ trip, selectedDayId, onDayChange }) {
           虚线：非自驾路段或道路数据缺失时的地点间示意
         </span>
         <span className="map-route-disclaimer">
-          路径由 <a href="https://project-osrm.org/" target="_blank" rel="noreferrer">OSRM</a>
-          {' '}基于 OpenStreetMap 路网预先计算，不含实时路况、施工、季节开放或交通管制；出发当天仍以实时导航与当地交管信息为准。
+          路径由 <a href="https://project-osrm.org/" target="_blank" rel="noreferrer">开源路径规划引擎（OSRM）</a>
+          {' '}基于开放街图（OpenStreetMap）路网预先计算，不含实时路况、施工、季节开放或交通管制；出发当天仍以实时导航与当地交管信息为准。
         </span>
       </div>
     </section>

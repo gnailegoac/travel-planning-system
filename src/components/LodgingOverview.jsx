@@ -10,7 +10,7 @@ export function LodgingOverview({ trip }) {
     <section className="content-section" aria-labelledby="lodging-title">
       <div className="section-heading">
         <div>
-          <span className="section-kicker">WHERE TO STAY</span>
+          <span className="section-kicker">住宿安排</span>
           <h2 id="lodging-title">每晚住宿</h2>
         </div>
         <span className="section-count">{stays.length} 晚</span>

@@ -13,7 +13,7 @@ export function PreparationPanel({ trip }) {
     <section className="content-section" aria-labelledby="preparation-title">
       <div className="section-heading">
         <div>
-          <span className="section-kicker">BEFORE YOU GO</span>
+          <span className="section-kicker">出发准备</span>
           <h2 id="preparation-title">出发前待办</h2>
         </div>
         <span className="section-count">以临行前公告为准</span>

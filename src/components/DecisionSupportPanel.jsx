@@ -24,7 +24,7 @@ export function DecisionSupportPanel({ trip }) {
     <section className="content-section planning-notes-section" aria-labelledby="planning-notes-title">
       <div className="section-heading planning-notes-heading">
         <div>
-          <span className="section-kicker">PLAN LOGIC</span>
+          <span className="section-kicker">规划逻辑</span>
           <h2 id="planning-notes-title">行程决策与应变</h2>
         </div>
         <ItemCount decisionCount={decisions.length} fallbackCount={fallbackPlans.length} />

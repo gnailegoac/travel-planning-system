@@ -57,13 +57,13 @@ try {
     const fallbackCount = await page.locator('.fallback-note').count();
     if (decisionCount !== 7) errors.push(`关键决策显示 ${decisionCount} 项，预期 7 项`);
     if (fallbackCount !== 7) errors.push(`应变预案显示 ${fallbackCount} 项，预期 7 项`);
-    if (await page.getByRole('button', { name: 'D11', exact: true }).count() !== 1) {
+    if (await page.getByRole('button', { name: '第11天', exact: true }).count() !== 1) {
       errors.push('11 天行程缺少 D11 日期筛选按钮');
     }
     if (!(await page.locator('.demo-notice').innerText()).startsWith('重要提醒：')) {
       errors.push('正式行程顶部提醒标签不正确');
     }
-    await page.getByRole('button', { name: 'D2', exact: true }).click();
+    await page.getByRole('button', { name: '第2天', exact: true }).click();
     await page.waitForTimeout(250);
 
     const visibleDayCards = await page.locator('.day-card').count();
@@ -95,7 +95,7 @@ try {
     });
 
     if (scenario.name === 'desktop') {
-      await page.getByRole('button', { name: 'D4', exact: true }).click();
+      await page.getByRole('button', { name: '第4天', exact: true }).click();
       await page.waitForTimeout(750);
       for (const routeName of ['day-4-driving.geojson', 'day-4-baihaba-driving.geojson']) {
         if (![...loadedRouteFiles].some((path) => path.endsWith(`/${routeName}`))) {
@@ -106,7 +106,7 @@ try {
         path: resolve(outputDirectory, 'desktop-day4-map.png'),
       });
 
-      await page.getByRole('button', { name: 'D7', exact: true }).click();
+      await page.getByRole('button', { name: '第7天', exact: true }).click();
       await page.waitForTimeout(750);
       if (![...loadedRouteFiles].some((path) => path.endsWith('/day-7-driving.geojson'))) {
         errors.push('D7 道路轨迹文件未成功加载');
@@ -121,12 +121,15 @@ try {
     await page.goto(indiaUrl.toString(), { waitUntil: 'networkidle', timeout: 30000 });
     await page.locator('.route-map.leaflet-container').waitFor();
 
-    const indiaTitle = '印度亲子 Safari：Pench 与 Kanha 双园14日';
+    const indiaTitle = '印度亲子野生动物之旅：彭奇与坎哈双园14日';
     if (await page.getByRole('heading', { name: indiaTitle, exact: true }).count() !== 1) {
       errors.push('印度行程标题未正确显示');
     }
     if (await page.locator('.trip-picker select').inputValue() !== 'india-safari-family-2027') {
       errors.push('印度行程未在行程选择器中激活');
+    }
+    if (await page.locator('.demo-notice').count() !== 0) {
+      errors.push('印度行程顶部提醒仍然可见');
     }
     if (await page.locator('.decision-note').count() !== 6) {
       errors.push('印度行程关键决策数量不正确');
@@ -134,11 +137,11 @@ try {
     if (await page.locator('.fallback-note').count() !== 8) {
       errors.push('印度行程应变预案数量不正确');
     }
-    if (await page.getByRole('button', { name: 'D14', exact: true }).count() !== 1) {
+    if (await page.getByRole('button', { name: '第14天', exact: true }).count() !== 1) {
       errors.push('印度 14 天行程缺少 D14 日期筛选按钮');
     }
 
-    await page.getByRole('button', { name: 'D14', exact: true }).click();
+    await page.getByRole('button', { name: '第14天', exact: true }).click();
     await page.waitForTimeout(250);
     const indiaDayCards = await page.locator('.day-card').count();
     const indiaStops = await page.locator('.stop-item').count();
