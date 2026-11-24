@@ -136,7 +136,7 @@ export default function App() {
       </main>
       <footer className="site-footer">
         <span>行程画布 · 数据与页面分离的旅行规划框架</span>
-        <span>地图数据 © OpenStreetMap contributors</span>
+        <span>底图 Natural Earth · 路网 © OpenStreetMap contributors</span>
       </footer>
     </div>
   );

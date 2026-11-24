@@ -17,7 +17,11 @@
     "children": 1,
     "seniors": 1
   },
-  "tags": ["自驾", "家庭", "慢节奏"],
+  "tags": [
+    "自驾",
+    "家庭",
+    "慢节奏"
+  ],
   "days": [
     {
       "id": "day-1",
@@ -30,8 +34,23 @@
         "durationMinutes": 300,
         "geometry": [
           [30.5728, 104.0668],
-          [30.2965, 102.8347],
-          [30.0508, 101.9602]
+          [30.009, 103.0415],
+          [30.0508, 101.9602],
+          [30.0556, 101.9588]
+        ],
+        "segments": [
+          {
+            "id": "day-1-driving",
+            "label": "成都 → 雅安 → 康定",
+            "mode": "driving",
+            "waypoints": [
+              [30.5728, 104.0668],
+              [30.009, 103.0415],
+              [30.0508, 101.9602],
+              [30.0556, 101.9588]
+            ],
+            "geometryFile": "data/routes/demo-west-sichuan/day-1-driving.geojson"
+          }
         ]
       },
       "stops": [
@@ -160,7 +179,21 @@
           [30.0508, 101.9602],
           [30.3319, 101.5316],
           [30.5307, 101.5068],
-          [30.6354, 101.5749]
+          [30.48461, 101.48386]
+        ],
+        "segments": [
+          {
+            "id": "day-3-driving",
+            "label": "康定 → 新都桥 → 塔公 → 八美镇",
+            "mode": "driving",
+            "waypoints": [
+              [30.0508, 101.9602],
+              [30.3319, 101.5316],
+              [30.5307, 101.5068],
+              [30.48461, 101.48386]
+            ],
+            "geometryFile": "data/routes/demo-west-sichuan/day-3-driving.geojson"
+          }
         ]
       },
       "stops": [
@@ -198,7 +231,7 @@
           "arrival": "16:20",
           "departure": "08:30",
           "departureDayOffset": 1,
-          "coordinates": [30.6354, 101.5749],
+          "coordinates": [30.48461, 101.48386],
           "note": "高海拔住宿仅作框架示例，实际需按成员状况评估。"
         }
       ],
@@ -222,9 +255,22 @@
         "distanceKm": 90,
         "durationMinutes": 150,
         "geometry": [
-          [30.6354, 101.5749],
+          [30.48461, 101.48386],
           [30.8786, 101.8924],
           [30.8789, 101.8904]
+        ],
+        "segments": [
+          {
+            "id": "day-4-driving",
+            "label": "八美镇 → 丹巴",
+            "mode": "driving",
+            "waypoints": [
+              [30.48461, 101.48386],
+              [30.8786, 101.8924],
+              [30.8789, 101.8904]
+            ],
+            "geometryFile": "data/routes/demo-west-sichuan/day-4-driving.geojson"
+          }
         ]
       },
       "stops": [
@@ -234,7 +280,7 @@
           "kind": "departure",
           "arrival": "08:00",
           "departure": "08:30",
-          "coordinates": [30.6354, 101.5749],
+          "coordinates": [30.48461, 101.48386],
           "note": "检查路况与车辆。"
         },
         {

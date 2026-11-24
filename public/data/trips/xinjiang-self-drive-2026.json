@@ -18,7 +18,15 @@
     "children": 0,
     "seniors": 0
   },
-  "tags": ["双人自驾", "北疆 + 南疆", "11 天 10 晚", "秋季错峰", "喀纳斯老村连住", "铁贾公路", "白哈巴"],
+  "tags": [
+    "双人自驾",
+    "北疆 + 南疆",
+    "11 天 10 晚",
+    "秋季错峰",
+    "喀纳斯老村连住",
+    "铁贾公路",
+    "白哈巴"
+  ],
   "keyDecisions": [
     {
       "id": "arrive-one-day-earlier",
@@ -100,7 +108,8 @@
             "coordinates": [
               [48.571074, 87.524492],
               [48.569206, 87.430372]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-1-shuttle.geojson"
           }
         ]
       },
@@ -191,7 +200,8 @@
               [48.569206, 87.430372],
               [48.576476, 87.426503],
               [48.569206, 87.430372]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-2-walk.geojson"
           },
           {
             "id": "day-2-hemu-shuttle",
@@ -200,7 +210,8 @@
             "coordinates": [
               [48.569206, 87.430372],
               [48.571074, 87.524492]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-2-hemu-shuttle.geojson"
           },
           {
             "id": "day-2-driving",
@@ -214,13 +225,24 @@
           },
           {
             "id": "day-2-kanas-shuttle",
-            "label": "喀纳斯景区接驳",
+            "label": "贾登峪 → 喀纳斯换乘中心",
             "mode": "shuttle",
             "coordinates": [
               [48.506368, 87.128007],
+              [48.699878, 87.035303]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-2-kanas-shuttle-in.geojson"
+          },
+          {
+            "id": "day-2-kanas-lake-walk",
+            "label": "喀纳斯换乘中心 ⇄ 湖边栈道",
+            "mode": "walk",
+            "coordinates": [
+              [48.699878, 87.035303],
               [48.714959, 87.025323],
               [48.699878, 87.035303]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-3-walk.geojson"
           }
         ]
       },
@@ -313,13 +335,25 @@
         "segments": [
           {
             "id": "day-3-shuttle",
-            "label": "观鱼台区间车",
+            "label": "喀纳斯换乘中心 ⇄ 观鱼台步道入口",
             "mode": "shuttle",
             "coordinates": [
               [48.699878, 87.035303],
-              [48.725782, 86.990507],
+              [48.719746, 86.988844],
               [48.699878, 87.035303]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-3-shuttle.geojson"
+          },
+          {
+            "id": "day-3-fish-platform-trail",
+            "label": "观鱼台步道入口 ⇄ 观鱼台",
+            "mode": "walk",
+            "coordinates": [
+              [48.719746, 86.988844],
+              [48.725782, 86.990507],
+              [48.719746, 86.988844]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-3-fish-platform-trail.geojson"
           },
           {
             "id": "day-3-walk",
@@ -329,7 +363,8 @@
               [48.699878, 87.035303],
               [48.714959, 87.025323],
               [48.699878, 87.035303]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-3-walk.geojson"
           }
         ]
       },
@@ -422,16 +457,35 @@
         ],
         "segments": [
           {
-            "id": "day-4-shuttle-walk",
-            "label": "喀纳斯三湾与出景区接驳",
+            "id": "day-4-bay-shuttle",
+            "label": "喀纳斯老村 → 神仙湾 → 月亮湾",
             "mode": "shuttle",
             "coordinates": [
               [48.699878, 87.035303],
               [48.658248, 87.037659],
+              [48.634545, 87.047184]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-4-bay-shuttle.geojson"
+          },
+          {
+            "id": "day-4-moon-wolong-walk",
+            "label": "月亮湾 → 卧龙湾沿河步行",
+            "mode": "walk",
+            "coordinates": [
               [48.634545, 87.047184],
+              [48.619762, 87.051558]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-4-moon-wolong-walk.geojson"
+          },
+          {
+            "id": "day-4-exit-shuttle",
+            "label": "卧龙湾 → 贾登峪",
+            "mode": "shuttle",
+            "coordinates": [
               [48.619762, 87.051558],
               [48.506368, 87.128007]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-4-exit-shuttle.geojson"
           },
           {
             "id": "day-4-driving",
@@ -463,7 +517,8 @@
             "coordinates": [
               [48.681506, 86.778475],
               [48.694849, 86.780713]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-4-baihaba-village.geojson"
           }
         ]
       },
@@ -598,7 +653,8 @@
             "coordinates": [
               [48.694849, 86.780713],
               [48.681506, 86.778475]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-4b-baihaba-shuttle.geojson"
           },
           {
             "id": "day-4b-driving",
@@ -1155,7 +1211,8 @@
               [39.4741, 75.9986],
               [39.472055, 75.987628],
               [39.472242, 75.98418]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-9-walk.geojson"
           },
           {
             "id": "day-9-taxi",
@@ -1166,7 +1223,8 @@
               [39.495123, 75.992991],
               [39.470182, 75.99996],
               [39.472055, 75.987628]
-            ]
+            ],
+            "geometryFile": "data/routes/xinjiang-self-drive-2026/day-9-taxi.geojson"
           }
         ]
       },

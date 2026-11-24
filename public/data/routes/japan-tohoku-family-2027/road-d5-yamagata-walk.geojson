@@ -1,0 +1,112 @@
+{
+  "type": "Feature",
+  "properties": {
+    "tripId": "japan-tohoku-family-2027",
+    "dayId": "day-5",
+    "segmentId": "d5-yamagata-walk",
+    "label": "山形站 → 酒店",
+    "mode": "walk",
+    "routeQuality": "pedestrian-network",
+    "source": "OSRM / FOSSGIS",
+    "sourceUrl": "https://routing.openstreetmap.de/about.html",
+    "mapData": "© OpenStreetMap contributors",
+    "mapDataUrl": "https://www.openstreetmap.org/copyright",
+    "fixMapUrl": "https://www.openstreetmap.org/fixthemap",
+    "routingProfile": "foot",
+    "inputCoordinates": [
+      [
+        140.327456,
+        38.248708
+      ],
+      [
+        140.327699,
+        38.248267
+      ]
+    ],
+    "snappedWaypoints": [
+      [
+        140.327472,
+        38.248738
+      ],
+      [
+        140.327975,
+        38.248176
+      ]
+    ],
+    "distanceMeters": 276.8,
+    "durationSeconds": 221.5
+  },
+  "geometry": {
+    "coordinates": [
+      [
+        140.327472,
+        38.248738
+      ],
+      [
+        140.327721,
+        38.248655
+      ],
+      [
+        140.328006,
+        38.24856
+      ],
+      [
+        140.328023,
+        38.248555
+      ],
+      [
+        140.327953,
+        38.248437
+      ],
+      [
+        140.32806,
+        38.248401
+      ],
+      [
+        140.32853,
+        38.248244
+      ],
+      [
+        140.328615,
+        38.248089
+      ],
+      [
+        140.328935,
+        38.247971
+      ],
+      [
+        140.328897,
+        38.247902
+      ],
+      [
+        140.328392,
+        38.248067
+      ],
+      [
+        140.32834,
+        38.248112
+      ],
+      [
+        140.328246,
+        38.248154
+      ],
+      [
+        140.328139,
+        38.248246
+      ],
+      [
+        140.328078,
+        38.248257
+      ],
+      [
+        140.328004,
+        38.248231
+      ],
+      [
+        140.327975,
+        38.248176
+      ]
+    ],
+    "type": "LineString"
+  }
+}

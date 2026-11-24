@@ -8,7 +8,7 @@
 
 ## 已实现
 
-- 按天筛选的 Leaflet 路线地图、编号地点与地图弹窗；自驾段可沿预生成的道路几何显示。
+- 按天筛选的 Leaflet 路线地图、编号地点与地图弹窗。带轨迹文件的陆路段沿对应路网显示。
 - 每个停靠点的到达、离开和自动计算的停留时间。
 - 每日交通方式、里程、在途时间和活动说明。
 - 可展开的行程关键决策、取舍说明与触发式应变预案。
@@ -35,7 +35,7 @@ npm run check
 1. 复制 `public/data/trips/demo-west-sichuan.json`，用小写英文和连字符命名，例如 `chengdu-yunnan-2026.json`。
 2. 修改根级信息、`days`、`stops`、`lodging` 与 `budget.items`；需要时增加 `keyDecisions` 和 `fallbackPlans`。
 3. 在 `public/data/trips/index.json` 的 `trips` 数组中登记新文件；需要时修改 `defaultTripId`。
-4. 自驾段需要道路形状时，在 `route.segments` 中录入 `mode: "driving"`、`waypoints` 与 `geometryFile`，然后生成静态路线文件：
+4. 把陆路轨迹的 GeoJSON 存放在 `public/data/routes/`，并在 `route.segments` 中引用 `geometryFile`。自驾段录入 `mode: "driving"`、`waypoints` 与 `geometryFile` 后，也可用命令生成：
 
    ```powershell
    npm run routes:fetch -- <trip-id>
@@ -49,11 +49,11 @@ npm run check
 
 ## 地图与路线边界
 
-地图使用 Leaflet 1.9.4 和 OpenStreetMap 标准瓦片。自驾段可以在构建前通过 [OSRM Route service](https://project-osrm.org/docs/v5.24.0/api/#route-service) 生成沿路网的 GeoJSON，并将快照提交到 `public/data/routes/`；页面只读取本站静态文件，不会让访客的浏览器临时请求路由服务。景区区间车、步行、航班等非自驾段仍使用录入坐标绘制虚线，以免被误解为道路导航。
+地图使用 Leaflet 和部署在本站的 Natural Earth 矢量底图。道路、步行和铁路轨迹以静态 GeoJSON 存放在 `public/data/routes/`，由浏览器从本站读取。道路可在构建前通过 [OSRM Route service](https://project-osrm.org/docs/v5.24.0/api/#route-service) 生成。日本铁路轨迹采用日本国土交通省 2025 年度「国土数值信息・铁路数据」加工生成。航班用虚线标注，缺少轨迹的陆路段只显示停靠点。
 
 静态路线只是规划时快照，不包含实时路况、临时封路、季节性管制、施工、边防检查或车辆限行，也不提供逐向导航。出发当天仍应使用可靠的导航应用，并以交管、景区和现场指示为准；修改 `waypoints` 后要重新执行 `npm run routes:fetch -- <trip-id>` 并人工核对路线。
 
-路线数据和底图均须保留 [OpenStreetMap contributors 署名](https://www.openstreetmap.org/copyright)。公共 OSRM 实例只适合低频生成，不能作为生产环境的大批量或高并发路由服务；如果未来访问量扩大，应改用有服务保障的路由与地图瓦片供应商。完整字段约定见 [数据格式说明](docs/DATA_SCHEMA.md)。
+基于开放街图路网生成的轨迹保留 [OpenStreetMap contributors 署名](https://www.openstreetmap.org/copyright) 和数据反馈入口。公共 OSRM 实例用于低频生成。完整字段约定见 [数据格式说明](docs/DATA_SCHEMA.md)。
 
 ## 公共数据安全
 

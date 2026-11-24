@@ -1,0 +1,105 @@
+{
+  "type": "Feature",
+  "properties": {
+    "tripId": "japan-tohoku-family-2027",
+    "dayId": "day-7",
+    "segmentId": "d7-zao-ropeway",
+    "label": "藏王山麓 → 树冰高原 → 地藏山顶往返",
+    "mode": "shuttle",
+    "routeQuality": "aerialway-network",
+    "source": "OpenStreetMap",
+    "sourceUrl": "https://www.openstreetmap.org/way/309920452",
+    "mapData": "© OpenStreetMap contributors",
+    "mapDataUrl": "https://www.openstreetmap.org/copyright",
+    "fixMapUrl": "https://www.openstreetmap.org/fixthemap",
+    "osmWays": [
+      {
+        "id": 309920452,
+        "name": "1 蔵王ロープウェイ山麓線",
+        "aerialway": "cable_car",
+        "url": "https://www.openstreetmap.org/way/309920452"
+      },
+      {
+        "id": 309920444,
+        "name": "2 蔵王ロープウェイ山頂線",
+        "aerialway": "gondola",
+        "url": "https://www.openstreetmap.org/way/309920444"
+      }
+    ],
+    "operatorRouteUrl": "https://www.zaoropeway.co.jp/summer/guide.php",
+    "routeNote": "山麓线和山顶线按实际索道绘制，往返沿同一轨迹。"
+  },
+  "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+      [
+        [
+          140.3952612,
+          38.1615968
+        ],
+        [
+          140.3979647,
+          38.1598201
+        ],
+        [
+          140.4093606,
+          38.1523306
+        ],
+        [
+          140.4100221,
+          38.1518958
+        ]
+      ],
+      [
+        [
+          140.410741,
+          38.1516617
+        ],
+        [
+          140.411119,
+          38.1517185
+        ],
+        [
+          140.4133886,
+          38.1520595
+        ],
+        [
+          140.4156723,
+          38.1524026
+        ],
+        [
+          140.4192196,
+          38.1529356
+        ],
+        [
+          140.4199725,
+          38.1530488
+        ],
+        [
+          140.4219458,
+          38.1533452
+        ],
+        [
+          140.4233056,
+          38.1535496
+        ],
+        [
+          140.4269828,
+          38.154102
+        ],
+        [
+          140.428544,
+          38.1543366
+        ],
+        [
+          140.4304875,
+          38.1546286
+        ],
+        [
+          140.4311795,
+          38.1547326
+        ]
+      ]
+    ]
+  }
+}

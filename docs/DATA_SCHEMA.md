@@ -34,7 +34,7 @@
 - `travelers`：`adults`、`children`、`seniors` 的人数，页面自动合计。
 - `keyDecisions`：可选的关键安排、理由和取舍。
 - `fallbackPlans`：可选的触发条件、调整方案和优先级。
-- `preparation`、`sourceLinks`：出发前待办和公开参考来源。
+- `preparation`、`sourceLinks`：出发前待办和公开参考来源。路线数据来源可标记 `showOnMap: true`，同时显示在地图图例中。
 - `days`：逐日计划。
 - `budget`：预算配置和预算项。
 
@@ -127,7 +127,7 @@
 
 `route.segments` 用于在同一天分别表达自驾、景区区间车、步行、航班等线路。每段都需要在当天唯一的 `id`、供页面展示的 `label` 和 `mode`。当前模式包括：
 
-- `driving`：自驾；页面读取预生成的道路 GeoJSON，并以实线展示。
+- `driving`：自驾。
 - `shuttle`：景区区间车。
 - `walk`：步行。
 - `flight`：航班。
@@ -135,14 +135,14 @@
 - `train`：铁路，包括新干线、普通列车和观光列车。
 - `bus`：公共巴士。
 
-自驾段使用以下两个字段：
+陆路段可使用以下两个字段：
 
-- `waypoints`：两个或更多用于请求路由的节点，顺序为 `[纬度, 经度]`。它们也是道路文件无法加载时的简化回退线，不应密集录入整条道路轨迹。
-- `geometryFile`：相对于 `public/` 的 GeoJSON 路径，例如 `data/routes/trip-id/day-1-driving.geojson`。文件由生成脚本写入，几何须为 `LineString` 或 `MultiLineString`。
+- `waypoints`：两个或更多用于请求路由的节点，顺序为 `[纬度, 经度]`。自驾段必填。
+- `geometryFile`：相对于 `public/` 的 GeoJSON 路径，例如 `data/routes/trip-id/day-1-driving.geojson`。几何须为 `LineString` 或 `MultiLineString`，应沿核验过的道路、步道、铁路或索道数据绘制，并记录数据来源。自驾段必填。
 
-区间车、步行、航班和出租车等非自驾段不请求道路路由，直接使用 `coordinates`，至少包含两个 `[纬度, 经度]` 节点。它们在地图中使用虚线，以表达连接关系而不是可执行导航。
+有轨迹文件的陆路段用实线显示。轨迹缺失或加载失败时，地图只保留停靠点，并在图例标注缺失段数。用于录入未核验区间的 `coordinates` 至少包含两个 `[纬度, 经度]` 节点。航班使用 `coordinates` 以虚线展示地点间的飞行方向。
 
-如果没有 `segments`，页面继续使用 `route.geometry` 作为兼容的整日示意线。没有经过道路路由服务生成并人工核验的 `geometry` 或 `coordinates`，都不能标作道路导航线路。
+旧版 `route.geometry` 可继续保留，迁移后应按实际交通方式拆成 `segments`。页面保留旧行程的停靠点。道路路由输出为规划轨迹，轨迹上的临时管制及通行条件以出行当天为准。
 
 ### 生成自驾道路文件
 

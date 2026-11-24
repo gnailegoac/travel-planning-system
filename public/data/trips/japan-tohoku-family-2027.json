@@ -111,7 +111,7 @@
         "仙台机场至青森自行转铁路。入境取行李后按实际时间选择车次。购票时核对机票的托运行李、四人余位和价格。",
         "四人指定席依次确认 1 月 26 日隼号、27 日往返七户十和田、29 日白神号、31 日山形与大石田之间的翼号及 2 月 1 日翼号和成田特快。白神号预计 12 月 29 日日本时间 10:00 开售，按 JR 实际开放为准。",
         "1 月 27 日锁定七户十和田往返出租车和奥入濑现场导览。28 日青森出发前备好日元现金，暖炉车现场买票后排队。31 日优先确认银山协会直达往返车四席，官网截止为乘车前一天日本时间 17:00。",
-        "地图点位供行程定位。列车以沿线车站描绘，各交通图线为示意。"
+        "铁路和缆车沿地图中的线路绘制，道路、步行及接驳按路网规划。航班使用示意线。奥入濑冰瀑导览的路线由向导当天决定。"
       ]
     },
     {
@@ -453,6 +453,16 @@
     {
       "label": "山形酒店 · 1 月 30 日至 2 月 1 日查价",
       "url": "https://www.jtb.co.jp/kokunai-hotel/htl/2445085/plan/?checkindate=20270130&backdate=20270201&godate=20270130&staynight=2&traveldays=3&room=1&roomassign=m1a1&shouldresearch=1&displaymode=room"
+    },
+    {
+      "label": "日本国土交通省铁路数据（加工）",
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html",
+      "showOnMap": true
+    },
+    {
+      "label": "山交巴士站序（藏王路线）",
+      "url": "https://www400.pref.yamagata.jp/020057/kurashi/kendo/kotsuseisaku/kokyokotsu_gtfs-jp.html",
+      "showOnMap": true
     }
   ],
   "days": [
@@ -499,7 +509,8 @@
                 38.2602,
                 140.8823
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d1-airport-train.geojson"
           },
           {
             "id": "d1-shinkansen",
@@ -530,7 +541,8 @@
                 40.8275,
                 140.6935
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d1-shinkansen.geojson"
           },
           {
             "id": "d1-local-train",
@@ -545,7 +557,8 @@
                 40.8279,
                 140.7347
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d1-local-train.geojson"
           },
           {
             "id": "d1-hotel-walk",
@@ -560,7 +573,8 @@
                 40.8273,
                 140.7396
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d1-hotel-walk.geojson"
           }
         ]
       },
@@ -677,7 +691,8 @@
                 40.8275,
                 140.6935
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d2-aomori-out.geojson"
           },
           {
             "id": "d2-shinkansen-out",
@@ -692,7 +707,8 @@
                 40.72,
                 141.1535
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d2-shinkansen-out.geojson"
           },
           {
             "id": "d2-taxi-out",
@@ -711,12 +727,13 @@
                 40.574723,
                 140.978893
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d2-taxi-out.geojson"
           },
           {
             "id": "d2-gorge-tour",
             "mode": "shuttle",
-            "label": "奥入濑溪流馆 ⇄ 中上游冰瀑区 · 当天选段示意",
+            "label": "奥入濑溪流馆 ⇄ 中上游冰瀑区 · 线路当天确定",
             "coordinates": [
               [
                 40.574723,
@@ -749,7 +766,8 @@
                 40.72,
                 141.1535
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d2-taxi-back.geojson"
           },
           {
             "id": "d2-shinkansen-back",
@@ -768,7 +786,8 @@
                 40.8279,
                 140.7347
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d2-shinkansen-back.geojson"
           },
           {
             "id": "d2-hotel-walk",
@@ -783,7 +802,8 @@
                 40.8273,
                 140.7396
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d2-hotel-walk.geojson"
           }
         ]
       },
@@ -953,7 +973,8 @@
                 40.8279,
                 140.7347
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d3-hotel-rail.geojson"
           },
           {
             "id": "d3-jr",
@@ -984,7 +1005,8 @@
                 40.80893,
                 140.44803
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d3-jr.geojson"
           },
           {
             "id": "d3-station-walk",
@@ -999,7 +1021,8 @@
                 40.8095,
                 140.4487
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d3-station-walk.geojson"
           },
           {
             "id": "d3-stove-line",
@@ -1022,7 +1045,8 @@
                 40.90315,
                 140.45989
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d3-stove-line.geojson"
           }
         ]
       },
@@ -1178,7 +1202,8 @@
                 40.8279,
                 140.7347
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d4-hotel-rail.geojson"
           },
           {
             "id": "d4-gono-north",
@@ -1213,7 +1238,8 @@
                 40.7678,
                 140.0548
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d4-gono-north.geojson"
           },
           {
             "id": "d4-gono-coast",
@@ -1240,7 +1266,8 @@
                 40.187,
                 140.0665
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d4-gono-coast.geojson"
           },
           {
             "id": "d4-gono-akita",
@@ -1259,7 +1286,8 @@
                 39.7168,
                 140.1299
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d4-gono-akita.geojson"
           },
           {
             "id": "d4-akita-walk",
@@ -1278,7 +1306,8 @@
                 39.7174,
                 140.1289
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d4-akita-walk.geojson"
           }
         ]
       },
@@ -1380,7 +1409,8 @@
                 39.7168,
                 140.1299
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d5-akita-walk.geojson"
           },
           {
             "id": "d5-akita-innai",
@@ -1407,7 +1437,8 @@
                 39.049583,
                 140.413917
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d5-akita-innai.geojson"
           },
           {
             "id": "d5-innai-shinjo",
@@ -1426,7 +1457,8 @@
                 38.762681,
                 140.306064
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d5-innai-shinjo.geojson"
           },
           {
             "id": "d5-shinjo-yamagata",
@@ -1449,7 +1481,8 @@
                 38.248708,
                 140.327456
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d5-shinjo-yamagata.geojson"
           },
           {
             "id": "d5-yamagata-walk",
@@ -1464,7 +1497,8 @@
                 38.248267,
                 140.327699
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d5-yamagata-walk.geojson"
           }
         ]
       },
@@ -1585,7 +1619,8 @@
                 38.595689,
                 140.375292
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d6-rail-out.geojson"
           },
           {
             "id": "d6-ginzan-bus-out",
@@ -1604,7 +1639,8 @@
                 38.572,
                 140.528
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d6-ginzan-bus-out.geojson"
           },
           {
             "id": "d6-ginzan-walk",
@@ -1623,7 +1659,8 @@
                 38.572,
                 140.528
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d6-ginzan-walk.geojson"
           },
           {
             "id": "d6-ginzan-bus-back",
@@ -1642,7 +1679,8 @@
                 38.595689,
                 140.375292
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d6-ginzan-bus-back.geojson"
           },
           {
             "id": "d6-rail-back",
@@ -1661,7 +1699,8 @@
                 38.248708,
                 140.327456
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d6-rail-back.geojson"
           }
         ]
       },
@@ -1809,7 +1848,8 @@
                 38.16743,
                 140.39397
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d7-zao-bus-out.geojson"
           },
           {
             "id": "d7-zao-terminal-walk",
@@ -1824,7 +1864,8 @@
                 38.161659,
                 140.395154
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d7-zao-terminal-walk.geojson"
           },
           {
             "id": "d7-zao-ropeway",
@@ -1851,7 +1892,8 @@
                 38.161659,
                 140.395154
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d7-zao-ropeway.geojson"
           },
           {
             "id": "d7-zao-bus-back",
@@ -1870,7 +1912,8 @@
                 38.248708,
                 140.327456
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d7-zao-bus-back.geojson"
           },
           {
             "id": "d7-yamagata-rail",
@@ -1905,7 +1948,8 @@
                 35.6812,
                 139.7671
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d7-yamagata-rail.geojson"
           },
           {
             "id": "d7-narita-express",
@@ -1928,7 +1972,8 @@
                 35.7732,
                 140.3872
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/rail-d7-narita-express.geojson"
           },
           {
             "id": "d7-shuttle",
@@ -1947,7 +1992,8 @@
                 35.7842,
                 140.37962
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d7-shuttle.geojson"
           }
         ]
       },
@@ -2120,7 +2166,8 @@
                 35.7639,
                 140.3842
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/japan-tohoku-family-2027/road-d8-shuttle.geojson"
           },
           {
             "id": "d8-flight",

@@ -187,7 +187,7 @@
         "广州至德里规划15:35中国时间起飞、19:00印度时间抵达；返程规划德里20:20印度时间起飞、次日广州04:15中国时间抵达。仅参考南航公布航线时刻，2027具体班期、航站楼、票价、行李与退改条件尚未确认，不填写航班号。",
         "德里至那格浦尔国内段仅按约2小时飞行规划；2月14日国内航班计划12:30抵德里，国际20:20起飞，预留7小时50分衔接。分票时核实提取行李、重办托运、国内转国际航站楼及误机责任。",
         "2月6日为2027年农历正月初一。本方案覆盖春节，但未取得对应方向的四人机票报价，不能仅因春节断言机票更贵；用完整往返含税家庭价比较邻近日期。",
-        "那格浦尔机场至彭奇树屋旅舍（Pench Tree Lodge）约140公里为路网估算；酒店官网要求导航先到苏克塔拉简易机场，再设酒店，接送方需核实该进路。出租车分段仅示意端点，不当作可执行导航，也未编造中间控制点坐标。",
+        "那格浦尔机场客运航站楼至彭奇树屋旅舍（Pench Tree Lodge）按酒店建议经苏克塔拉简易机场附近，地图道路轨迹约 148 公里。接送方出发前仍需确认进路。待选酒店和解散区域的路线以区域代表点规划。",
         "酒店至卡尔马吉里单程约11公里/30分钟、至卡蒂亚约16公里/40分钟，均为保守规划估算。彭奇国家公园至坎哈国家公园约170公里，预留4小时交通和1小时午餐休息；坎哈国家公园至那格浦尔约270公里，预留5小时30分交通和1小时30分休息。均须出发前再查路况。",
         "带司机商务车或运动型多用途车需确认全座安全带、适龄儿童座椅、行李空间、司机费用、通行费和每约90—120分钟休息条件；用户未提供每日最大车程，最长公路转场须在预订前确认可接受。",
         "每日住宿均按当晚1晚计算，续住日不重复退房；住宿卡片中的入住时间表示当日返回酒店的规划时刻，次日离店时间表示次日出门活动或最终退房的规划时刻，并非酒店公布的入住政策。跨夜住宿停靠点已标记为次日离开。"
@@ -377,6 +377,14 @@
     {
       "label": "开源路径规划引擎（OSRM）实际查询：坎哈大地旅舍（Kanha Earth Lodge）至那格浦尔机场附近约268公里，住宿点不同需重算",
       "url": "https://router.project-osrm.org/route/v1/driving/80.486897,22.266545;79.0552,21.0922?overview=false"
+    },
+    {
+      "label": "开放街图 · 那格浦尔机场客运航站楼上落客车道",
+      "url": "https://www.openstreetmap.org/way/1001768135"
+    },
+    {
+      "label": "开放街图 · 苏克塔拉机场进场道路",
+      "url": "https://www.openstreetmap.org/way/918585192"
     }
   ],
   "days": [
@@ -511,25 +519,26 @@
                 77.112222
               ],
               [
-                21.091667,
-                79.048333
+                21.0908023,
+                79.0552787
               ]
             ]
           },
           {
             "id": "day-2-nag-pench-transfer",
-            "label": "那格浦尔机场→彭奇树屋旅舍（Pench Tree Lodge），按酒店指引经苏克塔拉简易机场，端点示意",
+            "label": "那格浦尔机场 → 彭奇树屋旅舍（Pench Tree Lodge），经苏克塔拉简易机场附近",
             "mode": "taxi",
             "coordinates": [
               [
-                21.091667,
-                79.048333
+                21.0908023,
+                79.0552787
               ],
               [
                 21.882423,
                 79.3786325
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-2-nag-pench-transfer.geojson"
           }
         ]
       },
@@ -554,8 +563,8 @@
           "arrival": "12:00",
           "departure": "13:00",
           "coordinates": [
-            21.091667,
-            79.048333
+            21.0908023,
+            79.0552787
           ],
           "timeStatus": "规划值，待确认",
           "note": "机场基准点或机场区域代表位置，待确认；不是具体航站楼、柜台或接机点。国内飞行约2小时为规划值；午餐地点与接车人由服务方私下确认，不公开个人信息。"
@@ -598,7 +607,7 @@
         "segments": [
           {
             "id": "day-3-gate-transfer",
-            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口，接送示意",
+            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -609,11 +618,12 @@
                 21.8270422,
                 79.3186667
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-gate-transfer.geojson"
           },
           {
             "id": "day-3-hotel-transfer",
-            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认），接送示意",
+            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -624,7 +634,8 @@
                 21.882423,
                 79.3786325
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-hotel-transfer.geojson"
           }
         ]
       },
@@ -693,7 +704,7 @@
         "segments": [
           {
             "id": "day-4-gate-transfer",
-            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口，接送示意",
+            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -704,11 +715,12 @@
                 21.8270422,
                 79.3186667
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-gate-transfer.geojson"
           },
           {
             "id": "day-4-hotel-transfer",
-            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认），接送示意",
+            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -719,7 +731,8 @@
                 21.882423,
                 79.3786325
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-hotel-transfer.geojson"
           }
         ]
       },
@@ -814,7 +827,7 @@
         "segments": [
           {
             "id": "day-5-gate-transfer",
-            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口，接送示意",
+            "label": "彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）→卡尔马吉里入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -825,11 +838,12 @@
                 21.8270422,
                 79.3186667
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-gate-transfer.geojson"
           },
           {
             "id": "day-5-hotel-transfer",
-            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认），接送示意",
+            "label": "卡尔马吉里入口→彭奇树屋旅舍（Pench Tree Lodge）家庭别墅（首选，四人入住待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -840,7 +854,8 @@
                 21.882423,
                 79.3786325
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-3-hotel-transfer.geojson"
           }
         ]
       },
@@ -909,7 +924,7 @@
         "segments": [
           {
             "id": "day-6-pench-kanha-transfer",
-            "label": "彭奇树屋旅舍（Pench Tree Lodge）→坎哈大地旅舍（Kanha Earth Lodge），包车端点示意",
+            "label": "彭奇树屋旅舍（Pench Tree Lodge）→坎哈大地旅舍（Kanha Earth Lodge）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -920,7 +935,8 @@
                 22.266545,
                 80.486897
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-6-pench-kanha-transfer.geojson"
           }
         ]
       },
@@ -976,7 +992,7 @@
         "segments": [
           {
             "id": "day-7-gate-transfer",
-            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口，接送示意",
+            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -987,11 +1003,12 @@
                 22.3082305,
                 80.5218441
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-gate-transfer.geojson"
           },
           {
             "id": "day-7-hotel-transfer",
-            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认），接送示意",
+            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1002,7 +1019,8 @@
                 22.266545,
                 80.486897
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-hotel-transfer.geojson"
           }
         ]
       },
@@ -1071,7 +1089,7 @@
         "segments": [
           {
             "id": "day-8-gate-transfer",
-            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口，接送示意",
+            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1082,11 +1100,12 @@
                 22.3082305,
                 80.5218441
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-gate-transfer.geojson"
           },
           {
             "id": "day-8-hotel-transfer",
-            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认），接送示意",
+            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1097,7 +1116,8 @@
                 22.266545,
                 80.486897
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-hotel-transfer.geojson"
           }
         ]
       },
@@ -1166,7 +1186,7 @@
         "segments": [
           {
             "id": "day-9-gate-transfer",
-            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口，接送示意",
+            "label": "坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）→卡蒂亚入口",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1177,11 +1197,12 @@
                 22.3082305,
                 80.5218441
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-gate-transfer.geojson"
           },
           {
             "id": "day-9-hotel-transfer",
-            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认），接送示意",
+            "label": "卡蒂亚入口→坎哈大地旅舍（Kanha Earth Lodge）两间别墅（首选，待确认）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1192,7 +1213,8 @@
                 22.266545,
                 80.486897
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-7-hotel-transfer.geojson"
           }
         ]
       },
@@ -1261,7 +1283,7 @@
         "segments": [
           {
             "id": "day-10-kanha-nag-transfer",
-            "label": "坎哈大地旅舍（Kanha Earth Lodge）→那格浦尔瓦尔达路待选酒店，包车示意",
+            "label": "坎哈大地旅舍（Kanha Earth Lodge）→那格浦尔瓦尔达路待选酒店（按酒店候选区域规划）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1272,7 +1294,8 @@
                 21.1036478,
                 79.0682984
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-10-kanha-nag-transfer.geojson"
           }
         ]
       },
@@ -1328,7 +1351,7 @@
         "segments": [
           {
             "id": "day-11-nag-airport-transfer",
-            "label": "那格浦尔酒店→机场，包车示意",
+            "label": "那格浦尔机场附近酒店区域（待选） → 客运航站楼",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1336,10 +1359,11 @@
                 79.0682984
               ],
               [
-                21.091667,
-                79.048333
+                21.0908023,
+                79.0552787
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-11-nag-airport-transfer.geojson"
           },
           {
             "id": "day-11-domestic-flight",
@@ -1347,8 +1371,8 @@
             "mode": "flight",
             "coordinates": [
               [
-                21.091667,
-                79.048333
+                21.0908023,
+                79.0552787
               ],
               [
                 28.568611,
@@ -1396,8 +1420,8 @@
           "arrival": "08:30",
           "departure": "10:30",
           "coordinates": [
-            21.091667,
-            79.048333
+            21.0908023,
+            79.0552787
           ],
           "timeStatus": "规划值，待确认",
           "note": "机场基准点或机场区域代表位置，待确认；不是具体航站楼、柜台或接机点。实际航班待确认，预留国内值机和安检。"
@@ -1444,7 +1468,7 @@
         "segments": [
           {
             "id": "day-12-guangzhou-transfer",
-            "label": "广州白云机场→天河区解散区域，包车端点示意",
+            "label": "广州白云机场→天河区解散区域（按解散区域规划）",
             "mode": "taxi",
             "coordinates": [
               [
@@ -1455,7 +1479,8 @@
                 23.12712,
                 113.356424
               ]
-            ]
+            ],
+            "geometryFile": "data/routes/india-safari-family-2027/day-12-guangzhou-transfer.geojson"
           }
         ]
       },

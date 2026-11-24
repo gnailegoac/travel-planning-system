@@ -85,8 +85,15 @@ for (const entry of catalog.trips ?? []) {
           }
           if (!segment.geometryFile) {
             errors.push(`${entry.file}: ${day.id}/${segment.id} 自驾段缺少 geometryFile`);
-            continue;
           }
+        } else if (segment.mode === 'flight') {
+          if (!hasValidLatLngs(segment.coordinates)) {
+            errors.push(`${entry.file}: ${day.id}/${segment.id} 航班至少需要两个有效坐标`);
+          }
+        } else if (!segment.geometryFile && !hasValidLatLngs(segment.coordinates)) {
+          errors.push(`${entry.file}: ${day.id}/${segment.id} 至少需要两个有效坐标或有效轨迹文件`);
+        }
+        if (segment.geometryFile) {
           const geometryPath = resolve(publicDirectory, segment.geometryFile);
           const relativeGeometryPath = relative(publicDirectory, geometryPath);
           if (relativeGeometryPath.startsWith('..') || isAbsolute(relativeGeometryPath)) {
@@ -105,8 +112,6 @@ for (const entry of catalog.trips ?? []) {
           } catch (error) {
             errors.push(`${entry.file}: ${day.id}/${segment.id} 无法读取路线文件：${error.message}`);
           }
-        } else if (!hasValidLatLngs(segment.coordinates)) {
-          errors.push(`${entry.file}: ${day.id}/${segment.id} 非自驾段至少需要两个有效坐标`);
         }
       }
     }
