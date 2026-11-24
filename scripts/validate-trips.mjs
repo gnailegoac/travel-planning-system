@@ -6,7 +6,7 @@ import { validateTrip } from '../src/lib/trip.js';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const tripsDirectory = resolve(root, 'public', 'data', 'trips');
 const publicDirectory = resolve(root, 'public');
-const supportedRouteModes = new Set(['driving', 'shuttle', 'walk', 'flight', 'taxi']);
+const supportedRouteModes = new Set(['driving', 'shuttle', 'walk', 'flight', 'taxi', 'train', 'bus']);
 
 async function readJson(path) {
   return JSON.parse(await readFile(path, 'utf8'));

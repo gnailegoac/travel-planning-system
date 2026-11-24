@@ -1,0 +1,1774 @@
+{
+  "schemaVersion": 1,
+  "id": "japan-tohoku-family-2027",
+  "title": "日本东北冬季亲子游 · 青森与秋田五能线 8 天",
+  "subtitle": "香港直飞仙台进｜白神号看日本海｜成田直飞成都回｜8 天 7 晚",
+  "status": "planning",
+  "statusLabel": "行程规划 · 航班和酒店待预订",
+  "versionDate": "2026-11-24",
+  "timezone": "Asia/Tokyo",
+  "currency": "CNY",
+  "startDate": "2027-01-26",
+  "endDate": "2027-02-02",
+  "origin": "广州出发，经香港国际机场",
+  "destination": "日本东北 · 青森、弘前、秋田，返抵成都天府",
+  "travelers": {
+    "adults": 2,
+    "children": 2,
+    "seniors": 0
+  },
+  "tags": [
+    "亲子",
+    "雪景与树冰",
+    "五能线白神号",
+    "雪地动物园"
+  ],
+  "keyDecisions": [
+    {
+      "id": "flight-routing",
+      "decision": "香港直飞仙台，返程从成田直飞成都天府。",
+      "reason": "仙台入境后搭新干线，首晚到青森。查到的川航成田直飞班表在 2 月 1 日周一没有这班，2 月 2 日周二有班，整段顺延一天仍住七晚。",
+      "tradeoff": "首日傍晚抵达青森，订房时保留晚到入住。秋田到成田的铁路和国际航班分两天完成。"
+    },
+    {
+      "id": "route-coast",
+      "decision": "把五能线白神号排成青森到秋田的单程转场。",
+      "reason": "2 号上午行经鰺泽、千叠敷、深浦等海岸段。海、雪、车窗与便当集中在同一天，四个人可尝试订同一个海侧卡座。",
+      "tradeoff": "全程 5 小时 20 分钟。当天午后只留秋田站边的可取消活动，两名孩子可在车上吃点心和休息。"
+    },
+    {
+      "id": "city-selection",
+      "decision": "青森 3 晚、秋田 3 晚、成田 1 晚。",
+      "reason": "青森两天可按天气互换八甲田与弘前，秋田保留周六雪地动物园，周日只排市内半天。",
+      "tradeoff": "仙台只换乘。浅虫水族馆为青森天气备选。"
+    },
+    {
+      "id": "rail-tickets",
+      "decision": "两段新干线按单买指定席；1 月 28–29 日比较五能线两日票，再单买白神号指定席。",
+      "reason": "两日票可用于弘前往返和白神号的乘车券部分，白神号四人座位单独订。1 月 26 日仙台至新青森与 2 月 1 日秋田至东京分别按单程指定席估算。",
+      "tradeoff": "白神号是主要体验，优先确认四人座位。五能线两日票可到青森站购票窗口或符合条件的设备办理，改行程时按实际乘车方案重算。"
+    }
+  ],
+  "fallbackPlans": [
+    {
+      "id": "sendai-late",
+      "trigger": "UO890 延误、仙台入境较慢或铁路线临时受影响。",
+      "action": "机场线搭下一班。仙台站隼号可查 17:53 发车、19:37 到新青森，或 18:54 发车、20:40 到新青森，再转奥羽本线或搭出租车。若已不适合连夜北上，在仙台站附近住一晚，通知青森酒店并次晨北上，按到达时间调整八甲田预约。",
+      "priority": "为四人留换乘时间和晚间住宿"
+    },
+    {
+      "id": "shirakami-wind",
+      "trigger": "五能线强风停运，或四人连座无法安排。",
+      "action": "奥羽本线正常时，可搭超级津轻 2 号青森 12:40 至秋田 15:12。若铁路也受影响，先改签并核对青森续住和秋田取消政策。",
+      "priority": "保留秋田周末活动，优先确认可执行的路段"
+    },
+    {
+      "id": "hakkoda-closure",
+      "trigger": "八甲田缆车停运、山路受限，或山顶能见度低。",
+      "action": "1 月 27 日和 28 日可对调，巴士预约同步调整。两天均不适合上山时，按当天开放情况去浅虫水族馆或青森市内室内展馆。",
+      "priority": "孩子舒适、返城交通和当天运行"
+    },
+    {
+      "id": "akita-zoo-weather",
+      "trigger": "大森山动物园临时闭园，或户外天气太冷。",
+      "action": "改去秋田站相连的自然科学学习馆，或把周日的民俗艺能传承馆提前。周日可休息。",
+      "priority": "室内活动与短交通"
+    },
+    {
+      "id": "return-snow",
+      "trigger": "2 月 1 日秋田新干线提示大雪或延误。",
+      "action": "改乘可订到的较早班次，晚上抵达成田附近。错过东京站 18:03 的成田特快可查 18:33 等后续班次，并同步核对酒店接驳。",
+      "priority": "2 月 2 日成田直飞成都"
+    }
+  ],
+  "preparation": [
+    {
+      "kind": "transport",
+      "title": "航班与铁路",
+      "items": [
+        "1 月 26 日香港快运 UO890（香港 09:00 → 仙台 14:05）按公开排班规划。香港机场第 2 航站楼办理值机，暂按 06:30 到机场。广州前往香港机场的方式和时间由家庭确定。",
+        "2 月 2 日四川航空 3U3962（成田 16:40 → 成都天府 21:45）按公开排班规划，参考成田第 1 航站楼北翼、天府第 1 航站楼。航班均用当地时间，香港、成都 UTC+8，日本 UTC+9。飞行时间分别为 4 小时 05 分和 6 小时 05 分。",
+        "仙台机场至青森自行转铁路。入境取行李后按实际时间选择车次。购票时核对机票的托运行李、四人余位和价格。",
+        "四人指定席的日期为 1 月 26 日隼号、1 月 29 日白神号、2 月 1 日小町号与成田特快。按铁路通常提前一个月开售，白神号预计 12 月 29 日日本时间 10:00 开售。先确认白神号座位，再核对五能线两日票。隼号选开往新青森的车厢。",
+        "地图点位用于行程定位。列车按沿线车站描绘，各交通图线为示意。"
+      ]
+    },
+    {
+      "kind": "documents",
+      "title": "证件与住宿",
+      "items": [
+        "如持中国大陆普通护照，从日本驻广州总领事馆确认适用签证及指定送签机构。进行不可退预订前，先复核签证要求和最新官方出行信息。",
+        "1 月 26 日入住、29 日退房，首选青森大和鲁内酒店无烟标准双床（Moderate Twin）两间，每间 24.87 平方米、两张 110 厘米宽的床。青森站东口步行约 5 分钟。酒店常规 14:00 起入住、11:00 前退房。首晚计划 19:20 到店，航班或列车延误时联系酒店。",
+        "青森的两间双床也可改订青森艺术酒店。同日期按两间双人房、儿童独立占床的成人计价口径，参考约 4,600 元。酒店离青森站步行约 15 分钟，若改住这里，首晚抵达和出发乘白神号的早晨安排短程出租车。",
+        "1 月 29 日入住、2 月 1 日退房，秋田大都会酒店北翼禁烟标准双床两间，每间约 21 平方米、两张 100 厘米宽的床。到秋田站后可经站内商场通道前往本馆前台。酒店常规 15:00 起入住、11:00 前退房。",
+        "青森、秋田按每间 1 名成人和 1 名儿童、各睡独立床预订，优先请求相邻房。如想四人同住，可比较青森的 42.8 平方米豪华双床加床，以及秋田北翼的 35.6 平方米概念转角双床加两套日式寝具。四人房和加床价格另查。",
+        "2 月 1 日入住、2 日退房，成田日航酒店本馆无烟日式家庭房（J-Style）一间，33 平方米、四套独立榻榻米寝具，两名儿童均按占床人数查询。酒店 15:00 起入住、11:00 前退房。抵达时从机场第 2 航站楼乘免费班车，次日乘班车去第 1 航站楼。",
+        "七晚纯房费暂按人民币 11,100 元编列，早餐归入餐饮。指定日期公开报价用于估算。相邻房、取消条件和最终价需在下单前确认。"
+      ]
+    },
+    {
+      "kind": "weather",
+      "title": "看雪与备选",
+      "items": [
+        "出发前及上山当天检查八甲田缆车与 JR 巴士运行状态。上山从青森站出发需预约，座位预约费每席 300 日元，乘车另付车费。返程现场排队且满员可能无法上车，13:25 前到山麓站候车。当前末班 15:03 从山麓站开出。",
+        "按防滑防水鞋、手套和儿童干袜准备，山顶只在工作人员开放的观景范围内短停。弘前城天守内部目前长期休止，公园按开放步道走。",
+        "1 月 30 日是秋田大森山动物园冬季开放日。园门冬季无直达巴士，安排往返出租车。带孩子先看户外重点区域，冷了就在访客中心休息。"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "预算口径",
+      "items": [
+        "费用以人民币列四人合计。日元项目按规划换算率 100 日元约合 4.8 元人民币并取整。两段国际单程、酒店与两地接送均采用预算估价。",
+        "两名儿童的门票资格按各经营方的年龄或学籍规则确认。预算按占座和较保守的儿童收费口径预留。购物和大件雪地装备按个人需求另计。"
+      ]
+    }
+  ],
+  "sourceLinks": [
+    {
+      "label": "仙台机场 · 香港快运冬航季每日直飞",
+      "url": "https://www.sendai-airport.co.jp/notice/20260826_hk_express.html"
+    },
+    {
+      "label": "香港快运 · 香港至仙台直飞",
+      "url": "https://www.hkexpress.com/en/flights-from-hong-kong-to-sendai"
+    },
+    {
+      "label": "香港快运 · 香港机场值机",
+      "url": "https://www.hkexpress.com/zh-cn/travel-help/check-in-guide"
+    },
+    {
+      "label": "航班时刻资料 · 香港快运 UO890 分日期排班",
+      "url": "https://flyteam.jp/flightnumber/UO890"
+    },
+    {
+      "label": "成田机场 · 四川航空出发航班",
+      "url": "https://www.narita-airport.jp/en/flight/dep-search/?keywordAirlineCodeV=3U"
+    },
+    {
+      "label": "航班时刻资料 · 川航 3U3962 分日期排班",
+      "url": "https://flyteam.jp/en/flightnumber/3U3962"
+    },
+    {
+      "label": "仙台机场铁路 · 机场往仙台站",
+      "url": "https://www.senat.co.jp/en/sendaiair"
+    },
+    {
+      "label": "JR 东日本 · 隼号 31 号",
+      "url": "https://timetables.jreast.co.jp/2612/train/125/129793.html"
+    },
+    {
+      "label": "JR 东日本 · 隼号 33 号",
+      "url": "https://timetables.jreast.co.jp/2612/train/110/111172.html"
+    },
+    {
+      "label": "JR 东日本 · 隼号 35 号",
+      "url": "https://timetables.jreast.co.jp/2612/train/030/030482.html"
+    },
+    {
+      "label": "JR 东日本 · 新青森至青森普通列车",
+      "url": "https://timetables.jreast.co.jp/2612/train/045/046761.html"
+    },
+    {
+      "label": "JR 东日本 · 成田特快 47 号",
+      "url": "https://timetables.jreast.co.jp/en/2612/train/030/031521.html"
+    },
+    {
+      "label": "JR 东日本 · 成田特快单程票价",
+      "url": "https://www.jreast.co.jp/en/multi/nex/tickets/"
+    },
+    {
+      "label": "成田日航酒店 · 4 人日式家庭房",
+      "url": "https://www.nikko-narita.com/english/stay/room/"
+    },
+    {
+      "label": "成田日航酒店 · 2 月 1 日四人家庭房官网查价",
+      "url": "https://book.okura.com/booking/result?code=0190a022-3a78-75ba-834b-07dddd7dae0d&adults=4&room_type_code=53&checkin=2027-02-01&checkout=2027-02-02"
+    },
+    {
+      "label": "成田日航酒店 · 儿童入住与退房规则",
+      "url": "https://www.nikko-narita.com/english/stay/faq.html"
+    },
+    {
+      "label": "成田日航酒店 · 机场接驳车",
+      "url": "https://www.nikko-narita.com/english/access/bus_greet.html"
+    },
+    {
+      "label": "浅虫水族馆 · 开馆与票价",
+      "url": "https://asamushi-aqua.com/userguide/fee"
+    },
+    {
+      "label": "JR 东日本 · 列车时刻查询",
+      "url": "https://timetables.jreast.co.jp/en/"
+    },
+    {
+      "label": "JR 东日本 · 指定席开售和儿童车票",
+      "url": "https://www.jreast.co.jp/en/multi/faq/?lang=en"
+    },
+    {
+      "label": "JR 东日本 · 新干线电子车票价格调整",
+      "url": "https://www.jreast.co.jp/press/2025/20260128_ho02.pdf"
+    },
+    {
+      "label": "JR 东日本 · 隼号普通期电子车票明细",
+      "url": "https://www.eki-net.com/top/e-ticket/pdf/pr_tohoku_hokkaido_hayabusa_normal.pdf"
+    },
+    {
+      "label": "青森大和鲁内酒店 · 青森站交通",
+      "url": "https://www.daiwaroynet.jp/aomori/access/"
+    },
+    {
+      "label": "青森大和鲁内酒店 · 双床房和四人入住选项",
+      "url": "https://www.daiwaroynet.jp/aomori/room/"
+    },
+    {
+      "label": "青森大和鲁内酒店 · 儿童住宿规则",
+      "url": "https://www.daiwaroynet.jp/aomori/facilities/"
+    },
+    {
+      "label": "乐天旅行 · 青森大和鲁内酒店 1 月 26 日至 29 日双人房查价",
+      "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/167605?f_nen1=2027&f_tuki1=1&f_hi1=26&f_nen2=2027&f_tuki2=1&f_hi2=29&f_heya_su=2&f_otona_su=2"
+    },
+    {
+      "label": "青森艺术酒店 · 官方交通与房型",
+      "url": "https://iconia.co.jp/en-us/hotel-art-hotel-aomori-aomori/"
+    },
+    {
+      "label": "乐天旅行 · 青森艺术酒店 1 月 26 日至 29 日双人房查价",
+      "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/172789?f_nen1=2027&f_tuki1=1&f_hi1=26&f_nen2=2027&f_tuki2=1&f_hi2=29&f_heya_su=2&f_otona_su=2"
+    },
+    {
+      "label": "青森大和鲁内酒店 · 早餐时段和价格",
+      "url": "https://www.daiwaroynet.jp/aomori/breakfast/"
+    },
+    {
+      "label": "青森睡魔之家 · 开馆时段",
+      "url": "https://www.nebuta.jp/warasse/shisetsu/business-day.html"
+    },
+    {
+      "label": "JR 巴士东北 · 八甲田冬季线路与运价",
+      "url": "https://www.jrbustohoku.co.jp/route/11/283/"
+    },
+    {
+      "label": "JR 巴士东北 · 八甲田车位预约规则",
+      "url": "https://www.jrbustohoku.co.jp/route/11/287/"
+    },
+    {
+      "label": "八甲田缆车 · 营运时段与往返票价",
+      "url": "https://hakkoda-ropeway.jp/en/fare_time/"
+    },
+    {
+      "label": "八甲田缆车 · 运行与树冰季节",
+      "url": "https://hakkoda-ropeway.jp/en/faq/"
+    },
+    {
+      "label": "弘前公园 · 冬季开放与天守工程",
+      "url": "https://www.hirosakipark.or.jp/hirosakipark/"
+    },
+    {
+      "label": "青森县观光官网 · 津轻藩睡魔村",
+      "url": "https://aomori-tourism.com/spot/detail_211.html"
+    },
+    {
+      "label": "青森县立美术馆 · 年度开放日历",
+      "url": "https://www.aomori-museum.jp/assets/uploads/2026/03/1773031582-128ab192725715292e415fefc95ee0c5.pdf"
+    },
+    {
+      "label": "日本驻广州总领事馆 · 中国公民赴日旅游签证",
+      "url": "https://www.guangzhou.cn.emb-japan.go.jp/itpr_zh/visa_00004.html"
+    },
+    {
+      "label": "中国文旅部转载外交部 · 2026 年 3 月赴日出行提示",
+      "url": "https://www.mct.gov.cn/ggfw/cxts/202603/t20260327_965195.htm"
+    },
+    {
+      "label": "JR 东日本 · 1 月白神号运行日历",
+      "url": "https://www.jreast.co.jp/multi/joyful/shirakami_timetable.html"
+    },
+    {
+      "label": "JR 东日本 · 白神号 2 号逐站时刻",
+      "url": "https://timetables.jreast.co.jp/en/2612/train/020/022911.html"
+    },
+    {
+      "label": "JR 东日本 · 五能线、卡座与海景区间",
+      "url": "https://www.jreast.co.jp/railway/joyful/pdf/akita/pamph20262027.pdf"
+    },
+    {
+      "label": "JR 东日本 · 五能线两日票",
+      "url": "https://www.jreast.co.jp/tickets/info.aspx?GoodsCd=3006"
+    },
+    {
+      "label": "JR 东日本 · 五能线运行状态",
+      "url": "https://traininfo.jreast.co.jp/train_info/line.aspx?gid=4&lineid=gonoline"
+    },
+    {
+      "label": "JR 东日本 · 超级津轻 2 号备选",
+      "url": "https://timetables.jreast.co.jp/2612/train/095/098761.html"
+    },
+    {
+      "label": "JR 东日本 · 秋田至东京小町 24 号",
+      "url": "https://timetables.jreast.co.jp/en/2612/train/030/033891.html"
+    },
+    {
+      "label": "JR 东日本 · 小町号普通期电子车票价",
+      "url": "https://www.eki-net.com/top/e-ticket/pdf/pr_akita_normal.pdf"
+    },
+    {
+      "label": "秋田大都会酒店 · 秋田站室内通道",
+      "url": "https://akita.hotel-metropolitan.com/access/"
+    },
+    {
+      "label": "JR 东日本 · 秋田大都会酒店本馆至北翼一层通道",
+      "url": "https://www.jreast.co.jp/press/2020/akita/20201126_a05.pdf"
+    },
+    {
+      "label": "秋田大都会酒店 · 北翼禁烟标准双床房",
+      "url": "https://akita.hotel-metropolitan.com/stay/rooms/NorthWing/northwing_twin_standard.html"
+    },
+    {
+      "label": "JTB · 秋田大都会酒店 1 月 29 日至 2 月 1 日查价",
+      "url": "https://www.jtb.co.jp/kokunai-hotel/htl/2209087/plan/?checkindate=20270129&backdate=20270201&godate=20270129&staynight=3&traveldays=4&room=1&roomassign=m1a1&shouldresearch=1&displaymode=room"
+    },
+    {
+      "label": "秋田大都会酒店 · 北翼四人同住选项",
+      "url": "https://akita.hotel-metropolitan.com/stay/rooms/NorthWing/northwing_concept_corner_standard.html"
+    },
+    {
+      "label": "秋田大都会酒店 · 早餐时段和价格",
+      "url": "https://akita.hotel-metropolitan.com/stay/breakfast/index.html"
+    },
+    {
+      "label": "秋田市 · 大森山动物园冬季开放与门票",
+      "url": "https://www.city.akita.lg.jp/zoo/guide/1003691.html"
+    },
+    {
+      "label": "秋田市 · 冬季动物园交通",
+      "url": "https://www.city.akita.lg.jp/zoo/guide/1003687.html"
+    },
+    {
+      "label": "秋田 ALVE · 自然科学学习馆",
+      "url": "https://www.alve.jp/facility/ns/ns_info"
+    },
+    {
+      "label": "秋田市 · 民俗艺能传承馆",
+      "url": "https://www.city.akita.lg.jp/shisetsu/hakubutukan-tpsyokan/1011113/1006737.html"
+    }
+  ],
+  "days": [
+    {
+      "id": "day-1",
+      "date": "2027-01-26",
+      "title": "香港直飞仙台，傍晚到青森",
+      "summary": "早上从香港飞仙台。入境后换机场线和新干线，顺利时 18:58 到青森站，直奔酒店并就近晚餐。",
+      "route": {
+        "method": "国际航班、仙台机场线、东北新干线、奥羽本线、步行",
+        "distanceKm": 392,
+        "flightDistanceKm": 2930,
+        "durationMinutes": 392,
+        "segments": [
+          {
+            "id": "d1-flight",
+            "mode": "flight",
+            "label": "香港 → 仙台",
+            "coordinates": [
+              [
+                22.3083,
+                113.9369
+              ],
+              [
+                38.1396,
+                140.9221
+              ]
+            ]
+          },
+          {
+            "id": "d1-airport-train",
+            "mode": "train",
+            "label": "仙台机场 → 名取 → 仙台站",
+            "coordinates": [
+              [
+                38.1396,
+                140.9221
+              ],
+              [
+                38.1737,
+                140.8827
+              ],
+              [
+                38.2602,
+                140.8823
+              ]
+            ]
+          },
+          {
+            "id": "d1-shinkansen",
+            "mode": "train",
+            "label": "仙台 → 盛冈 → 八户 → 新青森",
+            "coordinates": [
+              [
+                38.2602,
+                140.8823
+              ],
+              [
+                38.5704,
+                140.9674
+              ],
+              [
+                39.287,
+                141.1137
+              ],
+              [
+                39.7016,
+                141.1364
+              ],
+              [
+                40.5092,
+                141.4311
+              ],
+              [
+                40.8275,
+                140.6935
+              ]
+            ]
+          },
+          {
+            "id": "d1-local-train",
+            "mode": "train",
+            "label": "新青森 → 青森站",
+            "coordinates": [
+              [
+                40.8275,
+                140.6935
+              ],
+              [
+                40.8279,
+                140.7347
+              ]
+            ]
+          },
+          {
+            "id": "d1-hotel-walk",
+            "mode": "walk",
+            "label": "青森站 → 酒店",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.8273,
+                140.7396
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d1-hkg",
+          "name": "香港国际机场第 2 航站楼值机",
+          "kind": "departure",
+          "arrival": "06:30",
+          "departure": "09:00",
+          "coordinates": [
+            22.3083,
+            113.9369
+          ],
+          "timeStatus": "香港时间 · 参考 UO890",
+          "note": "广州到香港机场的接驳方式与出发时间待定。值机和托运行李按香港快运实际指引。"
+        },
+        {
+          "id": "d1-sendai-airport",
+          "name": "仙台机场入境并乘机场线",
+          "kind": "arrival",
+          "arrival": "14:05",
+          "departure": "15:48",
+          "coordinates": [
+            38.1396,
+            140.9221
+          ],
+          "timeStatus": "日本时间 · 航班与机场线参考时刻",
+          "note": "预留约 1 小时 43 分通关、取行李并步行至铁路站。15:48 为目标班次，迟到时搭下一班。"
+        },
+        {
+          "id": "d1-sendai",
+          "name": "仙台站换乘隼号",
+          "kind": "transport",
+          "arrival": "16:13",
+          "departure": "16:53",
+          "coordinates": [
+            38.2602,
+            140.8823
+          ],
+          "timeStatus": "参考隼号 31 号 · 待购票",
+          "note": "留 40 分钟换乘和买便当。若前段拖延，可改查 17:53 隼号 33 号或 18:54 隼号 35 号。"
+        },
+        {
+          "id": "d1-shin-aomori",
+          "name": "新青森站换乘奥羽本线",
+          "kind": "transport",
+          "arrival": "18:39",
+          "departure": "18:52",
+          "coordinates": [
+            40.8275,
+            140.6935
+          ],
+          "timeStatus": "参考公示班次",
+          "note": "新干线晚点或 13 分钟换乘不足时，搭下一班，或乘出租车去青森站附近酒店。"
+        },
+        {
+          "id": "d1-aomori",
+          "name": "抵达青森站",
+          "kind": "arrival",
+          "arrival": "18:58",
+          "departure": "19:10",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "note": "从东口步行去酒店。此日晚餐安排在酒店附近。"
+        },
+        {
+          "id": "d1-hotel",
+          "name": "青森大和鲁内酒店",
+          "kind": "lodging",
+          "arrival": "19:20",
+          "departure": "08:50",
+          "coordinates": [
+            40.8273,
+            140.7396
+          ],
+          "departureDayOffset": 1,
+          "note": "1 月 26 日至 29 日住无烟标准双床两间，每间一大一小各睡一张床。航班或铁路延误时，联系酒店保留晚到入住。"
+        }
+      ],
+      "lodging": {
+        "name": "青森大和鲁内酒店",
+        "area": "青森站东口步行约 5 分钟 · 无烟标准双床",
+        "checkIn": "19:20",
+        "checkOut": "08:50",
+        "continues": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-2",
+      "date": "2027-01-27",
+      "title": "八甲田缆车与树冰",
+      "summary": "上午上山看雪和树冰，约 14:38 返回青森。下午按孩子体力选睡魔之家或回酒店休息。",
+      "route": {
+        "method": "JR 巴士东北、缆车、步行",
+        "distanceKm": 53,
+        "durationMinutes": 170,
+        "segments": [
+          {
+            "id": "d2-bus-out",
+            "mode": "bus",
+            "label": "青森站 → 八甲田缆车山麓站",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.749,
+                140.746
+              ],
+              [
+                40.6809,
+                140.8318
+              ]
+            ]
+          },
+          {
+            "id": "d2-cable",
+            "mode": "shuttle",
+            "label": "八甲田缆车 · 山麓至山顶站往返",
+            "coordinates": [
+              [
+                40.6809,
+                140.8318
+              ],
+              [
+                40.6755,
+                140.8588
+              ]
+            ]
+          },
+          {
+            "id": "d2-bus-back",
+            "mode": "bus",
+            "label": "山麓站 → 青森站",
+            "coordinates": [
+              [
+                40.6809,
+                140.8318
+              ],
+              [
+                40.749,
+                140.746
+              ],
+              [
+                40.8279,
+                140.7347
+              ]
+            ]
+          },
+          {
+            "id": "d2-city",
+            "mode": "walk",
+            "label": "青森站 → 睡魔之家（可选） → 酒店",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.829,
+                140.7359
+              ],
+              [
+                40.8273,
+                140.7396
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d2-bus",
+          "name": "青森站巴士站",
+          "kind": "departure",
+          "arrival": "09:00",
+          "departure": "09:20",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "timeStatus": "冬季公示班次 · 需预约",
+          "note": "拟搭 09:20 的八甲田 4 号。出门前查看巴士和缆车是否正常运行。"
+        },
+        {
+          "id": "d2-base",
+          "name": "八甲田缆车山麓站",
+          "kind": "transport",
+          "arrival": "10:45",
+          "departure": "11:20",
+          "coordinates": [
+            40.6809,
+            140.8318
+          ],
+          "note": "取票、上洗手间、加衣。缆车按 20 分钟班距举例，实际班次以现场运行和排队情况为准。"
+        },
+        {
+          "id": "d2-summit",
+          "name": "八甲田缆车山顶站观景",
+          "kind": "attraction",
+          "arrival": "11:30",
+          "departure": "12:00",
+          "coordinates": [
+            40.6755,
+            140.8588
+          ],
+          "timeStatus": "随现场运行与天气调整",
+          "note": "使用站内和当天开放的展望设施，孩子冷了就进站取暖，短停后坐缆车下山。"
+        },
+        {
+          "id": "d2-return-bus",
+          "name": "山麓站午餐与返城候车",
+          "kind": "meal",
+          "arrival": "12:10",
+          "departure": "13:43",
+          "coordinates": [
+            40.6809,
+            140.8318
+          ],
+          "timeStatus": "13:43 冬季公示返程班次",
+          "note": "山麓站周边吃热食，也可自备午餐。计划 13:25 前到站排队，下一班也是现行末班，15:03 发车。"
+        },
+        {
+          "id": "d2-station-back",
+          "name": "返回青森站",
+          "kind": "arrival",
+          "arrival": "14:38",
+          "departure": "14:50",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "note": "下午自由休息，可进站周边商场补给。"
+        },
+        {
+          "id": "d2-warasse",
+          "name": "睡魔之家瓦拉塞（可选）",
+          "kind": "attraction",
+          "arrival": "15:05",
+          "departure": "16:10",
+          "coordinates": [
+            40.829,
+            140.7359
+          ],
+          "note": "孩子还有体力就看大型祭典灯笼，累了直接回酒店。"
+        },
+        {
+          "id": "d2-hotel",
+          "name": "青森大和鲁内酒店续住",
+          "kind": "lodging",
+          "arrival": "16:30",
+          "departure": "09:00",
+          "departureDayOffset": 1,
+          "coordinates": [
+            40.8273,
+            140.7396
+          ],
+          "note": "表中为参观睡魔之家后的返店时刻。若省略参观，回到青森站后可直接步行返店。"
+        }
+      ],
+      "lodging": {
+        "name": "青森大和鲁内酒店",
+        "area": "青森站东口步行约 5 分钟 · 无烟标准双床",
+        "checkIn": "16:30",
+        "checkOut": "09:00",
+        "continued": true,
+        "continues": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "续住待预订"
+      }
+    },
+    {
+      "id": "day-3",
+      "date": "2027-01-28",
+      "title": "弘前雪中散步与津轻睡魔村",
+      "summary": "从青森坐普通列车去弘前，室内活动与雪地短走交替，下午回青森。",
+      "route": {
+        "method": "奥羽本线、市内短程出租车、步行",
+        "distanceKm": 80,
+        "durationMinutes": 125,
+        "segments": [
+          {
+            "id": "d3-rail",
+            "mode": "train",
+            "label": "青森 ⇄ 弘前",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.8275,
+                140.6935
+              ],
+              [
+                40.7129,
+                140.5897
+              ],
+              [
+                40.5997,
+                140.4855
+              ]
+            ]
+          },
+          {
+            "id": "d3-taxi",
+            "mode": "taxi",
+            "label": "弘前站 ⇄ 弘前公园、津轻藩睡魔村",
+            "coordinates": [
+              [
+                40.5997,
+                140.4855
+              ],
+              [
+                40.6051,
+                140.4673
+              ],
+              [
+                40.6115,
+                140.4672
+              ]
+            ]
+          },
+          {
+            "id": "d3-city",
+            "mode": "walk",
+            "label": "青森站与酒店",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.8273,
+                140.7396
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d3-aomori",
+          "name": "青森站搭奥羽本线",
+          "kind": "departure",
+          "arrival": "09:25",
+          "departure": "09:52",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "timeStatus": "参考本线公示班次",
+          "note": "搭普通车约 45 分钟，出门前核对降雪造成的变化。"
+        },
+        {
+          "id": "d3-hirosaki",
+          "name": "弘前站",
+          "kind": "transport",
+          "arrival": "10:37",
+          "departure": "10:45",
+          "coordinates": [
+            40.5997,
+            140.4855
+          ],
+          "note": "带孩子可坐短程出租车；当地巴士是备选。"
+        },
+        {
+          "id": "d3-park",
+          "name": "弘前公园与弘前城外观",
+          "kind": "attraction",
+          "arrival": "11:00",
+          "departure": "11:45",
+          "coordinates": [
+            40.6051,
+            140.4673
+          ],
+          "note": "从追手门附近进入，依开放步道和雪况走短环线。天守内部长期停止开放，工程也可能影响外观视线。"
+        },
+        {
+          "id": "d3-lunch",
+          "name": "弘前公园北侧午餐",
+          "kind": "meal",
+          "arrival": "12:00",
+          "departure": "13:00",
+          "coordinates": [
+            40.6113,
+            140.4676
+          ],
+          "note": "可以就近选津轻藩睡魔村餐饮区，安排热食和休息。"
+        },
+        {
+          "id": "d3-neputa",
+          "name": "津轻藩睡魔村",
+          "kind": "attraction",
+          "arrival": "13:05",
+          "departure": "14:25",
+          "coordinates": [
+            40.6115,
+            140.4672
+          ],
+          "note": "看弘前扇形灯笼、津轻工艺和现场演示。手作体验需确认可约时段。"
+        },
+        {
+          "id": "d3-hirosaki-back",
+          "name": "弘前站返程",
+          "kind": "transport",
+          "arrival": "14:45",
+          "departure": "15:29",
+          "coordinates": [
+            40.5997,
+            140.4855
+          ],
+          "timeStatus": "参考本线公示班次",
+          "note": "采购点心或在车站取暖，下午回青森。"
+        },
+        {
+          "id": "d3-aomori-back",
+          "name": "返回青森站",
+          "kind": "arrival",
+          "arrival": "16:19",
+          "departure": "16:30",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "note": "晚餐和第二天的便当可在站附近解决。"
+        },
+        {
+          "id": "d3-hotel",
+          "name": "青森大和鲁内酒店续住",
+          "kind": "lodging",
+          "arrival": "16:45",
+          "departure": "07:30",
+          "departureDayOffset": 1,
+          "coordinates": [
+            40.8273,
+            140.7396
+          ],
+          "note": "晚上整理行李，次日 07:30 左右出门，搭 08:09 白神号。"
+        }
+      ],
+      "lodging": {
+        "name": "青森大和鲁内酒店",
+        "area": "青森站东口步行约 5 分钟 · 无烟标准双床",
+        "checkIn": "16:45",
+        "checkOut": "07:30",
+        "continued": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "续住待预订"
+      }
+    },
+    {
+      "id": "day-4",
+      "date": "2027-01-29",
+      "title": "五能线白神号 · 日本海沿岸到秋田",
+      "summary": "白神号 2 号的 5 小时 20 分钟里，海景重点在上午约 10 时至近中午。把这天留给车窗、便当和短暂停留，下午在秋田站附近活动。",
+      "route": {
+        "method": "白神号观光列车、步行",
+        "distanceKm": 248,
+        "durationMinutes": 335,
+        "segments": [
+          {
+            "id": "d4-hotel-rail",
+            "mode": "walk",
+            "label": "青森酒店 → 青森站",
+            "coordinates": [
+              [
+                40.8273,
+                140.7396
+              ],
+              [
+                40.8279,
+                140.7347
+              ]
+            ]
+          },
+          {
+            "id": "d4-gono-north",
+            "mode": "train",
+            "label": "青森 → 弘前 → 五所川原 → 鰺泽 → 千叠敷",
+            "coordinates": [
+              [
+                40.8279,
+                140.7347
+              ],
+              [
+                40.8275,
+                140.6935
+              ],
+              [
+                40.5997,
+                140.4855
+              ],
+              [
+                40.654,
+                140.505
+              ],
+              [
+                40.8095,
+                140.4487
+              ],
+              [
+                40.7767,
+                140.2206
+              ],
+              [
+                40.7678,
+                140.0548
+              ]
+            ]
+          },
+          {
+            "id": "d4-gono-coast",
+            "mode": "train",
+            "label": "千叠敷 → 深浦 → 十二湖 → 岩馆 → 东能代",
+            "coordinates": [
+              [
+                40.7678,
+                140.0548
+              ],
+              [
+                40.6504,
+                139.9295
+              ],
+              [
+                40.5516,
+                139.9419
+              ],
+              [
+                40.409,
+                139.946
+              ],
+              [
+                40.187,
+                140.0665
+              ]
+            ]
+          },
+          {
+            "id": "d4-gono-akita",
+            "mode": "train",
+            "label": "东能代 → 秋田",
+            "coordinates": [
+              [
+                40.187,
+                140.0665
+              ],
+              [
+                39.9498,
+                140.0765
+              ],
+              [
+                39.7168,
+                140.1299
+              ]
+            ]
+          },
+          {
+            "id": "d4-akita-walk",
+            "mode": "walk",
+            "label": "秋田站 → 自然科学学习馆 → 酒店",
+            "coordinates": [
+              [
+                39.7168,
+                140.1299
+              ],
+              [
+                39.7164,
+                140.1314
+              ],
+              [
+                39.7174,
+                140.1289
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d4-aomori",
+          "name": "青森站 · 白神号 2 号",
+          "kind": "departure",
+          "arrival": "07:40",
+          "departure": "08:09",
+          "coordinates": [
+            40.8279,
+            140.7347
+          ],
+          "timeStatus": "JR 东日本公示 · 指定席待订",
+          "note": "提前准备早餐、便当和热饮。四人优先订 2 号车海侧卡座，按车型座位图选座。"
+        },
+        {
+          "id": "d4-senjojiki",
+          "name": "千叠敷站 · 海岸短停",
+          "kind": "attraction",
+          "arrival": "10:15",
+          "departure": "10:30",
+          "coordinates": [
+            40.7678,
+            140.0548
+          ],
+          "timeStatus": "表定短停",
+          "note": "视现场雪况及乘务指引，在车站近处看海或留在车内。乘原车继续前往深浦、十二湖和岩馆，从车窗继续看海。"
+        },
+        {
+          "id": "d4-akita-station",
+          "name": "秋田站午餐",
+          "kind": "meal",
+          "arrival": "13:29",
+          "departure": "14:30",
+          "coordinates": [
+            39.7168,
+            140.1299
+          ],
+          "note": "先到站旁酒店寄存行李，再在站内吃热食。"
+        },
+        {
+          "id": "d4-alve",
+          "name": "秋田自然科学学习馆（可选）",
+          "kind": "attraction",
+          "arrival": "14:40",
+          "departure": "15:40",
+          "coordinates": [
+            39.7164,
+            140.1314
+          ],
+          "note": "车站东口侧，免费。到秋田后按孩子体力决定是否进馆。"
+        },
+        {
+          "id": "d4-hotel",
+          "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+          "kind": "lodging",
+          "arrival": "16:00",
+          "departure": "09:55",
+          "coordinates": [
+            39.7174,
+            140.1289
+          ],
+          "note": "1 月 29 日至 2 月 1 日住北翼禁烟标准双床两间，每间一大一小各睡一张床。可从秋田站经室内通道到本馆前台办理入住。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+        "area": "秋田站旁 · 北翼禁烟标准双床",
+        "checkIn": "16:00",
+        "checkOut": "09:55",
+        "continues": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-5",
+      "date": "2027-01-30",
+      "title": "秋田雪地动物园",
+      "summary": "利用周六的冬季开放日，在大森山动物园看雪和动物。午后回秋田站吃饭休息，天气恶劣则改室内。",
+      "route": {
+        "method": "出租车、步行",
+        "distanceKm": 19,
+        "durationMinutes": 65,
+        "segments": [
+          {
+            "id": "d5-zoo-taxi",
+            "mode": "taxi",
+            "label": "秋田站区 ⇄ 大森山动物园",
+            "coordinates": [
+              [
+                39.7174,
+                140.1289
+              ],
+              [
+                39.6907,
+                140.097
+              ],
+              [
+                39.672,
+                140.0744
+              ]
+            ]
+          },
+          {
+            "id": "d5-hotel-walk",
+            "mode": "walk",
+            "label": "秋田站与酒店",
+            "coordinates": [
+              [
+                39.7168,
+                140.1299
+              ],
+              [
+                39.7174,
+                140.1289
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d5-taxi",
+          "name": "秋田站西口乘车",
+          "kind": "departure",
+          "arrival": "10:00",
+          "departure": "10:10",
+          "coordinates": [
+            39.7168,
+            140.1299
+          ],
+          "note": "冬季没有直达园门的巴士，安排出租车往返，去程时先约好返程接车。"
+        },
+        {
+          "id": "d5-zoo",
+          "name": "大森山动物园 · 雪之动物园",
+          "kind": "attraction",
+          "arrival": "10:40",
+          "departure": "13:00",
+          "coordinates": [
+            39.672,
+            140.0744
+          ],
+          "timeStatus": "冬季周末开放 · 以园方当天为准",
+          "note": "园方 1 月冬季周末 10:00–15:00 开放。以当日开区和动物状态为准，冷了就到访客中心休息。"
+        },
+        {
+          "id": "d5-lunch",
+          "name": "秋田站附近午餐",
+          "kind": "meal",
+          "arrival": "13:30",
+          "departure": "14:15",
+          "coordinates": [
+            39.7168,
+            140.1299
+          ],
+          "note": "吃热食，下午自行决定休息或在站内活动。"
+        },
+        {
+          "id": "d5-hotel",
+          "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+          "kind": "lodging",
+          "arrival": "14:30",
+          "departure": "10:10",
+          "coordinates": [
+            39.7174,
+            140.1289
+          ],
+          "note": "连续第二晚。周日只安排短程室内活动，仍住同一家酒店。",
+          "departureDayOffset": 1
+        }
+      ],
+      "lodging": {
+        "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+        "area": "秋田站旁 · 北翼禁烟标准双床",
+        "checkIn": "14:30",
+        "checkOut": "10:10",
+        "continued": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "续住待预订",
+        "continues": true
+      }
+    },
+    {
+      "id": "day-6",
+      "date": "2027-01-31",
+      "title": "秋田市区休息半日，室内看竿灯",
+      "summary": "睡到自然醒，午前到秋田市民俗艺能传承馆。下午自由休息，继续住秋田站旁。",
+      "route": {
+        "method": "步行或短程出租车",
+        "distanceKm": 3,
+        "durationMinutes": 45,
+        "segments": [
+          {
+            "id": "d6-city",
+            "mode": "walk",
+            "label": "秋田站旁酒店 ⇄ 民俗艺能传承馆",
+            "coordinates": [
+              [
+                39.7174,
+                140.1289
+              ],
+              [
+                39.7189,
+                140.1236
+              ],
+              [
+                39.72037,
+                140.11696
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d6-folk",
+          "name": "秋田市民俗艺能传承馆",
+          "kind": "attraction",
+          "arrival": "10:35",
+          "departure": "11:40",
+          "coordinates": [
+            39.72037,
+            140.11696
+          ],
+          "timeStatus": "公开开放时间 09:30–16:30",
+          "note": "看竿灯祭的展示和影像，按现场安排体验。成人 130 日元，高中生及以下免费。"
+        },
+        {
+          "id": "d6-lunch",
+          "name": "秋田市区午餐和自由休息",
+          "kind": "meal",
+          "arrival": "12:05",
+          "departure": "14:00",
+          "coordinates": [
+            39.7168,
+            140.1299
+          ],
+          "note": "视雪况步行或短程打车，从容吃午餐。若前一日已看竿灯，今天可直接在秋田站周边休息。"
+        },
+        {
+          "id": "d6-hotel",
+          "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+          "kind": "lodging",
+          "arrival": "14:15",
+          "departure": "11:00",
+          "coordinates": [
+            39.7174,
+            140.1289
+          ],
+          "departureDayOffset": 1,
+          "note": "秋田第三晚，可以提早整理次日转场的行李。"
+        }
+      ],
+      "lodging": {
+        "name": "秋田大都会酒店（Hotel Metropolitan Akita）",
+        "area": "秋田站旁 · 北翼禁烟标准双床",
+        "checkIn": "14:15",
+        "checkOut": "11:00",
+        "continued": true,
+        "nights": 1,
+        "rooms": 2,
+        "status": "续住待预订"
+      }
+    },
+    {
+      "id": "day-7",
+      "date": "2027-02-01",
+      "title": "秋田经东京转车，住成田机场旁",
+      "summary": "午后坐小町号到东京站，接成田特快到第 2 航站楼并搭酒店班车。",
+      "route": {
+        "method": "秋田新干线、成田特快、酒店接驳",
+        "distanceKm": 734,
+        "durationMinutes": 317,
+        "segments": [
+          {
+            "id": "d7-akita-rail",
+            "mode": "train",
+            "label": "秋田 → 大曲 → 角馆 → 盛冈 → 东京",
+            "coordinates": [
+              [
+                39.7168,
+                140.1299
+              ],
+              [
+                39.4651,
+                140.4798
+              ],
+              [
+                39.5916,
+                140.5704
+              ],
+              [
+                39.7016,
+                141.1364
+              ],
+              [
+                38.2602,
+                140.8823
+              ],
+              [
+                37.7531,
+                140.4599
+              ],
+              [
+                35.9064,
+                139.6238
+              ],
+              [
+                35.6812,
+                139.7671
+              ]
+            ]
+          },
+          {
+            "id": "d7-narita-express",
+            "mode": "train",
+            "label": "东京 → 千叶 → 成田机场第 2 航站楼",
+            "coordinates": [
+              [
+                35.6812,
+                139.7671
+              ],
+              [
+                35.6132,
+                140.1139
+              ],
+              [
+                35.7276,
+                140.3118
+              ],
+              [
+                35.7732,
+                140.3872
+              ]
+            ]
+          },
+          {
+            "id": "d7-shuttle",
+            "mode": "shuttle",
+            "label": "成田机场第 2 航站楼 → 成田日航酒店",
+            "coordinates": [
+              [
+                35.7732,
+                140.3872
+              ],
+              [
+                35.7639,
+                140.3842
+              ],
+              [
+                35.7842,
+                140.37962
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d7-akita",
+          "name": "秋田站午餐与搭车",
+          "kind": "departure",
+          "arrival": "11:10",
+          "departure": "13:06",
+          "coordinates": [
+            39.7168,
+            140.1299
+          ],
+          "timeStatus": "参考小町 24 号 · 待购票",
+          "note": "在站内午餐或采购便当。若预报降雪可能影响新干线，改乘能订到座位的较早班次。"
+        },
+        {
+          "id": "d7-tokyo",
+          "name": "东京站换乘成田特快",
+          "kind": "transport",
+          "arrival": "17:04",
+          "departure": "18:03",
+          "coordinates": [
+            35.6812,
+            139.7671
+          ],
+          "timeStatus": "参考 JR 东日本工作日班次",
+          "note": "预留 59 分钟从新干线走到成田特快站台。参考成田特快 47 号，坐到第 2 航站楼并下车。"
+        },
+        {
+          "id": "d7-nrt2",
+          "name": "成田机场第 2 航站楼接驳",
+          "kind": "transport",
+          "arrival": "19:02",
+          "departure": "19:35",
+          "coordinates": [
+            35.7732,
+            140.3872
+          ],
+          "timeStatus": "参考公开铁路和酒店班车时刻",
+          "note": "去 1 楼 33 号站台搭酒店班车，经第 1 航站楼后到酒店。若顺利，可乘较早的 19:15 班次。"
+        },
+        {
+          "id": "d7-narita-hotel",
+          "name": "成田日航酒店",
+          "kind": "lodging",
+          "arrival": "19:55",
+          "departure": "11:00",
+          "coordinates": [
+            35.7842,
+            140.37962
+          ],
+          "departureDayOffset": 1,
+          "note": "计划入住本馆无烟日式家庭房（J-Style），33 平方米，四人各睡一套榻榻米寝具。晚上确认次日航班及班车。"
+        }
+      ],
+      "lodging": {
+        "name": "成田日航酒店",
+        "area": "成田机场旁 · 本馆 J-Style 4 人日式家庭房",
+        "checkIn": "19:55",
+        "checkOut": "11:00",
+        "nights": 1,
+        "rooms": 1,
+        "status": "待预订"
+      }
+    },
+    {
+      "id": "day-8",
+      "date": "2027-02-02",
+      "title": "东京成田直飞成都天府",
+      "summary": "退房后就近午餐，13:30 搭酒店班车去第 1 航站楼。傍晚飞成都，预计当地 21:45 抵达。",
+      "route": {
+        "method": "酒店接驳、国际航班",
+        "distanceKm": 6,
+        "flightDistanceKm": 3385,
+        "durationMinutes": 390,
+        "segments": [
+          {
+            "id": "d8-shuttle",
+            "mode": "shuttle",
+            "label": "酒店 → 成田机场第 2 航站楼 → 第 1 航站楼",
+            "coordinates": [
+              [
+                35.7842,
+                140.37962
+              ],
+              [
+                35.7732,
+                140.3872
+              ],
+              [
+                35.7639,
+                140.3842
+              ]
+            ]
+          },
+          {
+            "id": "d8-flight",
+            "mode": "flight",
+            "label": "东京成田 → 成都天府",
+            "coordinates": [
+              [
+                35.7639,
+                140.3842
+              ],
+              [
+                30.3136,
+                104.4408
+              ]
+            ]
+          }
+        ]
+      },
+      "stops": [
+        {
+          "id": "d8-hotel",
+          "name": "成田日航酒店退房与午餐",
+          "kind": "meal",
+          "arrival": "11:00",
+          "departure": "13:30",
+          "coordinates": [
+            35.7842,
+            140.37962
+          ],
+          "note": "房间 11:00 退房，行李可请前台寄存。午餐后乘 13:30 酒店班车去第 1 航站楼。"
+        },
+        {
+          "id": "d8-nrt",
+          "name": "成田机场第 1 航站楼北翼值机",
+          "kind": "departure",
+          "arrival": "13:55",
+          "departure": "16:40",
+          "coordinates": [
+            35.7639,
+            140.3842
+          ],
+          "timeStatus": "日本时间 · 参考 3U3962",
+          "note": "预留约 2 小时 45 分办理托运、安检和出境，出发前核对四川航空航班信息。"
+        },
+        {
+          "id": "d8-tfu",
+          "name": "抵达成都天府机场第 1 航站楼",
+          "kind": "arrival",
+          "arrival": "21:45",
+          "departure": "22:50",
+          "coordinates": [
+            30.3136,
+            104.4408
+          ],
+          "timeStatus": "北京时间 · 参考 3U3962",
+          "note": "约 22:50 出到达厅为规划值。预算预留成都夜间接送，具体目的地和路程待定。"
+        }
+      ],
+      "lodging": null
+    }
+  ],
+  "budget": {
+    "contingencyRate": 0.1,
+    "items": [
+      {
+        "id": "guangzhou-hkg",
+        "category": "transport",
+        "name": "广州至香港机场接驳",
+        "quantity": 1,
+        "unitAmount": 1200,
+        "actualAmount": null,
+        "status": "估算",
+        "note": "四人接驳预留，具体方式待定。若需提前一天住香港，住宿另计。",
+        "dayId": "day-1"
+      },
+      {
+        "id": "hkg-sendai-flight",
+        "category": "transport",
+        "name": "香港至仙台四人单程机票",
+        "quantity": 1,
+        "unitAmount": 5500,
+        "actualAmount": null,
+        "status": "规划占位",
+        "note": "预留四人经济舱及所需托运行李，按实际报价更新。",
+        "dayId": "day-1"
+      },
+      {
+        "id": "narita-chengdu-flight",
+        "category": "transport",
+        "name": "成田至成都天府四人单程机票",
+        "quantity": 1,
+        "unitAmount": 10500,
+        "actualAmount": null,
+        "status": "规划占位",
+        "note": "预留四人经济舱及所需托运行李，按实际报价更新。",
+        "dayId": "day-8"
+      },
+      {
+        "id": "sendai-aomori",
+        "category": "transport",
+        "name": "仙台至新青森隼号",
+        "quantity": 1,
+        "unitAmount": 1650,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "普通期电子车票成人 11,440 日元、儿童 5,720 日元，两大两小合计 34,320 日元。",
+        "dayId": "day-1"
+      },
+      {
+        "id": "gono-pass-and-seats",
+        "dayId": "day-4",
+        "category": "transport",
+        "name": "五能线两日票与白神号四席",
+        "quantity": 1,
+        "unitAmount": 710,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "两大两小两日票合计 12,120 日元，白神号指定席再预留 2,520 日元。两日票用于 1 月 28 日弘前往返和 29 日青森至秋田。"
+      },
+      {
+        "id": "akita-tokyo",
+        "dayId": "day-7",
+        "category": "transport",
+        "name": "秋田至东京小町号新干线",
+        "quantity": 1,
+        "unitAmount": 2700,
+        "actualAmount": null,
+        "status": "估算",
+        "note": "四人普通车指定席，按通常期成人约 18,300 日元、儿童约半价预留。"
+      },
+      {
+        "id": "nex",
+        "category": "transport",
+        "name": "东京至成田机场特快",
+        "quantity": 1,
+        "unitAmount": 460,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "普通车成人公开票价 3,140 日元，儿童按铁路半价计价，四人总额取整。",
+        "dayId": "day-7"
+      },
+      {
+        "id": "local-transit",
+        "category": "transport",
+        "name": "日本本地铁路、巴士和短程出租车",
+        "quantity": 1,
+        "unitAmount": 1450,
+        "actualAmount": null,
+        "status": "估算",
+        "note": "包括仙台机场线、奥羽本线、八甲田巴士与预约费、弘前短程出租车、秋田动物园往返及市内机动。"
+      },
+      {
+        "id": "chengdu-transfer",
+        "category": "transport",
+        "name": "成都天府机场夜间接送",
+        "quantity": 1,
+        "unitAmount": 250,
+        "actualAmount": null,
+        "status": "估算",
+        "note": "预留四人接送，车费按目的地与用车方式调整。",
+        "dayId": "day-8"
+      },
+      {
+        "id": "aomori-hotel",
+        "category": "lodging",
+        "name": "青森大和鲁内酒店 · 双床 2 间 × 3 晚",
+        "quantity": 1,
+        "unitAmount": 5800,
+        "actualAmount": null,
+        "status": "指定日期双人房参考价",
+        "note": "2026 年 11 月 24 日查乐天旅行，1 月 26 日入住、29 日退房，无烟标准双床按每间两位成人显示，三晚含税纯房费 60,000 日元一间。两间同价推算约 5,760 元，预算取整。家庭按实际年龄选独立占床方案，需确认最终可订价格。"
+      },
+      {
+        "id": "akita-hotel",
+        "category": "lodging",
+        "name": "秋田大都会酒店 · 北翼双床 2 间 × 3 晚",
+        "quantity": 1,
+        "unitAmount": 4100,
+        "actualAmount": null,
+        "status": "指定日期参考价",
+        "note": "2026 年 11 月 24 日查 JTB，北翼禁烟标准双床 1 大 1 小占床，三晚预付纯住宿 42,600 日元一间。按两间同价合计 85,200 日元约 4,090 元，预算取整。最终价格和具体条款以两间房实际订单为准。"
+      },
+      {
+        "id": "narita-hotel",
+        "category": "lodging",
+        "name": "成田日航酒店 · J-Style 家庭房 1 晚",
+        "quantity": 1,
+        "unitAmount": 1200,
+        "actualAmount": null,
+        "status": "指定日期官网参考价",
+        "note": "2026 年 11 月 24 日官网查得 2 月 1 日四人一间早订纯房费 18,872 日元，普通纯房费 22,200 日元。早订参考约 906 元，预算预留 1,200 元。库存、价格和取消条款以实际预订为准。",
+        "dayId": "day-7"
+      },
+      {
+        "id": "meals",
+        "category": "food",
+        "name": "四人餐饮与热饮",
+        "quantity": 1,
+        "unitAmount": 3600,
+        "actualAmount": null,
+        "status": "估算",
+        "note": "含全程早餐、其他餐饮和转场便当的估算，约每天 450 元。按青森、秋田各一次酒店早餐，其余安排简餐。酒店官网当前早餐参考价，按两名 6–12 岁儿童计，青森四人约 7,600 日元一餐，秋田约 7,200 日元一餐。"
+      },
+      {
+        "id": "warasse",
+        "dayId": "day-2",
+        "category": "tickets",
+        "name": "睡魔之家门票",
+        "quantity": 1,
+        "unitAmount": 90,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "可选。大人 620 日元、小中学生 260 日元，按两大两小取整。"
+      },
+      {
+        "id": "hakkoda",
+        "dayId": "day-2",
+        "category": "tickets",
+        "name": "八甲田缆车往返",
+        "quantity": 1,
+        "unitAmount": 310,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "大人往返 2,500 日元，小学生 700 日元，按两大两小预算。"
+      },
+      {
+        "id": "neputa",
+        "dayId": "day-3",
+        "category": "tickets",
+        "name": "津轻藩睡魔村",
+        "quantity": 1,
+        "unitAmount": 90,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "按大人 600 日元、小学生 300 日元计，额外手作按选择支付。"
+      },
+      {
+        "id": "akita-zoo",
+        "dayId": "day-5",
+        "category": "tickets",
+        "name": "大森山雪地动物园",
+        "quantity": 1,
+        "unitAmount": 100,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "成人每位 1,000 日元，高中生及以下免费，按两名成人计。"
+      },
+      {
+        "id": "akita-folk",
+        "category": "tickets",
+        "name": "秋田市民俗艺能传承馆",
+        "quantity": 1,
+        "unitAmount": 20,
+        "actualAmount": null,
+        "status": "参考价",
+        "note": "成人 130 日元，高中生及以下免费，按两名成人取整。",
+        "dayId": "day-6"
+      },
+      {
+        "id": "visa-insurance",
+        "category": "other",
+        "name": "四人签证与旅行保险",
+        "quantity": 1,
+        "unitAmount": 1600,
+        "actualAmount": null,
+        "status": "规划占位",
+        "note": "按适用签证类型、办理渠道及保单实际报价调整。"
+      }
+    ]
+  }
+}
