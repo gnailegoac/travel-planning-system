@@ -1,0 +1,106 @@
+{
+  "type": "Feature",
+  "properties": {
+    "tripId": "japan-tohoku-family-2027",
+    "dayId": "day-4",
+    "segmentId": "d4-yamagata-hotel-walk",
+    "label": "山形站东口 → 山形大都会酒店南楼",
+    "mode": "walk",
+    "routeQuality": "pedestrian-network",
+    "source": "OSRM / FOSSGIS",
+    "sourceUrl": "https://routing.openstreetmap.de/about.html",
+    "mapData": "© OpenStreetMap contributors",
+    "mapDataUrl": "https://www.openstreetmap.org/copyright",
+    "fixMapUrl": "https://www.openstreetmap.org/fixthemap",
+    "routingProfile": "foot",
+    "inputCoordinates": [
+      [
+        140.3285822,
+        38.249115475363034
+      ],
+      [
+        140.32866,
+        38.24786
+      ]
+    ],
+    "snappedWaypoints": [
+      [
+        140.328597,
+        38.24905
+      ],
+      [
+        140.328674,
+        38.247886
+      ]
+    ],
+    "distanceMeters": 183,
+    "routingDurationSeconds": 147,
+    "maxWaypointSnapMeters": 7,
+    "operatorRouteUrl": "https://yamagata.metropolitan.jp/"
+  },
+  "geometry": {
+    "coordinates": [
+      [
+        140.328597,
+        38.24905
+      ],
+      [
+        140.328517,
+        38.249043
+      ],
+      [
+        140.328433,
+        38.248993
+      ],
+      [
+        140.328352,
+        38.248846
+      ],
+      [
+        140.328364,
+        38.248761
+      ],
+      [
+        140.328397,
+        38.248662
+      ],
+      [
+        140.32845,
+        38.248581
+      ],
+      [
+        140.328536,
+        38.248485
+      ],
+      [
+        140.32834,
+        38.248112
+      ],
+      [
+        140.328392,
+        38.248067
+      ],
+      [
+        140.328311,
+        38.247905
+      ],
+      [
+        140.328384,
+        38.24794
+      ],
+      [
+        140.328448,
+        38.247946
+      ],
+      [
+        140.328536,
+        38.247931
+      ],
+      [
+        140.328674,
+        38.247886
+      ]
+    ],
+    "type": "LineString"
+  }
+}

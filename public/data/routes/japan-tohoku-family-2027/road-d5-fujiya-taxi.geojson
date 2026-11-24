@@ -1,0 +1,134 @@
+{
+  "type": "Feature",
+  "properties": {
+    "tripId": "japan-tohoku-family-2027",
+    "dayId": "day-5",
+    "segmentId": "d5-fujiya-taxi",
+    "label": "上山温泉观光案内所 → 别馆藤屋旅馆",
+    "mode": "taxi",
+    "routeQuality": "road-network",
+    "source": "OSRM / FOSSGIS",
+    "sourceUrl": "https://routing.openstreetmap.de/about.html",
+    "mapData": "© OpenStreetMap contributors",
+    "mapDataUrl": "https://www.openstreetmap.org/copyright",
+    "fixMapUrl": "https://www.openstreetmap.org/fixthemap",
+    "routingProfile": "car",
+    "inputCoordinates": [
+      [
+        140.2781531,
+        38.1525567
+      ],
+      [
+        140.264156,
+        38.152369
+      ]
+    ],
+    "snappedWaypoints": [
+      [
+        140.277969,
+        38.152552
+      ],
+      [
+        140.264259,
+        38.152519
+      ]
+    ],
+    "distanceMeters": 1376,
+    "routingDurationSeconds": 131,
+    "maxWaypointSnapMeters": 19,
+    "operatorRouteUrl": "https://hpdsp.jp/fujiyaryokan/access"
+  },
+  "geometry": {
+    "coordinates": [
+      [
+        140.277969,
+        38.152552
+      ],
+      [
+        140.277974,
+        38.15244
+      ],
+      [
+        140.27796,
+        38.1523
+      ],
+      [
+        140.277956,
+        38.152218
+      ],
+      [
+        140.276857,
+        38.152512
+      ],
+      [
+        140.276493,
+        38.152597
+      ],
+      [
+        140.276366,
+        38.152618
+      ],
+      [
+        140.276116,
+        38.152675
+      ],
+      [
+        140.275157,
+        38.152915
+      ],
+      [
+        140.275125,
+        38.152923
+      ],
+      [
+        140.274854,
+        38.152992
+      ],
+      [
+        140.274805,
+        38.153006
+      ],
+      [
+        140.274264,
+        38.153141
+      ],
+      [
+        140.274141,
+        38.153174
+      ],
+      [
+        140.273691,
+        38.152986
+      ],
+      [
+        140.270734,
+        38.151873
+      ],
+      [
+        140.269988,
+        38.151515
+      ],
+      [
+        140.269215,
+        38.151114
+      ],
+      [
+        140.268484,
+        38.150715
+      ],
+      [
+        140.267234,
+        38.151256
+      ],
+      [
+        140.265877,
+        38.151836
+      ],
+      [
+        140.264259,
+        38.152519
+      ]
+    ],
+    "type": "LineString"
+  }
+}

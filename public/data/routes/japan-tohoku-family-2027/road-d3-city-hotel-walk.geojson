@@ -1,0 +1,105 @@
+{
+  "type": "Feature",
+  "properties": {
+    "tripId": "japan-tohoku-family-2027",
+    "dayId": "day-3",
+    "segmentId": "d3-city-hotel-walk",
+    "label": "十和田市中央 → 十和田城市酒店",
+    "mode": "walk",
+    "routeQuality": "pedestrian-network",
+    "source": "OSRM / FOSSGIS",
+    "sourceUrl": "https://routing.openstreetmap.de/about.html",
+    "mapData": "© OpenStreetMap contributors",
+    "mapDataUrl": "https://www.openstreetmap.org/copyright",
+    "fixMapUrl": "https://www.openstreetmap.org/fixthemap",
+    "routingProfile": "foot",
+    "inputCoordinates": [
+      [
+        141.214743,
+        40.613315
+      ],
+      [
+        141.2171038,
+        40.6149751
+      ]
+    ],
+    "snappedWaypoints": [
+      [
+        141.214766,
+        40.613326
+      ],
+      [
+        141.21737,
+        40.615098
+      ]
+    ],
+    "distanceMeters": 413,
+    "routingDurationSeconds": 332,
+    "maxWaypointSnapMeters": 26
+  },
+  "geometry": {
+    "coordinates": [
+      [
+        141.214766,
+        40.613326
+      ],
+      [
+        141.214928,
+        40.613119
+      ],
+      [
+        141.214967,
+        40.613114
+      ],
+      [
+        141.215458,
+        40.613338
+      ],
+      [
+        141.215484,
+        40.613305
+      ],
+      [
+        141.215996,
+        40.613536
+      ],
+      [
+        141.216076,
+        40.613572
+      ],
+      [
+        141.216147,
+        40.613603
+      ],
+      [
+        141.216597,
+        40.613803
+      ],
+      [
+        141.216869,
+        40.613924
+      ],
+      [
+        141.217274,
+        40.614104
+      ],
+      [
+        141.217921,
+        40.614391
+      ],
+      [
+        141.217788,
+        40.614564
+      ],
+      [
+        141.217565,
+        40.614855
+      ],
+      [
+        141.21737,
+        40.615098
+      ]
+    ],
+    "type": "LineString"
+  }
+}
