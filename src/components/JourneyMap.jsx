@@ -12,6 +12,8 @@ const FONT = 'system-ui, -apple-system, "PingFang SC", sans-serif';
 const WATER = '#102427';
 const LAND = '#3c5149';
 const RELIEF_COLORS = ['#273f39', '#304741', '#3a5046', '#43594d', '#4e6352', '#596d58', '#66765f', '#748269'];
+const FOLLOW_FRAME_MS = 48;
+const FOLLOW_DEAD_ZONE_PX = 7;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
 let worldPromise;
@@ -476,15 +478,19 @@ function formatScale(km) {
 
 function paintMap(canvas, size, world, camera, view, stops, routes) {
   const resolution = Math.min(2, window.devicePixelRatio || 1);
-  canvas.width = Math.max(1, Math.round(size.width * resolution));
-  canvas.height = Math.max(1, Math.round(size.height * resolution));
+  const width = Math.max(1, Math.round(size.width * resolution));
+  const height = Math.max(1, Math.round(size.height * resolution));
+  if (canvas.width !== width) canvas.width = width;
+  if (canvas.height !== height) canvas.height = height;
   const ctx = canvas.getContext('2d', { alpha: false });
   if (!ctx) return;
+  ctx.save();
   ctx.setTransform(resolution, 0, 0, resolution, 0, 0);
   drawWater(ctx, camera, view);
   drawTerrain(ctx, world, camera, view);
   drawPlaces(ctx, world, view, camera, stops);
   drawRoutes(ctx, routes, view);
+  ctx.restore();
 }
 
 function panCamera(camera, size, dx, dy) {
@@ -517,16 +523,20 @@ function Traveler({ position, moving }) {
   );
 }
 
-export function JourneyMap({ trip, day, geometries, position, activeStopId, onStopSelect, moving = false, mode }) {
+export function JourneyMap({
+  trip, day, geometries, position, activeStopId, onStopSelect, moving = false, mode, followTraveler = false,
+}) {
   const hostRef = useRef(null);
   const canvasRef = useRef(null);
   const pointers = useRef(new Map());
+  const lastFollow = useRef(null);
   const [world, setWorld] = useState(null);
   const [baseStatus, setBaseStatus] = useState('loading');
   const [size, setSize] = useState({ width: 700, height: 510 });
   const [cameraOverride, setCameraOverride] = useState(null);
   const [pitch, setPitch] = useState(THREE_DIMENSIONAL_PITCH);
   const [dragging, setDragging] = useState(false);
+  const [followInterrupted, setFollowInterrupted] = useState(false);
 
   useEffect(() => {
     let connected = true;
@@ -573,7 +583,35 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
   const markers = useMemo(() => selectMarkers(stops, activeStopId, Boolean(day), size.width), [stops, activeStopId, day, size.width]);
   const traveler = position && view.mapPoint(position, mode === 'flight' ? flightAltitude(position, prepared.routes, view) : 0);
   const travelerVisible = traveler && traveler[0] >= 4 && traveler[0] <= size.width - 4 && traveler[1] >= 42 && traveler[1] <= size.height - 4;
+  const following = Boolean(followTraveler && position && !followInterrupted);
   const scale = scaleStep(52 / view.scaleAtCenter);
+
+  useLayoutEffect(() => {
+    if (!followTraveler && followInterrupted) setFollowInterrupted(false);
+    if (!following) {
+      lastFollow.current = null;
+      return;
+    }
+
+    const [lat, lng] = position;
+    const now = performance.now();
+    const previous = lastFollow.current;
+    const starting = previous?.key !== key;
+    if (camera.lat === lat && camera.lng === lng) {
+      if (starting) lastFollow.current = { key, time: now };
+      return;
+    }
+    // A small screen-space dead zone keeps the person near center while avoiding
+    // a full terrain repaint on every playback frame.
+    if (!starting && travelerVisible) {
+      const [east, north] = view.toWorld(position);
+      const offset = Math.hypot(east, north) * view.scaleAtCenter;
+      const nearCenter = offset < Math.min(view.width, view.height) * 0.12;
+      if (offset < FOLLOW_DEAD_ZONE_PX || (nearCenter && now - previous.time < FOLLOW_FRAME_MS)) return;
+    }
+    lastFollow.current = { key, time: now };
+    setCameraOverride({ ...camera, key, lat, lng });
+  }, [camera, followInterrupted, followTraveler, following, key, position, travelerVisible, view]);
 
   useLayoutEffect(() => {
     paintMap(canvasRef.current, size, world, camera, view, stops, prepared.routes);
@@ -585,7 +623,16 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
   const zoom = (factor) => changeCamera((current) => ({ ...current, distance: clamp(current.distance * factor, 0.24, 17000) }));
   const recenter = () => {
     if (!position) return;
+    setFollowInterrupted(false);
     changeCamera((current) => ({ ...current, lat: position[0], lng: position[1] }));
+  };
+  const showCompleteRoute = () => {
+    if (following) setFollowInterrupted(true);
+    setCameraOverride(null);
+  };
+  const pan = (dx, dy) => {
+    if (following) setFollowInterrupted(true);
+    changeCamera((current) => panCamera(current, size, dx, dy));
   };
 
   useEffect(() => {
@@ -628,7 +675,7 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
         bearing: current.bearing - (next.x - previous.x) * 0.007,
       }));
     } else {
-      changeCamera((current) => panCamera(current, size, next.x - previous.x, next.y - previous.y));
+      pan(next.x - previous.x, next.y - previous.y);
     }
   };
 
@@ -640,10 +687,10 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
   const handleKey = (event) => {
     if (event.target !== hostRef.current) return;
     const move = { ArrowLeft: [48, 0], ArrowRight: [-48, 0], ArrowDown: [0, -48], ArrowUp: [0, 48] }[event.key];
-    if (move) changeCamera((current) => panCamera(current, size, ...move));
+    if (move) pan(...move);
     else if (event.key === '+' || event.key === '=') zoom(0.72);
     else if (event.key === '-') zoom(1.38);
-    else if (event.key === 'Home') setCameraOverride(null);
+    else if (event.key === 'Home') showCompleteRoute();
     else return;
     event.preventDefault();
   };
@@ -665,6 +712,9 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
       data-traveler-lng={position?.[1]}
       data-pitch={camera.pitch.toFixed(2)}
       data-view-km={camera.distance.toFixed(3)}
+      data-view-lat={camera.lat}
+      data-view-lng={camera.lng}
+      data-following={following}
       role="region"
       tabIndex={0}
       onPointerDown={pointerStart}
@@ -701,8 +751,8 @@ export function JourneyMap({ trip, day, geometries, position, activeStopId, onSt
           <button type="button" title="缩小地图" aria-label="缩小地图" onClick={() => zoom(1.42)}><Minus size={20} aria-hidden="true" /></button>
         </span>
         <button type="button" title="切换平面或三维视角" aria-pressed={camera.pitch < 1.3} aria-label="三维视角" onClick={togglePitch}><Layers3 size={18} aria-hidden="true" /></button>
-        <button type="button" title="地图居中到旅行者" aria-label="地图居中到旅行者" disabled={!position} onClick={recenter}><LocateFixed size={18} aria-hidden="true" /></button>
-        <button type="button" title="显示完整路线" aria-label="显示完整路线" onClick={() => setCameraOverride(null)}><Scan size={18} aria-hidden="true" /></button>
+        <button type="button" title="地图居中到旅行者" aria-label="地图居中到旅行者" aria-pressed={following} disabled={!position} onClick={recenter}><LocateFixed size={18} aria-hidden="true" /></button>
+        <button type="button" title="显示完整路线" aria-label="显示完整路线" onClick={showCompleteRoute}><Scan size={18} aria-hidden="true" /></button>
       </div>
       <div className="journey-map-scale" aria-hidden="true">
         <span>{formatScale(scale)}</span>

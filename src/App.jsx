@@ -147,7 +147,7 @@ function TripExperience({ trip, view }) {
           <span aria-hidden="true">·</span> {trip.days.length} 天
         </span>
       </section>
-      <div hidden={view !== 'player'}>
+      <div className="journey-player-view" hidden={view !== 'player'}>
         <JourneyPlayer trip={trip} initialDayId={initialDayId} visible={view === 'player'} />
       </div>
       <div className="journey-details" hidden={view !== 'details'}>
@@ -203,7 +203,7 @@ export default function App() {
   if (error || !trip || !catalog) return <ErrorState message={error ?? '没有可用行程'} />;
 
   return (
-    <div className="app-shell journey-app">
+    <div className="app-shell journey-app" data-view={view}>
       <TripNavigation catalog={catalog} activeTripId={activeTripId} loading={loading}
         onTripChange={changeTrip} view={view} onViewChange={changeView} />
       <TripExperience key={trip.id} trip={trip} view={view} />

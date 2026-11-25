@@ -188,11 +188,6 @@
   overflow: hidden;
 }
 
-.journey-map-frame, .journey-activity-panel {
-  height: clamp(370px, calc(100vh - 405px), 620px);
-  height: clamp(370px, calc(100svh - 405px), 620px);
-}
-
 .journey-map-frame {
   --journey-map-min-height: 0px;
   --journey-map-radius: 0px;
@@ -657,23 +652,82 @@
 .journey-details .day-card:only-child { grid-column: 1 / -1; }
 .journey-unavailable { padding: 28px; border: 1px solid var(--stroke); border-radius: 10px; }
 
+@media (min-width: 640px) {
+  .journey-app[data-view="player"] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100vh;
+    height: 100dvh;
+    min-height: 620px;
+  }
+
+  .journey-app[data-view="player"] .journey-nav-inner { min-height: 60px; }
+
+  .journey-app[data-view="player"] > .journey-main {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    min-height: 0;
+    padding-top: 15px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .journey-player-view {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .journey-experience {
+    display: grid;
+    grid-template-rows: minmax(325px, 1fr) auto auto;
+    min-height: 0;
+  }
+
+  .journey-map-frame, .journey-activity-panel { min-height: 0; }
+}
+
 @media (max-width: 1100px) {
   .journey-nav-inner, .journey-app > .journey-main { width: calc(100% - 40px); }
   .journey-stage { gap: 12px; grid-template-columns: minmax(0, 1fr) minmax(276px, 34%); }
   .activity-panel-head { padding-inline: 13px; }
   .activity-photo, .activity-photo-empty { margin-inline: 13px; }
   .activity-panel-copy, .activity-upcoming { padding-inline: 13px; }
-  .activity-photo img, .activity-photo-empty { height: clamp(122px, 19vh, 199px); }
+  .activity-photo img, .activity-photo-empty { height: clamp(122px, 19vh, 250px); }
 }
 
 @media (max-width: 800px) {
   .journey-nav-inner, .journey-app > .journey-main { width: calc(100% - 32px); }
   .journey-heading { align-items: flex-start; }
   .journey-party { margin-top: 22px; }
+  .journey-stage { grid-template-columns: minmax(0, 1fr) minmax(245px, 34%); }
   .journey-details .day-cards { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 679px) {
+@media (min-width: 640px) and (max-height: 900px) {
+  .journey-app[data-view="player"] .journey-heading { margin-bottom: 12px; }
+  .journey-app[data-view="player"] .journey-heading h1 {
+    margin-top: 4px;
+    font-size: clamp(23px, 2.8vw, 39px);
+  }
+  .journey-app[data-view="player"] .journey-subtitle { display: none; }
+  .journey-app[data-view="player"] .journey-player-controls { margin-top: 10px; }
+  .journey-app[data-view="player"] .journey-map-sources { margin-top: 7px; }
+}
+
+@media (min-width: 880px) and (max-height: 850px) {
+  .journey-player-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1.17fr) minmax(0, 1fr);
+    grid-template-areas: "toolbar days" "progress days";
+    column-gap: 14px;
+  }
+  .playback-toolbar { grid-area: toolbar; }
+  .playback-progress { grid-area: progress; height: 34px; }
+  .journey-day-strip { grid-area: days; align-self: center; }
+  .journey-day-strip button { flex-basis: 47px; }
+}
+
+@media (max-width: 639px) {
   .journey-nav-inner {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 4px 16px;
@@ -710,8 +764,14 @@
 }
 
 @media print {
+  .journey-app[data-view="player"], .journey-app[data-view="player"] > .journey-main {
+    display: block;
+    height: auto;
+    min-height: 0;
+  }
+  .journey-app[data-view="player"] .journey-subtitle { display: block; }
   .journey-app .journey-details[hidden] { display: block; }
-  .journey-experience, .journey-navigation, .journey-detail-filter { display: none !important; }
+  .journey-player-view, .journey-navigation, .journey-detail-filter { display: none !important; }
   .journey-app > .journey-main { width: 100%; }
   .journey-details .day-cards { grid-template-columns: 1fr; }
 }

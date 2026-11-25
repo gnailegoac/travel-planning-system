@@ -160,7 +160,7 @@ function DayStrip({ ticks, currentId, onSelect }) {
     const row = strip.current;
     const current = row?.querySelector('[aria-current="date"]');
     if (!current || row.scrollWidth <= row.clientWidth) return;
-    const left = current.offsetLeft - row.offsetLeft;
+    const left = current.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft;
     if (left < row.scrollLeft || left + current.offsetWidth > row.scrollLeft + row.clientWidth) {
       row.scrollLeft = left - (row.clientWidth - current.offsetWidth) / 2;
     }
@@ -305,6 +305,7 @@ export function JourneyPlayer({ trip, initialDayId, visible }) {
     if (playing) setPlaying(false);
     else {
       if (minute >= limit - 0.05) seek(range.min);
+      setShowWholeMap(false);
       setPlaying(true);
     }
   }
@@ -322,6 +323,7 @@ export function JourneyPlayer({ trip, initialDayId, visible }) {
           <JourneyMap trip={trip} day={showWholeMap ? undefined : sample.day} geometries={geometries}
             position={sample.position} activeStopId={sample.stop?.id} mode={sample.mode}
             moving={playing && (sample.kind === 'travel' || Boolean(sample.mode))}
+            followTraveler={playing && visible}
             onStopSelect={(stop, day) => {
               const item = model.activities.find(({ stop: candidate }) => candidate.id === stop.id);
               if (item) select(item.minute, day.id);
@@ -331,7 +333,10 @@ export function JourneyPlayer({ trip, initialDayId, visible }) {
             <p>{`第 ${dayIndex + 1} 天 · ${sample.day.title}`}</p>
           </header>
           <button className="map-scope-button" type="button" aria-pressed={showWholeMap}
-            onClick={() => setShowWholeMap(!showWholeMap)}><MapIcon size={16} aria-hidden="true" /> {showWholeMap ? '返回当天' : '查看全程'}</button>
+            onClick={() => {
+              setPlaying(false);
+              setShowWholeMap(!showWholeMap);
+            }}><MapIcon size={16} aria-hidden="true" /> {showWholeMap ? '返回当天' : '查看全程'}</button>
           {!loaded && <p className="map-load-status" role="status">正在读取路线轨迹…</p>}
           {loaded?.failed.length > 0 && <p className="map-load-status" role="status">部分轨迹暂不可用，已按行程点绘制。</p>}
         </section>
