@@ -8,14 +8,14 @@
 
 ## 已实现
 
-- 按天筛选的 Leaflet 路线地图、编号地点与地图弹窗。带轨迹文件的陆路段沿对应路网显示。
+- 自绘 3D 路线地图、可拖动的播放时间轴和随时间移动的旅行者。侧栏同步显示活动时间、说明及可用照片。
 - 每个停靠点的到达、离开和自动计算的停留时间。
 - 每日交通方式、里程、在途时间和活动说明。
 - 可展开的行程关键决策、取舍说明与触发式应变预案。
 - 每晚酒店、入住/退房、房间数与预订状态。
 - 总预算、人均预算、机动金、分类占比和逐项费用。
 - 多行程目录、数据加载错误提示、结构校验与单元测试。
-- 桌面和手机响应式布局，以及 GitHub Pages 自动部署。
+- 电脑和 iPad 地图与活动双栏布局，小屏按顺序排列。通过 GitHub Pages 自动部署。
 
 ## 本地运行
 
@@ -29,6 +29,8 @@ npm run dev
 ```powershell
 npm run check
 ```
+
+启动本地预览后，运行 `npm run test:browser` 可验收播放、时间轴和 iPad 布局。可用 `npx playwright-core install webkit` 安装平板测试使用的 WebKit。
 
 ## 新增一份具体行程
 
@@ -49,7 +51,7 @@ npm run check
 
 ## 地图与路线边界
 
-地图使用 Leaflet 和部署在本站的 Natural Earth 矢量底图。道路、步行和铁路轨迹以静态 GeoJSON 存放在 `public/data/routes/`，由浏览器从本站读取。道路可在构建前通过 [OSRM Route service](https://project-osrm.org/docs/v5.24.0/api/#route-service) 生成。日本铁路轨迹采用日本国土交通省 2025 年度「国土数值信息・铁路数据」加工生成。航班用虚线标注，缺少轨迹的陆路段只显示停靠点。
+3D 地图在 Canvas 中渲染本站提供的 Natural Earth 矢量底图、示意起伏和路线。道路、步行和铁路轨迹以静态 GeoJSON 存放在 `public/data/routes/`，由浏览器从本站读取。道路可在构建前通过 [OSRM Route service](https://project-osrm.org/docs/v5.24.0/api/#route-service) 生成。日本铁路轨迹采用日本国土交通省 2025 年度「国土数值信息・铁路数据」加工生成。航班与缺少详细轨迹的路段用虚线标注，播放位置为按规划时刻推算。
 
 静态路线只是规划时快照，不包含实时路况、临时封路、季节性管制、施工、边防检查或车辆限行，也不提供逐向导航。出发当天仍应使用可靠的导航应用，并以交管、景区和现场指示为准；修改 `waypoints` 后要重新执行 `npm run routes:fetch -- <trip-id>` 并人工核对路线。
 

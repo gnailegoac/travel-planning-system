@@ -552,6 +552,7 @@
         },
         {
           "id": "moon-to-wolong-boardwalk",
+          "movementFromPrevious": true,
           "name": "月亮湾—卧龙湾栈道",
           "kind": "attraction",
           "arrival": "09:30",
@@ -570,6 +571,8 @@
         },
         {
           "id": "tiejia-scenic-road",
+          "movementFromPrevious": true,
+          "movementToNext": true,
           "name": "铁贾公路",
           "kind": "attraction",
           "arrival": "12:00",
@@ -1045,6 +1048,8 @@
         },
         {
           "id": "panlong-scenic-road",
+          "movementFromPrevious": true,
+          "movementToNext": true,
           "name": "盘龙古道",
           "kind": "attraction",
           "arrival": "10:20",

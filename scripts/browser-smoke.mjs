@@ -1,175 +1,182 @@
+import assert from 'node:assert/strict';
 import { access, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { chromium } from 'playwright-core';
+import { chromium, devices, webkit } from 'playwright-core';
 
-const url = process.env.TRAVEL_APP_URL ?? 'http://127.0.0.1:4173';
-const candidates = [
-  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+const baseUrl = process.env.TRAVEL_APP_URL ?? 'http://127.0.0.1:4173';
+const outputDirectory = resolve('artifacts', 'browser');
+const chromeCandidates = [
+  'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/usr/bin/chromium',
 ];
 
-let executablePath;
-for (const candidate of candidates) {
+async function available(path) {
+  try { await access(path); return true; } catch { return false; }
+}
+
+function tripUrl(trip, day) {
+  const url = new URL(baseUrl);
+  if (trip) url.searchParams.set('trip', trip);
+  if (day) url.searchParams.set('day', day);
+  return url.toString();
+}
+
+function monitor(page) {
+  const errors = [];
+  const routes = new Set();
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('response', (response) => {
+    if (response.status() >= 400) errors.push(response.status() + ' ' + response.url());
+    if (response.ok() && response.url().includes('/data/routes/')) {
+      routes.add(new URL(response.url()).pathname.split('/').at(-1));
+    }
+  });
+  return { errors, routes };
+}
+
+async function waitForMap(page) {
+  const map = page.locator('.journey-map[data-basemap="ready"]');
+  await map.waitFor();
+  await page.locator('.journey-traveler').waitFor();
+  await page.locator('.map-load-status').waitFor({ state: 'hidden' });
+  await page.waitForFunction(() => document.querySelector('.activity-photo img')?.naturalWidth > 0);
+  assert.ok(Number(await map.getAttribute('data-route-count')) > 0);
+  return map;
+}
+
+async function position(map) {
+  const coordinates = await map.evaluate((map) => [
+    Number(map.dataset.travelerLat),
+    Number(map.dataset.travelerLng),
+  ]);
+  assert.ok(coordinates.every(Number.isFinite));
+  return coordinates;
+}
+
+async function checkLayout(page, sideBySide) {
+  const layout = await page.evaluate(() => {
+    const map = document.querySelector('.journey-map-frame').getBoundingClientRect();
+    const side = document.querySelector('.journey-activity-panel').getBoundingClientRect();
+    const root = document.documentElement;
+    return {
+      overflow: root.scrollWidth - root.clientWidth,
+      sideBySide: side.left > map.right && Math.abs(side.top - map.top) < 2,
+      panelReachable: side.height > 200 && map.height > 300,
+      title: document.title,
+    };
+  });
+  assert.ok(layout.overflow <= 1, JSON.stringify(layout));
+  assert.equal(layout.sideBySide, sideBySide, JSON.stringify(layout));
+  assert.ok(layout.panelReachable);
+  assert.ok(layout.title.includes('行程画布'));
+}
+
+async function verifyDesktop(browser) {
+  const page = await browser.newPage({ viewport: { width: 1366, height: 900 } });
+  const capture = monitor(page);
   try {
-    await access(candidate);
-    executablePath = candidate;
-    break;
-  } catch {
-    // Try the next locally installed browser.
+    await page.goto(tripUrl(), { waitUntil: 'networkidle' });
+    await waitForMap(page);
+    assert.ok(capture.routes.has('day-2-driving.geojson'), '新疆日期的道路轨迹未加载');
+    await checkLayout(page, true);
+    await page.screenshot({ path: resolve(outputDirectory, 'journey-desktop.png') });
+
+    await page.goto(tripUrl('japan-tohoku-family-2027', 'day-4'), { waitUntil: 'networkidle' });
+    const map = await waitForMap(page);
+    assert.ok(capture.routes.has('road-d4-oirase-tour.geojson'));
+    const slider = page.getByRole('slider', { name: '拖动行程时间' });
+    const start = Number(await slider.getAttribute('min'));
+    await slider.fill(String(start + 235)); // 13:55 JST
+    assert.match(await page.getByTestId('activity-name').innerText(), /奥入濑溪流馆与冰瀑导览/);
+    const early = await position(map);
+    await slider.fill(String(start + 300)); // 15:00 JST
+    assert.match(await page.getByTestId('activity-name').innerText(), /奥入濑溪流馆与冰瀑导览/);
+    const later = await position(map);
+    assert.ok(Math.hypot(later[0] - early[0], later[1] - early[1]) > 0.015, '人物未沿冰瀑团路线移动');
+    await page.getByRole('button', { name: '播放行程' }).click();
+    await page.waitForFunction((start) => document.querySelector('input[type=range]').valueAsNumber > start + 306, start);
+    await page.getByRole('button', { name: '暂停播放' }).click();
+    const paused = await slider.inputValue();
+    await page.waitForTimeout(120);
+    assert.equal(await slider.inputValue(), paused);
+    const track = await slider.boundingBox();
+    const maximum = Number(await slider.getAttribute('max'));
+    const thumb = track.x + 10 + (Number(paused) - start) / (maximum - start) * (track.width - 20);
+    await page.mouse.move(thumb, track.y + track.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(track.x + track.width * 0.75, track.y + track.height / 2, { steps: 8 });
+    await page.mouse.up();
+    assert.ok(Number(await slider.inputValue()) > Number(paused) + 100, '鼠标拖动没有推进时间轴');
+    const pitch = await map.getAttribute('data-pitch');
+    await page.getByRole('button', { name: '三维视角' }).click();
+    assert.notEqual(await map.getAttribute('data-pitch'), pitch);
+    await page.getByRole('button', { name: '查看全程' }).click();
+    assert.ok(Number(await map.getAttribute('data-route-count')) > 25);
+
+    await page.getByRole('button', { name: '行程明细' }).click();
+    assert.equal(await page.locator('.lodging-card:visible').count(), 7);
+    assert.match(await page.locator('.budget-total-card strong').innerText(), /52,058/);
+    assert.equal(await page.locator('.day-card:visible').count(), 1, '日期直达链接未保留');
+    await page.getByLabel('查看日期').selectOption('all');
+    assert.equal(await page.locator('.day-card:visible').count(), 8);
+
+    await page.getByLabel('切换行程').selectOption('india-safari-family-2027');
+    await page.getByRole('heading', { name: /印度亲子野生动物之旅/ }).waitFor();
+    assert.equal(await page.locator('.day-card:visible').count(), 12);
+    assert.equal(await page.locator('.demo-notice:visible').count(), 0);
+    assert.deepEqual(capture.errors, []);
+    console.log('电脑 Chrome 通过，包括播放、定位、照片和行程明细');
+  } finally {
+    await page.close();
   }
 }
 
+async function verifyTablet(browser, label) {
+  for (const orientation of ['iPad Mini', 'iPad Mini landscape']) {
+    const { defaultBrowserType, ...device } = devices[orientation];
+    const page = await browser.newPage(device);
+    const capture = monitor(page);
+    try {
+      await page.goto(tripUrl('japan-tohoku-family-2027', 'day-6'), { waitUntil: 'networkidle' });
+      const map = await waitForMap(page);
+      await checkLayout(page, true);
+      assert.match(await page.getByTestId('activity-name').innerText(), /藤屋旅馆早餐/);
+      const slider = page.getByRole('slider', { name: '拖动行程时间' });
+      const track = await slider.boundingBox();
+      await slider.tap({ position: { x: track.width * 0.27, y: track.height / 2 } });
+      assert.notDeepEqual(await position(map), [38.152369, 140.264156], '触摸时间轴未更新地图人物');
+      await page.getByRole('button', { name: /^第4天，/ }).tap();
+      assert.match(await page.getByTestId('activity-name').innerText(), /十和田现代美术馆/);
+      await page.waitForFunction(() => document.querySelector('.activity-photo img')?.naturalWidth > 0);
+      assert.deepEqual(capture.errors, []);
+      await page.screenshot({ path: resolve(outputDirectory, 'journey-' + orientation.toLowerCase().replaceAll(' ', '-') + '.png') });
+      console.log(orientation + ' ' + label + ' 通过，包括两栏布局、触控时间轴和图文切换');
+    } finally {
+      await page.close();
+    }
+  }
+}
+
+let executablePath;
+for (const path of chromeCandidates) {
+  if (await available(path)) {
+    executablePath = path;
+    break;
+  }
+}
 if (!executablePath) throw new Error('没有找到可用于浏览器验收的 Chrome 或 Edge');
-
-const outputDirectory = resolve('artifacts', 'browser');
 await mkdir(outputDirectory, { recursive: true });
-const browser = await chromium.launch({ executablePath, headless: true });
-const scenarios = [
-  { name: 'desktop', viewport: { width: 1366, height: 900 } },
-  { name: 'mobile', viewport: { width: 390, height: 844 } },
-];
-
+const chrome = await chromium.launch({ executablePath, headless: true });
 try {
-  for (const scenario of scenarios) {
-    const page = await browser.newPage({ viewport: scenario.viewport, deviceScaleFactor: 1 });
-    const errors = [];
-    const loadedRouteFiles = new Set();
-    page.on('console', (message) => {
-      if (message.type() === 'error') {
-        const location = message.location();
-        errors.push(`console: ${message.text()}${location.url ? ` (${location.url})` : ''}`);
-      }
-    });
-    page.on('pageerror', (error) => errors.push(`page: ${error.message}`));
-    page.on('response', (response) => {
-      if (response.status() >= 400) errors.push(`HTTP ${response.status()}: ${response.url()}`);
-      if (response.status() === 200 && response.url().includes('/data/routes/')) {
-        loadedRouteFiles.add(new URL(response.url()).pathname);
-      }
-    });
-
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-    await page.locator('.route-map.leaflet-container').waitFor();
-    await page.locator('.leaflet-control-attribution').waitFor();
-    const decisionCount = await page.locator('.decision-note').count();
-    const fallbackCount = await page.locator('.fallback-note').count();
-    if (decisionCount !== 7) errors.push(`关键决策显示 ${decisionCount} 项，预期 7 项`);
-    if (fallbackCount !== 7) errors.push(`应变预案显示 ${fallbackCount} 项，预期 7 项`);
-    if (await page.getByRole('button', { name: '第11天', exact: true }).count() !== 1) {
-      errors.push('11 天行程缺少 D11 日期筛选按钮');
-    }
-    if (!(await page.locator('.demo-notice').innerText()).startsWith('重要提醒：')) {
-      errors.push('正式行程顶部提醒标签不正确');
-    }
-    await page.getByRole('button', { name: '第2天', exact: true }).click();
-    await page.waitForTimeout(250);
-
-    const visibleDayCards = await page.locator('.day-card').count();
-    const visibleStops = await page.locator('.stop-item').count();
-    const visibleMarkers = await page.locator('.route-marker').count();
-    if (visibleDayCards !== 1) errors.push(`D2 筛选后显示 ${visibleDayCards} 张日程卡，预期 1 张`);
-    if (visibleMarkers !== visibleStops) {
-      errors.push(`D2 地图点 ${visibleMarkers} 个，与时间线停靠点 ${visibleStops} 个不一致`);
-    }
-    if (![...loadedRouteFiles].some((path) => path.endsWith('/day-2-driving.geojson'))) {
-      errors.push('D2 道路轨迹文件未成功加载');
-    }
-
-    const layout = await page.evaluate(() => ({
-      scrollWidth: document.documentElement.scrollWidth,
-      clientWidth: document.documentElement.clientWidth,
-      title: document.title,
-      attributionVisible: Boolean(document.querySelector('.leaflet-control-attribution')?.getClientRects().length),
-    }));
-    if (layout.scrollWidth > layout.clientWidth + 1) {
-      errors.push(`页面横向溢出：${layout.scrollWidth}px > ${layout.clientWidth}px`);
-    }
-    if (!layout.attributionVisible) errors.push('地图署名不可见');
-    if (!layout.title.includes('行程画布')) errors.push(`页面标题不正确：${layout.title}`);
-
-    await page.screenshot({
-      path: resolve(outputDirectory, `${scenario.name}.png`),
-      fullPage: true,
-    });
-
-    if (scenario.name === 'desktop') {
-      await page.getByRole('button', { name: '第4天', exact: true }).click();
-      await page.waitForTimeout(750);
-      for (const routeName of ['day-4-driving.geojson', 'day-4-baihaba-driving.geojson']) {
-        if (![...loadedRouteFiles].some((path) => path.endsWith(`/${routeName}`))) {
-          errors.push(`D4 道路轨迹文件未成功加载：${routeName}`);
-        }
-      }
-      await page.locator('.route-map').screenshot({
-        path: resolve(outputDirectory, 'desktop-day4-map.png'),
-      });
-
-      await page.getByRole('button', { name: '第7天', exact: true }).click();
-      await page.waitForTimeout(750);
-      if (![...loadedRouteFiles].some((path) => path.endsWith('/day-7-driving.geojson'))) {
-        errors.push('D7 道路轨迹文件未成功加载');
-      }
-      await page.locator('.route-map').screenshot({
-        path: resolve(outputDirectory, 'desktop-day7-map.png'),
-      });
-    }
-
-    const indiaUrl = new URL(url);
-    indiaUrl.searchParams.set('trip', 'india-safari-family-2027');
-    await page.goto(indiaUrl.toString(), { waitUntil: 'networkidle', timeout: 30000 });
-    await page.locator('.route-map.leaflet-container').waitFor();
-
-    const indiaTitle = '印度亲子野生动物之旅：彭奇与坎哈双园12日';
-    if (await page.getByRole('heading', { name: indiaTitle, exact: true }).count() !== 1) {
-      errors.push('印度行程标题未正确显示');
-    }
-    if (await page.locator('.trip-picker select').inputValue() !== 'india-safari-family-2027') {
-      errors.push('印度行程未在行程选择器中激活');
-    }
-    if (await page.locator('.demo-notice').count() !== 0) {
-      errors.push('印度行程顶部提醒仍然可见');
-    }
-    if (await page.locator('.decision-note').count() !== 10) {
-      errors.push('印度行程关键决策数量不正确');
-    }
-    if (await page.locator('.fallback-note').count() !== 9) {
-      errors.push('印度行程应变预案数量不正确');
-    }
-    if (await page.getByRole('button', { name: '第12天', exact: true }).count() !== 1) {
-      errors.push('印度 12 天行程缺少 D12 日期筛选按钮');
-    }
-
-    await page.getByRole('button', { name: '第12天', exact: true }).click();
-    await page.waitForTimeout(250);
-    const indiaDayCards = await page.locator('.day-card').count();
-    const indiaStops = await page.locator('.stop-item').count();
-    const indiaMarkers = await page.locator('.route-marker').count();
-    if (indiaDayCards !== 1) errors.push(`印度 D12 筛选后显示 ${indiaDayCards} 张日程卡，预期 1 张`);
-    if (indiaMarkers !== indiaStops) {
-      errors.push(`印度 D12 地图点 ${indiaMarkers} 个，与时间线停靠点 ${indiaStops} 个不一致`);
-    }
-
-    const indiaLayout = await page.evaluate(() => ({
-      scrollWidth: document.documentElement.scrollWidth,
-      clientWidth: document.documentElement.clientWidth,
-    }));
-    if (indiaLayout.scrollWidth > indiaLayout.clientWidth + 1) {
-      errors.push(`印度行程页面横向溢出：${indiaLayout.scrollWidth}px > ${indiaLayout.clientWidth}px`);
-    }
-    await page.screenshot({
-      path: resolve(outputDirectory, `${scenario.name}-india.png`),
-      fullPage: true,
-    });
-
-    await page.close();
-
-    if (errors.length) {
-      throw new Error(`${scenario.name} 验收失败：\n${errors.map((error) => `- ${error}`).join('\n')}`);
-    }
-    console.log(`${scenario.name} 浏览器验收通过`);
+  await verifyDesktop(chrome);
+  if (await available(webkit.executablePath())) {
+    const safariEngine = await webkit.launch({ headless: true });
+    try { await verifyTablet(safariEngine, 'WebKit'); } finally { await safariEngine.close(); }
+  } else {
+    await verifyTablet(chrome, 'Chromium');
   }
 } finally {
-  await browser.close();
+  await chrome.close();
 }

@@ -117,7 +117,11 @@
 }
 ```
 
-时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`；尚未确认的航班、班次或开放时段可用 `timeStatus` 明确标记。
+时间采用当地 `HH:MM`。跨午夜的停靠点增加 `departureDayOffset: 1`。若停靠点与行程时区不同，可添加 IANA `timezone`，例如 `Asia/Hong_Kong`，或分别使用 `arrivalTimezone` 和 `departureTimezone`。尚未确认的航班、班次或开放时段可用 `timeStatus` 标记。
+
+可为停靠点添加 `photo`，例如 `{"file":"data/photos/zao.webp","alt":"藏王地藏山顶的树冰","caption":"藏王地藏山顶"}`。图片放在 `public/data/photos/`。引用他人照片时可填写 `credit`、`sourceUrl`、`license`、`licenseUrl` 和 `changes`。
+
+若活动在停留时间内沿路线移动，可使用 `movementFromPrevious` 或 `movementToNext`，以相邻停靠点作为活动路线的起点或终点。往返同一地点的活动可使用 `movementLoopSegmentId` 指定对应的路线段。
 
 停靠点的 `coordinates`、旧版 `route.geometry`、分段路线的 `waypoints` 和 `coordinates` 均使用 `[纬度, 经度]`。`geometryFile` 指向的文件是标准 GeoJSON，因此其中的坐标顺序必须是 `[经度, 纬度]`；前端会在读取时转换，不要把两种顺序混用。
 
@@ -140,7 +144,7 @@
 - `waypoints`：两个或更多用于请求路由的节点，顺序为 `[纬度, 经度]`。自驾段必填。
 - `geometryFile`：相对于 `public/` 的 GeoJSON 路径，例如 `data/routes/trip-id/day-1-driving.geojson`。几何须为 `LineString` 或 `MultiLineString`，应沿核验过的道路、步道、铁路或索道数据绘制，并记录数据来源。自驾段必填。
 
-有轨迹文件的陆路段用实线显示。轨迹缺失或加载失败时，地图只保留停靠点，并在图例标注缺失段数。用于录入未核验区间的 `coordinates` 至少包含两个 `[纬度, 经度]` 节点。航班使用 `coordinates` 以虚线展示地点间的飞行方向。
+有轨迹文件的陆路段用实线显示。缺少详细轨迹时以录入的行程坐标或途经点绘制虚线示意。用于录入未核验区间的 `coordinates` 至少包含两个 `[纬度, 经度]` 节点。航班使用 `coordinates` 以虚线展示地点间的飞行方向。
 
 旧版 `route.geometry` 可继续保留，迁移后应按实际交通方式拆成 `segments`。页面保留旧行程的停靠点。道路路由输出为规划轨迹，轨迹上的临时管制及通行条件以出行当天为准。
 
